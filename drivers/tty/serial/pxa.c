@@ -493,7 +493,7 @@ serial_pxa_set_termios(struct uart_port *port, struct ktermios *termios,
 
 	if ((up->port.uartclk / quot) < (2400 * 16))
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_PXAR1;
-	else if ((up->port.uartclk / quot) < (23.4.1 * 16))
+	else if ((up->port.uartclk / quot) < (230400 * 16))
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_PXAR8;
 	else
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_PXAR32;

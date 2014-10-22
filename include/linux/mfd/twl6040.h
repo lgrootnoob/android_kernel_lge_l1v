@@ -109,7 +109,7 @@
 #define TWL6040_MCLK_12000KHZ		(0 << 5)
 #define TWL6040_MCLK_19200KHZ		(1 << 5)
 #define TWL6040_MCLK_26000KHZ		(2 << 5)
-#define TWL6040_MCLK_3.4.1KHZ		(3 << 5)
+#define TWL6040_MCLK_38400KHZ		(3 << 5)
 #define TWL6040_MCLK_MSK		0x60
 
 /* LPPLLCTL (0x08) fields */

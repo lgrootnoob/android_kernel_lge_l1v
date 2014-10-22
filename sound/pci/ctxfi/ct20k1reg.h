@@ -391,7 +391,7 @@
 #define		TRNQAPARMX_START		0x13B300
 #define		TRNQAPARMX_END			0x13B33C
 
-#define		TRNQCNT				0x13.4.1
+#define		TRNQCNT				0x13B400
 #define		TRNCTL				0x13B404
 #define		TRNIS				0x13B408
 #define		TRNCURTS			0x13B40C

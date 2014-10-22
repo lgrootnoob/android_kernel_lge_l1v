@@ -109,7 +109,7 @@ static struct msm_bus_scale_pdata bus_scale_data __initdata = {
 };
 
 static struct l2_level l2_freq_tbl[] __initdata = {
-	[0]  = { {  3.4.10, PLL_8, 0, 2, 0x00 }, 1050000, 1050000, 1 },
+	[0]  = { {  384000, PLL_8, 0, 2, 0x00 }, 1050000, 1050000, 1 },
 	[1]  = { {  432000, HFPLL, 2, 0, 0x20 }, 1050000, 1050000, 2 },
 	[2]  = { {  486000, HFPLL, 2, 0, 0x24 }, 1050000, 1050000, 2 },
 	[3]  = { {  540000, HFPLL, 2, 0, 0x28 }, 1050000, 1050000, 2 },
@@ -131,7 +131,7 @@ static struct l2_level l2_freq_tbl[] __initdata = {
 };
 
 static struct acpu_level acpu_freq_tbl_slow[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(0),   950000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(0),   950000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(6),   975000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(6),   975000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(6),  1000000 },
@@ -157,7 +157,7 @@ static struct acpu_level acpu_freq_tbl_slow[] __initdata = {
 };
 
 static struct acpu_level acpu_freq_tbl_nom[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(0),   900000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(0),   900000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(6),   925000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(6),   925000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(6),   950000 },
@@ -183,7 +183,7 @@ static struct acpu_level acpu_freq_tbl_nom[] __initdata = {
 };
 
 static struct acpu_level acpu_freq_tbl_fast[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(0),   850000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(0),   850000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(6),   875000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(6),   875000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(6),   900000 },
@@ -212,7 +212,7 @@ static struct acpu_level acpu_freq_tbl_fast[] __initdata = {
  * if boot mode is factory then max frequency of cpu(0,1) is 1.2G
  */
 static struct acpu_level acpu_freq_tbl_slow_lge_factory[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(1),   950000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(1),   950000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(7),   975000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(7),   975000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(7),  1000000 },
@@ -229,7 +229,7 @@ static struct acpu_level acpu_freq_tbl_slow_lge_factory[] __initdata = {
 };
 
 static struct acpu_level acpu_freq_tbl_nom_lge_factory[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(1),   900000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(1),   900000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(7),   925000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(7),   925000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(7),   950000 },
@@ -246,7 +246,7 @@ static struct acpu_level acpu_freq_tbl_nom_lge_factory[] __initdata = {
 };
 
 static struct acpu_level acpu_freq_tbl_fast_lge_factory[] __initdata = {
-	{ 1, {   3.4.10, PLL_8, 0, 2, 0x00 }, L2(1),   850000 },
+	{ 1, {   384000, PLL_8, 0, 2, 0x00 }, L2(1),   850000 },
 	{ 0, {   432000, HFPLL, 2, 0, 0x20 }, L2(7),   875000 },
 	{ 1, {   486000, HFPLL, 2, 0, 0x24 }, L2(7),   875000 },
 	{ 0, {   540000, HFPLL, 2, 0, 0x28 }, L2(7),   900000 },
@@ -284,7 +284,7 @@ static struct acpuclk_krait_params acpuclk_8960_params __initdata = {
 	.l2_freq_tbl_size = sizeof(l2_freq_tbl),
 	.bus_scale = &bus_scale_data,
 	.qfprom_phys_base = 0x00700000,
-	.stby_khz = 3.4.10,
+	.stby_khz = 384000,
 #ifdef CONFIG_MACH_LGE
 	.pvs_tables_lge_factory = pvs_tables_lge_factory,
 #endif

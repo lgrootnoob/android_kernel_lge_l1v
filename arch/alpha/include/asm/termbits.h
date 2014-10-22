@@ -128,13 +128,13 @@ struct ktermios {
 #define  B4800	0000014
 #define  B9600	0000015
 #define  B19200	0000016
-#define  B3.4.1	0000017
+#define  B38400	0000017
 #define EXTA B19200
-#define EXTB B3.4.1
+#define EXTB B38400
 #define CBAUDEX 0000000
 #define  B57600   00020
 #define  B115200  00021
-#define  B23.4.1  00022
+#define  B230400  00022
 #define  B460800  00023
 #define  B500000  00024
 #define  B576000  00025

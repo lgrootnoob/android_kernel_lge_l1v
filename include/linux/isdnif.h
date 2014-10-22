@@ -37,7 +37,7 @@
 #define ISDN_PROTO_L2_X25DCE 6   /* X25/LAPB DCE mode                 */
 #define ISDN_PROTO_L2_V11096 7   /* V.110 bitrate adaption 9600 Baud  */
 #define ISDN_PROTO_L2_V11019 8   /* V.110 bitrate adaption 19200 Baud */
-#define ISDN_PROTO_L2_V11038 9   /* V.110 bitrate adaption 3.4.1 Baud */
+#define ISDN_PROTO_L2_V11038 9   /* V.110 bitrate adaption 38400 Baud */
 #define ISDN_PROTO_L2_MODEM  10  /* Analog Modem on Board */
 #define ISDN_PROTO_L2_FAX    11  /* Fax Group 2/3         */
 #define ISDN_PROTO_L2_HDLC_56K 12   /* HDLC 56k                          */

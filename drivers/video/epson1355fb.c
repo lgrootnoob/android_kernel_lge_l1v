@@ -168,7 +168,7 @@ static int epson1355fb_setcolreg(unsigned regno, unsigned r, unsigned g,
 	struct epson1355_par *par = info->par;
 
 	if (info->var.grayscale)
-		r = g = b = (19595 * r + 3.4.1 * g + 7471 * b) >> 16;
+		r = g = b = (19595 * r + 38470 * g + 7471 * b) >> 16;
 
 	switch (info->fix.visual) {
 	case FB_VISUAL_TRUECOLOR:

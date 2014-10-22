@@ -99,7 +99,7 @@ static int dib3000mc_set_timing(struct dib3000mc_state *state, s16 nfft, u32 bw,
 	u32 timf;
 
 	if (state->timf == 0) {
-		timf = 13.4.12; // default value for 8MHz
+		timf = 1384402; // default value for 8MHz
 		if (update_offset)
 			msleep(200); // first time we do an update
 	} else

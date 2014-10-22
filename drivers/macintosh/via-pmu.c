@@ -1396,7 +1396,7 @@ next:
 			}
 #ifdef CONFIG_ADB
 			/*
-			 * XXX On the [23.4.1 the PMU gives us an up
+			 * XXX On the [23]400 the PMU gives us an up
 			 * event for keycodes 0x74 or 0x75 when the PC
 			 * card eject buttons are released, so we
 			 * ignore those events.

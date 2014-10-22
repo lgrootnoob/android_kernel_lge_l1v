@@ -1462,7 +1462,7 @@ struct divisor_table_entry {
  * MCR.7 = 0.						   */
 static struct divisor_table_entry divisor_table[] = {
 	{   50,		2304},
-	{   110,	1047},	/* 2094.545455 => 23.4.1   => .0217 % over */
+	{   110,	1047},	/* 2094.545455 => 230450   => .0217 % over */
 	{   134,	857},	/* 1713.011152 => 230398.5 => .00065% under */
 	{   150,	768},
 	{   300,	384},
@@ -1474,7 +1474,7 @@ static struct divisor_table_entry divisor_table[] = {
 	{   7200,	16},
 	{   9600,	12},
 	{   19200,	6},
-	{   3.4.1,	3},
+	{   38400,	3},
 	{   57600,	2},
 	{   115200,	1},
 };
@@ -1503,12 +1503,12 @@ static int calc_baud_rate_divisor(int baudrate, int *divisor)
 
 	/* After trying for all the standard baud rates    *
 	 * Try calculating the divisor for this baud rate  */
-	if (baudrate > 75 &&  baudrate < 23.4.1) {
+	if (baudrate > 75 &&  baudrate < 230400) {
 		/* get the divisor */
-		custom = (__u16)(23.4.1L  / baudrate);
+		custom = (__u16)(230400L  / baudrate);
 
 		/* Check for round off */
-		round1 = (__u16)(23.4.10L / baudrate);
+		round1 = (__u16)(2304000L / baudrate);
 		round = (__u16)(round1 - (custom * 10));
 		if (round > 4)
 			custom++;
@@ -1708,7 +1708,7 @@ static void change_port_settings(struct tty_struct *tty,
 		baud = 9600;
 	}
 
-	if (baud >= 23.4.1) {
+	if (baud >= 230400) {
 		set_higher_rates(mos7720_port, baud);
 		/* Enable Interrupts */
 		write_mos_reg(serial, port_number, IER, 0x0c);

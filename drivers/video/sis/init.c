@@ -962,13 +962,13 @@ SiS_SetRegOR(SISIOADDRESS Port, u8 Index, u8 DataOR)
 void
 SiS_DisplayOn(struct SiS_Private *SiS_Pr)
 {
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x01,0xDF);
+   SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x01,0xDF);
 }
 
 void
 SiS_DisplayOff(struct SiS_Private *SiS_Pr)
 {
-   SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x01,0x20);
+   SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x01,0x20);
 }
 
 
@@ -1027,11 +1027,11 @@ SiS_GetSysFlags(struct SiS_Private *SiS_Pr)
 
    SiS_Pr->SiS_SysFlags = 0;
    if(SiS_Pr->ChipType == SIS_650) {
-      cr5f = SiS_GetReg(SiS_Pr->SiS_P3.4.1x5f) & 0xf0;
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x5c,0x07);
-      temp1 = SiS_GetReg(SiS_Pr->SiS_P3.4.1x5c) & 0xf8;
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x5c,0xf8);
-      temp2 = SiS_GetReg(SiS_Pr->SiS_P3.4.1x5c) & 0xf8;
+      cr5f = SiS_GetReg(SiS_Pr->SiS_P3d4,0x5f) & 0xf0;
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x5c,0x07);
+      temp1 = SiS_GetReg(SiS_Pr->SiS_P3d4,0x5c) & 0xf8;
+      SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x5c,0xf8);
+      temp2 = SiS_GetReg(SiS_Pr->SiS_P3d4,0x5c) & 0xf8;
       if((!temp1) || (temp2)) {
 	 switch(cr5f) {
 	    case 0x80:
@@ -1048,7 +1048,7 @@ SiS_GetSysFlags(struct SiS_Private *SiS_Pr)
       } else {
 	 switch(cr5f) {
 	    case 0x90:
-	       temp1 = SiS_GetReg(SiS_Pr->SiS_P3.4.1x5c) & 0xf8;
+	       temp1 = SiS_GetReg(SiS_Pr->SiS_P3d4,0x5c) & 0xf8;
 	       switch(temp1) {
 		  case 0x00: SiS_Pr->SiS_SysFlags |= SF_IsM652; break;
 		  case 0x40: SiS_Pr->SiS_SysFlags |= SF_IsM653; break;
@@ -1066,10 +1066,10 @@ SiS_GetSysFlags(struct SiS_Private *SiS_Pr)
    }
 
    if(SiS_Pr->ChipType >= SIS_760 && SiS_Pr->ChipType <= SIS_761) {
-      if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x78) & 0x30) {
+      if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x78) & 0x30) {
          SiS_Pr->SiS_SysFlags |= SF_760LFB;
       }
-      if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x79) & 0xf0) {
+      if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x79) & 0xf0) {
          SiS_Pr->SiS_SysFlags |= SF_760UMA;
       }
    }
@@ -1093,13 +1093,13 @@ SiSInitPCIetc(struct SiS_Private *SiS_Pr)
        *     - MMIO ENABLED (0x01)
        * Leave other bits untouched.
        */
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x20,0xa1);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x20,0xa1);
       /*  - Enable 2D (0x40)
        *  - Enable 3D (0x02)
        *  - Enable 3D Vertex command fetch (0x10) ?
        *  - Enable 3D command parser (0x08) ?
        */
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x1E,0x5A);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x1E,0x5A);
       break;
 #endif
 #ifdef CONFIG_FB_SIS_315
@@ -1117,24 +1117,24 @@ SiSInitPCIetc(struct SiS_Private *SiS_Pr)
    case SIS_340:
    case XGI_40:
       /* See above */
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x20,0xa1);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x20,0xa1);
       /*  - Enable 3D G/L transformation engine (0x80)
        *  - Enable 2D (0x40)
        *  - Enable 3D vertex command fetch (0x10)
        *  - Enable 3D command parser (0x08)
        *  - Enable 3D (0x02)
        */
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x1E,0xDA);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x1E,0xDA);
       break;
    case XGI_20:
    case SIS_550:
       /* See above */
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x20,0xa1);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x20,0xa1);
       /* No 3D engine ! */
       /*  - Enable 2D (0x40)
        *  - disable 3D
        */
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x1E,0x60,0x40);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x1E,0x60,0x40);
       break;
 #endif
    default:
@@ -1170,7 +1170,7 @@ SiSSetLVDSetc(struct SiS_Private *SiS_Pr)
    case SIS_540:
    case SIS_630:
    case SIS_730:
-	temp = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x37) & 0x0e) >> 1;
+	temp = (SiS_GetReg(SiS_Pr->SiS_P3d4,0x37) & 0x0e) >> 1;
 	if((temp >= 2) && (temp <= 5))	SiS_Pr->SiS_IF_DEF_LVDS = 1;
 	if(temp == 3)			SiS_Pr->SiS_IF_DEF_TRUMPION = 1;
 	if((temp == 4) || (temp == 5)) {
@@ -1185,7 +1185,7 @@ SiSSetLVDSetc(struct SiS_Private *SiS_Pr)
    case SIS_650:
    case SIS_740:
    case SIS_330:
-	temp = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x37) & 0x0e) >> 1;
+	temp = (SiS_GetReg(SiS_Pr->SiS_P3d4,0x37) & 0x0e) >> 1;
 	if((temp >= 2) && (temp <= 3))	SiS_Pr->SiS_IF_DEF_LVDS = 1;
 	if(temp == 3)			SiS_Pr->SiS_IF_DEF_CH70xx = 2;
 	break;
@@ -1197,7 +1197,7 @@ SiSSetLVDSetc(struct SiS_Private *SiS_Pr)
    case SIS_340:
    case XGI_20:
    case XGI_40:
-	temp = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x38) & 0xe0) >> 5;
+	temp = (SiS_GetReg(SiS_Pr->SiS_P3d4,0x38) & 0xe0) >> 5;
 	if((temp >= 2) && (temp <= 3)) 	SiS_Pr->SiS_IF_DEF_LVDS = 1;
 	if(temp == 3)			SiS_Pr->SiS_IF_DEF_CH70xx = 2;
 	if(temp == 4)			SiS_Pr->SiS_IF_DEF_CONEX = 1;  /* Not yet supported */
@@ -1389,7 +1389,7 @@ SiS_SetSegmentRegOver(struct SiS_Private *SiS_Pr, unsigned short value)
 
    temp &= 0x07;
    temp |= (temp << 4);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x1d,temp);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x1d,temp);
    SiS_SetSegmentReg(SiS_Pr, value);
 }
 
@@ -1512,17 +1512,17 @@ SiS_Get310DRAMType(struct SiS_Private *SiS_Pr)
 	 data = 0;
       } if(SiS_Pr->ChipType >= SIS_661) {
 	 if(SiS_Pr->SiS_ROMNew) {
-	    data = ((SiS_GetReg(SiS_Pr->SiS_P3.4.1x78) & 0xc0) >> 6);
+	    data = ((SiS_GetReg(SiS_Pr->SiS_P3d4,0x78) & 0xc0) >> 6);
 	 } else {
-	    data = SiS_GetReg(SiS_Pr->SiS_P3.4.1x78) & 0x07;
+	    data = SiS_GetReg(SiS_Pr->SiS_P3d4,0x78) & 0x07;
 	 }
       } else if(IS_SIS550650740) {
-	 data = SiS_GetReg(SiS_Pr->SiS_P3.4.1x13) & 0x07;
+	 data = SiS_GetReg(SiS_Pr->SiS_P3c4,0x13) & 0x07;
       } else {	/* 315, 330 */
-	 data = SiS_GetReg(SiS_Pr->SiS_P3.4.1x3a) & 0x03;
+	 data = SiS_GetReg(SiS_Pr->SiS_P3c4,0x3a) & 0x03;
 	 if(SiS_Pr->ChipType == SIS_330) {
 	    if(data > 1) {
-	       switch(SiS_GetReg(SiS_Pr->SiS_P3.4.1x5f) & 0x30) {
+	       switch(SiS_GetReg(SiS_Pr->SiS_P3d4,0x5f) & 0x30) {
 	       case 0x00: data = 1; break;
 	       case 0x10: data = 3; break;
 	       case 0x20: data = 3; break;
@@ -1689,13 +1689,13 @@ SiS_DoLowModeTest(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
 
    if((ModeNo != 0x03) && (ModeNo != 0x10) && (ModeNo != 0x12))
       return true;
-   temp = SiS_GetReg(SiS_Pr->SiS_P3.4.1x11);
-   SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x11,0x80);
-   temp1 = SiS_GetReg(SiS_Pr->SiS_P3.4.1x00);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x00,0x55);
-   temp2 = SiS_GetReg(SiS_Pr->SiS_P3.4.1x00);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x00,temp1);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x11,temp);
+   temp = SiS_GetReg(SiS_Pr->SiS_P3d4,0x11);
+   SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x11,0x80);
+   temp1 = SiS_GetReg(SiS_Pr->SiS_P3d4,0x00);
+   SiS_SetReg(SiS_Pr->SiS_P3d4,0x00,0x55);
+   temp2 = SiS_GetReg(SiS_Pr->SiS_P3d4,0x00);
+   SiS_SetReg(SiS_Pr->SiS_P3d4,0x00,temp1);
+   SiS_SetReg(SiS_Pr->SiS_P3d4,0x11,temp);
    if((SiS_Pr->ChipType >= SIS_315H) ||
       (SiS_Pr->ChipType == SIS_300)) {
       if(temp2 == 0x55) return false;
@@ -1703,7 +1703,7 @@ SiS_DoLowModeTest(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
    } else {
       if(temp2 != 0x55) return true;
       else {
-	 SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x35,0x01);
+	 SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x35,0x01);
 	 return false;
       }
    }
@@ -1725,15 +1725,15 @@ static void
 SiS_OpenCRTC(struct SiS_Private *SiS_Pr)
 {
    if(IS_SIS650) {
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x51,0x1f);
-      if(IS_SIS651) SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x51,0x20);
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x56,0xe7);
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x51,0x1f);
+      if(IS_SIS651) SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x51,0x20);
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x56,0xe7);
    } else if(IS_SIS661741660760) {
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x61,0xf7);
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x51,0x1f);
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x56,0xe7);
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x61,0xf7);
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x51,0x1f);
+      SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x56,0xe7);
       if(!SiS_Pr->SiS_ROMNew) {
-	 SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x3a,0xef);
+	 SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x3a,0xef);
       }
    }
 }
@@ -1748,8 +1748,8 @@ SiS_CloseCRTC(struct SiS_Private *SiS_Pr)
       if(SiS_Pr->SiS_VBInfo & SetCRT2ToLCDA) {
          temp1 = 0xa0; temp2 = 0x08;
       }
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x51,0x1f,temp1);
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x56,0xe7,temp2);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x51,0x1f,temp1);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x56,0xe7,temp2);
    }
 #endif
 }
@@ -1760,9 +1760,9 @@ SiS_HandleCRT1(struct SiS_Private *SiS_Pr)
    /* Enable CRT1 gating */
    SiS_SetRegAND(SiS_Pr->SiS_P3d4,SiS_Pr->SiS_MyCR63,0xbf);
 #if 0
-   if(!(SiS_GetReg(SiS_Pr->SiS_P3.4.1x15) & 0x01)) {
-      if((SiS_GetReg(SiS_Pr->SiS_P3.4.1x15) & 0x0a) ||
-         (SiS_GetReg(SiS_Pr->SiS_P3.4.1x16) & 0x01)) {
+   if(!(SiS_GetReg(SiS_Pr->SiS_P3c4,0x15) & 0x01)) {
+      if((SiS_GetReg(SiS_Pr->SiS_P3c4,0x15) & 0x0a) ||
+         (SiS_GetReg(SiS_Pr->SiS_P3c4,0x16) & 0x01)) {
          SiS_SetRegOR(SiS_Pr->SiS_P3d4,SiS_Pr->SiS_MyCR63,0x40);
       }
    }
@@ -1833,7 +1833,7 @@ SiS_SetSeqRegs(struct SiS_Private *SiS_Pr, unsigned short StandTableIndex)
    unsigned char SRdata;
    int i;
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x00,0x03);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x00,0x03);
 
    /* or "display off"  */
    SRdata = SiS_Pr->SiS_StandTable[StandTableIndex].SR[0] | 0x20;
@@ -1847,7 +1847,7 @@ SiS_SetSeqRegs(struct SiS_Private *SiS_Pr, unsigned short StandTableIndex)
 
    }
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x01,SRdata);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x01,SRdata);
 
    for(i = 2; i <= 4; i++) {
       SRdata = SiS_Pr->SiS_StandTable[StandTableIndex].SR[i - 1];
@@ -1888,7 +1888,7 @@ SiS_SetCRTCRegs(struct SiS_Private *SiS_Pr, unsigned short StandTableIndex)
    unsigned short i;
 
    /* Unlock CRTC */
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x11,0x7f);
+   SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x11,0x7f);
 
    for(i = 0; i <= 0x18; i++) {
       CRTCdata = SiS_Pr->SiS_StandTable[StandTableIndex].CRTC[i];
@@ -1906,7 +1906,7 @@ SiS_SetCRTCRegs(struct SiS_Private *SiS_Pr, unsigned short StandTableIndex)
 	      (SiS_Pr->ChipRevision >= 0x30) ) {
       if(SiS_Pr->SiS_VBInfo & SetInSlaveMode) {
 	 if(SiS_Pr->SiS_VBInfo & (SetCRT2ToLCD | SetCRT2ToTV)) {
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x18,0xFE);
+	    SiS_SetReg(SiS_Pr->SiS_P3d4,0x18,0xFE);
 	 }
       }
    }
@@ -2007,10 +2007,10 @@ SiS_ClearExt1Regs(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
    }
 
    if(SiS_Pr->ChipType >= SIS_315H) {
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x37,0xFE);
+      SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x37,0xFE);
       if(ModeNo <= 0x13) {
 	 if(ModeNo == 0x06 || ModeNo >= 0x0e) {
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x0e,0x20);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x0e,0x20);
 	 }
       }
    }
@@ -2034,14 +2034,14 @@ SiS_ResetCRT1VCLK(struct SiS_Private *SiS_Pr)
       }
    }
 
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x31,0xcf,0x20);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2B,SiS_Pr->SiS_VCLKData[1].SR2B);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2C,SiS_Pr->SiS_VCLKData[1].SR2C);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2D,0x80);
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x31,0xcf,0x10);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2B,SiS_Pr->SiS_VCLKData[0].SR2B);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2C,SiS_Pr->SiS_VCLKData[0].SR2C);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2D,0x80);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x31,0xcf,0x20);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2B,SiS_Pr->SiS_VCLKData[1].SR2B);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2C,SiS_Pr->SiS_VCLKData[1].SR2C);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2D,0x80);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x31,0xcf,0x10);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2B,SiS_Pr->SiS_VCLKData[0].SR2B);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2C,SiS_Pr->SiS_VCLKData[0].SR2C);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2D,0x80);
 }
 
 /*********************************************/
@@ -2093,7 +2093,7 @@ SiS_SetCRT1CRTC(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    }
 
    /* unlock cr0-7 */
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x11,0x7f);
+   SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x11,0x7f);
 
    for(i = 0, j = 0; i <= 7; i++, j++) {
       SiS_SetReg(SiS_Pr->SiS_P3d4,j,crt1data[i]);
@@ -2108,26 +2108,26 @@ SiS_SetCRT1CRTC(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       SiS_SetReg(SiS_Pr->SiS_P3c4,j,crt1data[i]);
    }
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x0E,crt1data[16] & 0xE0);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x0E,crt1data[16] & 0xE0);
 
    temp = (crt1data[16] & 0x01) << 5;
    if(modeflag & DoubleScanMode) temp |= 0x80;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x09,0x5F,temp);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x09,0x5F,temp);
 
    if(SiS_Pr->SiS_ModeType > ModeVGA) {
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x14,0x4F);
+      SiS_SetReg(SiS_Pr->SiS_P3d4,0x14,0x4F);
    }
 
 #ifdef CONFIG_FB_SIS_315
    if(SiS_Pr->ChipType == XGI_20) {
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x04,crt1data[4] - 1);
+      SiS_SetReg(SiS_Pr->SiS_P3d4,0x04,crt1data[4] - 1);
       if(!(temp = crt1data[5] & 0x1f)) {
-         SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x0c,0xfb);
+         SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x0c,0xfb);
       }
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x05,0xe0,((temp - 1) & 0x1f));
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x05,0xe0,((temp - 1) & 0x1f));
       temp = (crt1data[16] >> 5) + 3;
       if(temp > 7) temp -= 7;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0e,0x1f,(temp << 5));
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0e,0x1f,(temp << 5));
    }
 #endif
 }
@@ -2153,9 +2153,9 @@ SiS_SetCRT1Offset(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    DisplayUnit = SiS_GetOffset(SiS_Pr, ModeNo, ModeIdIndex, RRTI);
 
    temp = (DisplayUnit >> 8) & 0x0f;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0E,0xF0,temp);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0E,0xF0,temp);
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x13,DisplayUnit & 0xFF);
+   SiS_SetReg(SiS_Pr->SiS_P3d4,0x13,DisplayUnit & 0xFF);
 
    if(infoflag & InterlaceMode) DisplayUnit >>= 1;
 
@@ -2165,7 +2165,7 @@ SiS_SetCRT1Offset(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    if(SiS_Pr->ChipType == XGI_20) {
       if(ModeNo == 0x4a || ModeNo == 0x49) temp--;
    }
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x10,temp);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x10,temp);
 }
 
 /*********************************************/
@@ -2195,26 +2195,26 @@ SiS_SetCRT1VCLK(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       }
    }
 
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x31,0xCF);
+   SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x31,0xCF);
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2b,clka);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x2c,clkb);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2b,clka);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x2c,clkb);
 
    if(SiS_Pr->ChipType >= SIS_315H) {
 #ifdef CONFIG_FB_SIS_315
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x2D,0x01);
+      SiS_SetReg(SiS_Pr->SiS_P3c4,0x2D,0x01);
       if(SiS_Pr->ChipType == XGI_20) {
          unsigned short mf = SiS_GetModeFlag(SiS_Pr, ModeNo, ModeIdIndex);
 	 if(mf & HalfDCLK) {
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x2b,SiS_GetReg(SiS_Pr->SiS_P3.4.1x2b));
-	    clkb = SiS_GetReg(SiS_Pr->SiS_P3.4.1x2c);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x2b,SiS_GetReg(SiS_Pr->SiS_P3c4,0x2b));
+	    clkb = SiS_GetReg(SiS_Pr->SiS_P3c4,0x2c);
 	    clkb = (((clkb & 0x1f) << 1) + 1) | (clkb & 0xe0);
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x2c,clkb);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x2c,clkb);
 	 }
       }
 #endif
    } else {
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x2D,0x80);
+      SiS_SetReg(SiS_Pr->SiS_P3c4,0x2D,0x80);
    }
 }
 
@@ -2232,10 +2232,10 @@ SiS_GetFIFOThresholdIndex300(struct SiS_Private *SiS_Pr, unsigned short *idx1,
 		1, 2, 2, 3, 0, 1, 1, 2
    };
 
-   temp1 = temp2 = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x18) & 0x62) >> 1;
+   temp1 = temp2 = (SiS_GetReg(SiS_Pr->SiS_P3c4,0x18) & 0x62) >> 1;
    (*idx2) = (unsigned short)(ThTiming[((temp2 >> 3) | temp1) & 0x07]);
-   (*idx1) = (unsigned short)(SiS_GetReg(SiS_Pr->SiS_P3.4.1x16) >> 6) & 0x03;
-   (*idx1) |= (unsigned short)(((SiS_GetReg(SiS_Pr->SiS_P3.4.1x14) >> 4) & 0x0c));
+   (*idx1) = (unsigned short)(SiS_GetReg(SiS_Pr->SiS_P3c4,0x16) >> 6) & 0x03;
+   (*idx1) |= (unsigned short)(((SiS_GetReg(SiS_Pr->SiS_P3c4,0x14) >> 4) & 0x0c));
    (*idx1) <<= 1;
 }
 
@@ -2319,39 +2319,39 @@ SiS_SetCRT1FIFO_300(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       colorth = colortharray[(SiS_Pr->SiS_ModeType - ModeEGA)];
 
       /* Get MCLK  */
-      index = SiS_GetReg(SiS_Pr->SiS_P3.4.1x3A) & 0x07;
+      index = SiS_GetReg(SiS_Pr->SiS_P3c4,0x3A) & 0x07;
       MCLK = SiS_Pr->SiS_MCLKData_0[index].CLOCK;
 
-      temp = SiS_GetReg(SiS_Pr->SiS_P3.4.1x35) & 0xc3;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x16,0x3c,temp);
+      temp = SiS_GetReg(SiS_Pr->SiS_P3d4,0x35) & 0xc3;
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x16,0x3c,temp);
 
       do {
 	 ThresholdLow = SiS_CalcDelay(SiS_Pr, VCLK, colorth, MCLK) + 1;
 	 if(ThresholdLow < 0x13) break;
-	 SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x16,0xfc);
+	 SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x16,0xfc);
 	 ThresholdLow = 0x13;
-	 temp = SiS_GetReg(SiS_Pr->SiS_P3.4.1x16) >> 6;
+	 temp = SiS_GetReg(SiS_Pr->SiS_P3c4,0x16) >> 6;
 	 if(!temp) break;
-	 SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x16,0x3f,((temp - 1) << 6));
+	 SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x16,0x3f,((temp - 1) << 6));
       } while(0);
 
    } else ThresholdLow = 2;
 
    /* Write CRT/CPU threshold low, CRT/Engine threshold high */
    temp = (ThresholdLow << 4) | 0x0f;
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,temp);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,temp);
 
    temp = (ThresholdLow & 0x10) << 1;
    if(ModeNo > 0x13) temp |= 0x40;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0f,0x9f,temp);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0f,0x9f,temp);
 
    /* What is this? */
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x3B,0x09);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x3B,0x09);
 
    /* Write CRT/CPU threshold high */
    temp = ThresholdLow + 3;
    if(temp > 0x0f) temp = 0x0f;
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x09,temp);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x09,temp);
 }
 
 unsigned short
@@ -2393,7 +2393,7 @@ SiS_CalcDelay2(struct SiS_Private *SiS_Pr, unsigned char key)
       index = (key & 0xe0) >> 5;
       if(key & 0x10)    index +=  6;
       if(!(key & 0x01)) index += 24;
-      if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x14) & 0x80) index += 12;
+      if(SiS_GetReg(SiS_Pr->SiS_P3c4,0x14) & 0x80) index += 12;
    }
    return SiS_GetLatencyFactor630(SiS_Pr, index);
 }
@@ -2438,7 +2438,7 @@ SiS_SetCRT1FIFO_630(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       }
 
       /* Get MCLK * 16 */
-      data = SiS_GetReg(SiS_Pr->SiS_P3.4.1x1A) & 0x07;
+      data = SiS_GetReg(SiS_Pr->SiS_P3c4,0x1A) & 0x07;
       MCLK16 = SiS_Pr->SiS_MCLKData_0[data].CLOCK * 16;
 
       /* Get half colordepth */
@@ -2478,18 +2478,18 @@ SiS_SetCRT1FIFO_630(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
 
    /* Write CRT/CPU threshold low, CRT/Engine threshold high */
    data = ((ThresholdLow & 0x0f) << 4) | 0x0f;
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,data);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,data);
 
    data = (ThresholdLow & 0x10) << 1;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0F,0xDF,data);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0F,0xDF,data);
 
    /* What is this? */
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x3B,0x09);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x3B,0x09);
 
    /* Write CRT/CPU threshold high (gap = 3) */
    data = ThresholdLow + 3;
    if(data > 0x0f) data = 0x0f;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x09,0x80,data);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x09,0x80,data);
 
   /* Write foreground and background queue */
    templ = sisfb_read_nbridge_pci_dword(SiS_Pr, 0x50);
@@ -2540,25 +2540,25 @@ SiS_SetCRT1FIFO_310(struct SiS_Private *SiS_Pr, unsigned short ModeNo, unsigned 
    unsigned short modeflag;
 
    /* disable auto-threshold */
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x3D,0xFE);
+   SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x3D,0xFE);
 
    modeflag = SiS_GetModeFlag(SiS_Pr, ModeNo, ModeIdIndex);
 
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,0xAE);
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x09,0xF0);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,0xAE);
+   SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x09,0xF0);
    if(ModeNo > 0x13) {
       if(SiS_Pr->ChipType >= XGI_20) {
-	 SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,0x34);
-	 SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x3D,0x01);
+	 SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,0x34);
+	 SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x3D,0x01);
       } else if(SiS_Pr->ChipType >= SIS_661) {
 	 if(!(modeflag & HalfDCLK)) {
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,0x34);
-	    SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x3D,0x01);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,0x34);
+	    SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x3D,0x01);
 	 }
       } else {
 	 if((!(modeflag & DoubleScanMode)) || (!(modeflag & HalfDCLK))) {
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x08,0x34);
-	    SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x3D,0x01);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x08,0x34);
+	    SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x3D,0x01);
 	 }
       }
    }
@@ -2587,30 +2587,30 @@ SiS_SetVCLKState(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    if(SiS_Pr->ChipType < SIS_315H) {
 #ifdef CONFIG_FB_SIS_300
       if(VCLK > 150) data |= 0x80;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x07,0x7B,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x07,0x7B,data);
 
       data = 0x00;
       if(VCLK >= 150) data |= 0x08;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x32,0xF7,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x32,0xF7,data);
 #endif
    } else if(SiS_Pr->ChipType < XGI_20) {
 #ifdef CONFIG_FB_SIS_315
       if(VCLK >= 166) data |= 0x0c;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x32,0xf3,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x32,0xf3,data);
 
       if(VCLK >= 166) {
-         SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x1f,0xe7);
+         SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x1f,0xe7);
       }
 #endif
    } else {
 #ifdef CONFIG_FB_SIS_315
       if(VCLK >= 200) data |= 0x0c;
       if(SiS_Pr->ChipType == XGI_20) data &= ~0x04;
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x32,0xf3,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x32,0xf3,data);
       if(SiS_Pr->ChipType != XGI_20) {
-         data = SiS_GetReg(SiS_Pr->SiS_P3.4.1x1f) & 0xe7;
+         data = SiS_GetReg(SiS_Pr->SiS_P3c4,0x1f) & 0xe7;
 	 if(VCLK < 200) data |= 0x10;
-	 SiS_SetReg(SiS_Pr->SiS_P3.4.1x1f,data);
+	 SiS_SetReg(SiS_Pr->SiS_P3c4,0x1f,data);
       }
 #endif
    }
@@ -2618,7 +2618,7 @@ SiS_SetVCLKState(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    /* DAC speed */
    if(SiS_Pr->ChipType >= SIS_661) {
 
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x07,0xE8,0x10);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x07,0xE8,0x10);
 
    } else {
 
@@ -2632,12 +2632,12 @@ SiS_SetVCLKState(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       }
 
       if(SiS_Pr->ChipType < SIS_315H) {
-         SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x07,0xFC,data);
+         SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x07,0xFC,data);
       } else {
          if(SiS_Pr->ChipType > SIS_315PRO) {
             if(ModeNo > 0x13) data &= 0xfc;
          }
-         SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x07,0xF8,data);
+         SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x07,0xF8,data);
       }
 
    }
@@ -2665,7 +2665,7 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    }
 
    /* Disable DPMS */
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x1F,0x3F);
+   SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x1F,0x3F);
 
    data = 0;
    if(ModeNo > 0x13) {
@@ -2675,30 +2675,30 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
       }
       if(infoflag & InterlaceMode) data |= 0x20;
    }
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x06,0xC0,data);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x06,0xC0,data);
 
    if(SiS_Pr->ChipType != SIS_300) {
       data = 0;
       if(infoflag & InterlaceMode) {
 	 /* data = (Hsync / 8) - ((Htotal / 8) / 2) + 3 */
-	 int hrs = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x04) |
-		    ((SiS_GetReg(SiS_Pr->SiS_P3.4.1x0b) & 0xc0) << 2)) - 3;
-	 int hto = (SiS_GetReg(SiS_Pr->SiS_P3.4.1x00) |
-		    ((SiS_GetReg(SiS_Pr->SiS_P3.4.1x0b) & 0x03) << 8)) + 5;
+	 int hrs = (SiS_GetReg(SiS_Pr->SiS_P3d4,0x04) |
+		    ((SiS_GetReg(SiS_Pr->SiS_P3c4,0x0b) & 0xc0) << 2)) - 3;
+	 int hto = (SiS_GetReg(SiS_Pr->SiS_P3d4,0x00) |
+		    ((SiS_GetReg(SiS_Pr->SiS_P3c4,0x0b) & 0x03) << 8)) + 5;
 	 data = hrs - (hto >> 1) + 3;
       }
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x19,data);
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x1a,0xFC,((data >> 8) & 0x03));
+      SiS_SetReg(SiS_Pr->SiS_P3d4,0x19,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x1a,0xFC,((data >> 8) & 0x03));
    }
 
    if(modeflag & HalfDCLK) {
-      SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x01,0x08);
+      SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x01,0x08);
    }
 
    data = 0;
    if(modeflag & LineCompareOff) data = 0x08;
    if(SiS_Pr->ChipType == SIS_300) {
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0F,0xF7,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0F,0xF7,data);
    } else {
       if(SiS_Pr->ChipType >= XGI_20) data |= 0x20;
       if(SiS_Pr->SiS_ModeType == ModeEGA) {
@@ -2706,12 +2706,12 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
 	    data |= 0x40;
 	 }
       }
-      SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0F,0xB7,data);
+      SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0F,0xB7,data);
    }
 
 #ifdef CONFIG_FB_SIS_315
    if(SiS_Pr->ChipType >= SIS_315H) {
-      SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x31,0xfb);
+      SiS_SetRegAND(SiS_Pr->SiS_P3c4,0x31,0xfb);
    }
 
    if(SiS_Pr->ChipType == SIS_315PRO) {
@@ -2729,7 +2729,7 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
 	    data |= 0x50;
 	 }
       }
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x17,data);
+      SiS_SetReg(SiS_Pr->SiS_P3c4,0x17,data);
 
    } else if((SiS_Pr->ChipType == SIS_330) || (SiS_Pr->SiS_SysFlags & SF_760LFB)) {
 
@@ -2781,7 +2781,7 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
 	    else                    data = 0x02;
 	 }
       }
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x17,data);
+      SiS_SetReg(SiS_Pr->SiS_P3c4,0x17,data);
 
    }
       /* XGI: Nothing. */
@@ -2795,25 +2795,25 @@ SiS_SetCRT1ModeRegs(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
          data ^= 0xA0;
       }
    }
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x21,0x1F,data);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x21,0x1F,data);
 
    SiS_SetVCLKState(SiS_Pr, ModeNo, RRTI, ModeIdIndex);
 
 #ifdef CONFIG_FB_SIS_315
    if(((SiS_Pr->ChipType >= SIS_315H) && (SiS_Pr->ChipType < SIS_661)) ||
        (SiS_Pr->ChipType == XGI_40)) {
-      if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x31) & 0x40) {
-         SiS_SetReg(SiS_Pr->SiS_P3.4.1x52,0x2c);
+      if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x31) & 0x40) {
+         SiS_SetReg(SiS_Pr->SiS_P3d4,0x52,0x2c);
       } else {
-         SiS_SetReg(SiS_Pr->SiS_P3.4.1x52,0x6c);
+         SiS_SetReg(SiS_Pr->SiS_P3d4,0x52,0x6c);
       }
    } else if(SiS_Pr->ChipType == XGI_20) {
-      if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x31) & 0x40) {
-         SiS_SetReg(SiS_Pr->SiS_P3.4.1x52,0x33);
+      if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x31) & 0x40) {
+         SiS_SetReg(SiS_Pr->SiS_P3d4,0x52,0x33);
       } else {
-         SiS_SetReg(SiS_Pr->SiS_P3.4.1x52,0x73);
+         SiS_SetReg(SiS_Pr->SiS_P3d4,0x52,0x73);
       }
-      SiS_SetReg(SiS_Pr->SiS_P3.4.1x51,0x02);
+      SiS_SetReg(SiS_Pr->SiS_P3d4,0x51,0x02);
    }
 #endif
 }
@@ -2830,7 +2830,7 @@ SiS_SetupDualChip(struct SiS_Private *SiS_Pr)
    int i;
 
    if((SiS_Pr->ChipRevision != 0) ||
-      (!(SiS_GetReg(SiS_Pr->SiS_P3.4.1x3a) & 0x04)))
+      (!(SiS_GetReg(SiS_Pr->SiS_P3c4,0x3a) & 0x04)))
       return;
 
    for(i = 0; i <= 4; i++) {					/* SR00 - SR04 */
@@ -2839,11 +2839,11 @@ SiS_SetupDualChip(struct SiS_Private *SiS_Pr)
    for(i = 0; i <= 8; i++) {					/* GR00 - GR08 */
       SiS_SetReg(P2_3ce,i,SiS_GetReg(SiS_Pr->SiS_P3ce,i));
    }
-   SiS_SetReg(P2_3.4.1x05,0x86);
-   SiS_SetReg(P2_3.4.1x06,SiS_GetReg(SiS_Pr->SiS_P3.4.1x06));	/* SR06 */
-   SiS_SetReg(P2_3.4.1x21,SiS_GetReg(SiS_Pr->SiS_P3.4.1x21));	/* SR21 */
+   SiS_SetReg(P2_3c4,0x05,0x86);
+   SiS_SetReg(P2_3c4,0x06,SiS_GetReg(SiS_Pr->SiS_P3c4,0x06));	/* SR06 */
+   SiS_SetReg(P2_3c4,0x21,SiS_GetReg(SiS_Pr->SiS_P3c4,0x21));	/* SR21 */
    SiS_SetRegByte(P2_3c2,SiS_GetRegByte(SiS_Pr->SiS_P3cc));	/* MISC */
-   SiS_SetReg(P2_3.4.1x05,0x00);
+   SiS_SetReg(P2_3c4,0x05,0x00);
 #endif
 }
 #endif
@@ -3018,8 +3018,8 @@ SiS_SetCRT1Group(struct SiS_Private *SiS_Pr, unsigned short ModeNo, unsigned sho
 	 case 0x0d: sr2b = 0x1b; sr2c = 0xe3; break;
 	 }
 	 if(sr2b) {
-            SiS_SetReg(SiS_Pr->SiS_P3.4.1x2b,sr2b);
-	    SiS_SetReg(SiS_Pr->SiS_P3.4.1x2c,sr2c);
+            SiS_SetReg(SiS_Pr->SiS_P3c4,0x2b,sr2b);
+	    SiS_SetReg(SiS_Pr->SiS_P3c4,0x2c,sr2c);
 	    SiS_SetRegByte(SiS_Pr->SiS_P3c2,(SiS_GetRegByte(SiS_Pr->SiS_P3cc) | 0x0c));
 	 }
       }
@@ -3143,7 +3143,7 @@ SiS_Handle760(struct SiS_Private *SiS_Pr)
 
    temp3 = SiS_GetRegByte((somebase + 0x85)) & 0xb7;
 
-   if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x31) & 0x40) {
+   if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x31) & 0x40) {
       temp1 = 0x21;
       temp2 = 0x03;
       temp3 |= 0x08;
@@ -3193,8 +3193,8 @@ SiSSetMode(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
 
    SiS_Pr->SiS_VGAINFO = 0x11;
 
-   KeepLockReg = SiS_GetReg(SiS_Pr->SiS_P3.4.1x05);
-   SiS_SetReg(SiS_Pr->SiS_P3.4.1x05,0x86);
+   KeepLockReg = SiS_GetReg(SiS_Pr->SiS_P3c4,0x05);
+   SiS_SetReg(SiS_Pr->SiS_P3c4,0x05,0x86);
 
    SiSInitPCIetc(SiS_Pr);
    SiSSetLVDSetc(SiS_Pr);
@@ -3215,11 +3215,11 @@ SiSSetMode(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
    if(SiS_Pr->SiS_VBType & VB_SIS30xBLV) {
       if(SiS_Pr->ChipType >= SIS_315H) {
          SiS_ResetVB(SiS_Pr);
-	 SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x32,0x10);
+	 SiS_SetRegOR(SiS_Pr->SiS_P3c4,0x32,0x10);
 	 SiS_SetRegOR(SiS_Pr->SiS_Part2Port,0x00,0x0c);
-         backupreg = SiS_GetReg(SiS_Pr->SiS_P3.4.1x38);
+         backupreg = SiS_GetReg(SiS_Pr->SiS_P3d4,0x38);
       } else {
-         backupreg = SiS_GetReg(SiS_Pr->SiS_P3.4.1x35);
+         backupreg = SiS_GetReg(SiS_Pr->SiS_P3d4,0x35);
       }
    }
 
@@ -3283,28 +3283,28 @@ SiSSetMode(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
 #ifdef CONFIG_FB_SIS_315
 	 if(!SiS_Pr->SiS_ROMNew) {
 	    if(SiS_IsVAMode(SiS_Pr)) {
-	       SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x35,0x01);
+	       SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x35,0x01);
 	    } else {
-	       SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x35,0xFE);
+	       SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x35,0xFE);
 	    }
 	 }
 
-	 SiS_SetReg(SiS_Pr->SiS_P3.4.1x38,backupreg);
+	 SiS_SetReg(SiS_Pr->SiS_P3d4,0x38,backupreg);
 
-	 if((IS_SIS650) && (SiS_GetReg(SiS_Pr->SiS_P3.4.1x30) & 0xfc)) {
+	 if((IS_SIS650) && (SiS_GetReg(SiS_Pr->SiS_P3d4,0x30) & 0xfc)) {
 	    if((ModeNo == 0x03) || (ModeNo == 0x10)) {
-	       SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x51,0x80);
-	       SiS_SetRegOR(SiS_Pr->SiS_P3.4.1x56,0x08);
+	       SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x51,0x80);
+	       SiS_SetRegOR(SiS_Pr->SiS_P3d4,0x56,0x08);
 	    }
 	 }
 
-	 if(SiS_GetReg(SiS_Pr->SiS_P3.4.1x30) & SetCRT2ToLCD) {
-	    SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x38,0xfc);
+	 if(SiS_GetReg(SiS_Pr->SiS_P3d4,0x30) & SetCRT2ToLCD) {
+	    SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x38,0xfc);
 	 }
 #endif
       } else if((SiS_Pr->ChipType == SIS_630) ||
 	        (SiS_Pr->ChipType == SIS_730)) {
-	 SiS_SetReg(SiS_Pr->SiS_P3.4.1x35,backupreg);
+	 SiS_SetReg(SiS_Pr->SiS_P3d4,0x35,backupreg);
       }
    }
 
@@ -3313,7 +3313,7 @@ SiSSetMode(struct SiS_Private *SiS_Pr, unsigned short ModeNo)
    SiS_Handle760(SiS_Pr);
 
    /* We never lock registers in XF86 */
-   if(KeepLockReg != 0xA1) SiS_SetReg(SiS_Pr->SiS_P3.4.1x05,0x00);
+   if(KeepLockReg != 0xA1) SiS_SetReg(SiS_Pr->SiS_P3c4,0x05,0x00);
 
    return true;
 }
@@ -3508,7 +3508,7 @@ SiS_CalcLCDACRT1Timing(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    SiS_Pr->CCRT1CRTC[15] |= (remaining << 4);
    SiS_Pr->CCRT1CRTC[16] &= ~0xE0;
 
-   SiS_SetRegAND(SiS_Pr->SiS_P3.4.1x11,0x7f);
+   SiS_SetRegAND(SiS_Pr->SiS_P3d4,0x11,0x7f);
 
    for(i = 0, j = 0; i <= 7; i++, j++) {
       SiS_SetReg(SiS_Pr->SiS_P3d4,j,SiS_Pr->CCRT1CRTC[i]);
@@ -3524,11 +3524,11 @@ SiS_CalcLCDACRT1Timing(struct SiS_Private *SiS_Pr, unsigned short ModeNo,
    }
 
    tempax = SiS_Pr->CCRT1CRTC[16] & 0xE0;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x0E,0x1F,tempax);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3c4,0x0E,0x1F,tempax);
 
    tempax = (SiS_Pr->CCRT1CRTC[16] & 0x01) << 5;
    if(modeflag & DoubleScanMode) tempax |= 0x80;
-   SiS_SetRegANDOR(SiS_Pr->SiS_P3.4.1x09,0x5F,tempax);
+   SiS_SetRegANDOR(SiS_Pr->SiS_P3d4,0x09,0x5F,tempax);
 
 }
 

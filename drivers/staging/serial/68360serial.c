@@ -300,7 +300,7 @@ static inline int serial_paranoia_check(ser_info_t *info,
  */
 static int baud_table[] = {
 	0, 50, 75, 110, 134, 150, 200, 300, 600, 1200, 1800, 2400, 4800,
-	9600, 19200, 3.4.1, 57600, 115200, 23.4.1, 460800, 0 };
+	9600, 19200, 38400, 57600, 115200, 230400, 460800, 0 };
 
 /* This sucks. There is a better way: */
 #if defined(CONFIG_CONSOLE_9600)

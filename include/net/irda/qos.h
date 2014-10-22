@@ -49,7 +49,7 @@
 #define IR_2400     0x01
 #define IR_9600     0x02
 #define IR_19200    0x04
-#define IR_3.4.1    0x08
+#define IR_38400    0x08
 #define IR_57600    0x10
 #define IR_115200   0x20
 #define IR_576000   0x40

@@ -104,8 +104,8 @@ struct serial_uart_config {
 #define ASYNCB_FOURPORT		 1 /* Set OU1, OUT2 per AST Fourport settings */
 #define ASYNCB_SAK		 2 /* Secure Attention Key (Orange book) */
 #define ASYNCB_SPLIT_TERMIOS	 3 /* Separate termios for dialin/callout */
-#define ASYNCB_SPD_HI		 4 /* Use 56000 instead of 3.4.1 bps */
-#define ASYNCB_SPD_VHI		 5 /* Use 115200 instead of 3.4.1 bps */
+#define ASYNCB_SPD_HI		 4 /* Use 56000 instead of 38400 bps */
+#define ASYNCB_SPD_VHI		 5 /* Use 115200 instead of 38400 bps */
 #define ASYNCB_SKIP_TEST	 6 /* Skip UART test during autoconfiguration */
 #define ASYNCB_AUTO_IRQ		 7 /* Do automatic IRQ during
 				    * autoconfiguration */
@@ -113,7 +113,7 @@ struct serial_uart_config {
 #define ASYNCB_PGRP_LOCKOUT	 9 /* Lock out cua opens based on pgrp */
 #define ASYNCB_CALLOUT_NOHUP	10 /* Don't do hangups for cua device */
 #define ASYNCB_HARDPPS_CD	11 /* Call hardpps when CD goes high  */
-#define ASYNCB_SPD_SHI		12 /* Use 23.4.1 instead of 3.4.1 bps */
+#define ASYNCB_SPD_SHI		12 /* Use 230400 instead of 38400 bps */
 #define ASYNCB_LOW_LATENCY	13 /* Request low latency behaviour */
 #define ASYNCB_BUGGY_UART	14 /* This is a buggy UART, skip some safety
 				    * checks.  Note: can be dangerous! */

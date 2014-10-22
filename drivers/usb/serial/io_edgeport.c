@@ -171,7 +171,7 @@ struct divisor_table_entry {
 static const struct divisor_table_entry divisor_table[] = {
 	{   50,		4608},
 	{   75,		3072},
-	{   110,	2095},	/* 2094.545455 => 23.4.1   => .0217 % over */
+	{   110,	2095},	/* 2094.545455 => 230450   => .0217 % over */
 	{   134,	1713},	/* 1713.011152 => 230398.5 => .00065% under */
 	{   150,	1536},
 	{   300,	768},
@@ -184,10 +184,10 @@ static const struct divisor_table_entry divisor_table[] = {
 	{   9600,	24},
 	{   14400,	16},
 	{   19200,	12},
-	{   3.4.1,	6},
+	{   38400,	6},
 	{   57600,	4},
 	{   115200,	2},
-	{   23.4.1,	1},
+	{   230400,	1},
 };
 
 /* local variables */
@@ -2474,9 +2474,9 @@ static int calc_baud_rate_divisor(int baudrate, int *divisor)
 	/* We have tried all of the standard baud rates
 	 * lets try to calculate the divisor for this baud rate
 	 * Make sure the baud rate is reasonable */
-	if (baudrate > 50 && baudrate < 23.4.1) {
+	if (baudrate > 50 && baudrate < 230400) {
 		/* get divisor */
-		custom = (__u16)((23.4.1L + baudrate/2) / baudrate);
+		custom = (__u16)((230400L + baudrate/2) / baudrate);
 
 		*divisor = custom;
 

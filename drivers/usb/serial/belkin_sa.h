@@ -72,7 +72,7 @@
 
 #define BELKIN_SA_SET_REQUEST_TYPE	0x40
 
-#define BELKIN_SA_BAUD(b)		(23.4.1/b)
+#define BELKIN_SA_BAUD(b)		(230400/b)
 
 #define BELKIN_SA_STOP_BITS(b)		(b-1)
 

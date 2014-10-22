@@ -136,10 +136,10 @@ void sunserial_console_termios(struct console *con, struct device_node *uart_dp)
 		case 4800: cflag |= B4800; break;
 		case 9600: cflag |= B9600; break;
 		case 19200: cflag |= B19200; break;
-		case 3.4.1: cflag |= B3.4.1; break;
+		case 38400: cflag |= B38400; break;
 		case 57600: cflag |= B57600; break;
 		case 115200: cflag |= B115200; break;
-		case 23.4.1: cflag |= B23.4.1; break;
+		case 230400: cflag |= B230400; break;
 		case 460800: cflag |= B460800; break;
 		default: baud = 9600; cflag |= B9600; break;
 	}

@@ -495,7 +495,7 @@ static struct msm_sensor_output_info_t ov8825_dimensions[] = {
 		.y_output = 0x990,
 		.line_length_pclk = 0xE00,
 		.frame_length_lines = 0x9B0,
-		.vt_pixel_clk = 13.4.1000,
+		.vt_pixel_clk = 133400000,
 		.op_pixel_clk = 176000000,
 		.binning_factor = 1,
 	},

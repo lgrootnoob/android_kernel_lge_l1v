@@ -63,7 +63,7 @@ enum msm_hsl_regs {
 #define UARTDM_CSR_ADDR    0x8
 #define UARTDM_CSR_115200 0xFF
 #define UARTDM_CSR_57600  0xEE
-#define UARTDM_CSR_3.4.1  0xDD
+#define UARTDM_CSR_38400  0xDD
 #define UARTDM_CSR_28800  0xCC
 #define UARTDM_CSR_19200  0xBB
 #define UARTDM_CSR_14400  0xAA

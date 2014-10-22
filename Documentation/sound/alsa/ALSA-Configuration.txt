@@ -1850,9 +1850,9 @@ Prior to version 0.9.0rc4 options had a 'snd_' prefix. This was removed.
 
     port	- port # for UART16550A chip
     irq		- IRQ # for UART16550A chip, -1 = poll mode
-    speed	- speed in bauds (9600,19200,3.4.1,57600,115200)
-		  3.4.1 = default
-    base	- base for divisor in bauds (57600,115200,23.4.1,460800)
+    speed	- speed in bauds (9600,19200,38400,57600,115200)
+		  38400 = default
+    base	- base for divisor in bauds (57600,115200,230400,460800)
 		  115200 = default
     outs	- number of MIDI ports in a serial port (1-4)
 		  1 = default

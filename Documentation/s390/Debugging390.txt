@@ -618,7 +618,7 @@ Compiler updates
 main(int argc,char *argv[])
 {
   4004fc:	90 7f f0 1c       	stm	%r7,%r15,28(%r15)
-  400500:	a7 d5 00 04       	bras	%r13.4.1508 <main+0xc>
+  400500:	a7 d5 00 04       	bras	%r13,400508 <main+0xc>
   400504:	00 40 04 f4       	.long	0x004004f4 
   # compiler now puts constant pool in code to so it saves an instruction 
   400508:	18 0f             	lr	%r0,%r15
@@ -1333,7 +1333,7 @@ so we'll
 hexdump -s 0xf160054 /dev/mem | more
 i.e. task_struct+active_mm offset
 to look at the active_mm member
-f160054 0fee cc60 0019 e3.4.1000 0000 0000 0011
+f160054 0fee cc60 0019 e334 0000 0000 0000 0011
 hexdump -s 0x0feecc6c /dev/mem | more
 i.e. active_mm+pgd offset
 feecc6c 0f2c 0000 0000 0001 0000 0001 0000 0010
@@ -1837,16 +1837,16 @@ RECEIVE / LOG TXT A1 ( replace
 filel & press F11 to look at it
 You should see something like:
 
-00020942' SSCH  B23.4.10    0048813C    CC 0    SCH 0000    DEV 7C08
+00020942' SSCH  B2334000    0048813C    CC 0    SCH 0000    DEV 7C08
           CPA 000FFDF0   PARM 00E2C9C4    KEY 0  FPI C0  LPM 80
           CCW    000FFDF0  E4200100 00487FE8   0000  E4240100 ........
           IDAL                                      43D8AFE8
           IDAL                                      0FB76000
 00020B0A'   I/O DEV 7C08 -> 000197BC'   SCH 0000   PARM 00E2C9C4
-00021628' TSCH  B23.4.10 >> 00488164    CC 0    SCH 0000    DEV 7C08
+00021628' TSCH  B2354000 >> 00488164    CC 0    SCH 0000    DEV 7C08
           CCWA 000FFDF8   DEV STS 0C  SCH STS 00  CNT 00EC
            KEY 0   FPI C0  CC 0   CTLS 4007
-00022238' STSCH B23.4.10 >> 00488108    CC 0    SCH 0000    DEV 7C08
+00022238' STSCH B2344000 >> 00488108    CC 0    SCH 0000    DEV 7C08
 
 If you don't like messing up your readed ( because you possibly booted from it )
 you can alternatively spool it to another readers guest.

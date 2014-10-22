@@ -44,10 +44,10 @@ struct rocket_version {
 #define ROCKET_HUP_NOTIFY	0x00000004
 #define ROCKET_SPLIT_TERMIOS	0x00000008
 #define ROCKET_SPD_MASK		0x00000070
-#define ROCKET_SPD_HI		0x00000010	/* Use 56000 instead of 3.4.1 bps */
-#define ROCKET_SPD_VHI		0x00000020	/* Use 115200 instead of 3.4.1 bps */
-#define ROCKET_SPD_SHI		0x00000030	/* Use 23.4.1 instead of 3.4.1 bps */
-#define ROCKET_SPD_WARP	        0x00000040	/* Use 460800 instead of 3.4.1 bps */
+#define ROCKET_SPD_HI		0x00000010	/* Use 56000 instead of 38400 bps */
+#define ROCKET_SPD_VHI		0x00000020	/* Use 115200 instead of 38400 bps */
+#define ROCKET_SPD_SHI		0x00000030	/* Use 230400 instead of 38400 bps */
+#define ROCKET_SPD_WARP	        0x00000040	/* Use 460800 instead of 38400 bps */
 #define ROCKET_SAK		0x00000080
 #define ROCKET_SESSION_LOCKOUT	0x00000100
 #define ROCKET_PGRP_LOCKOUT	0x00000200

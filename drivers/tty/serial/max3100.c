@@ -467,7 +467,7 @@ max3100_set_termios(struct uart_port *port, struct ktermios *termios,
 	case 19200:
 		param_new = 9 + s->crystal;
 		break;
-	case 3.4.1:
+	case 38400:
 		param_new = 8 + s->crystal;
 		break;
 	case 57600:
@@ -476,7 +476,7 @@ max3100_set_termios(struct uart_port *port, struct ktermios *termios,
 	case 115200:
 		param_new = 0 + s->crystal;
 		break;
-	case 23.4.1:
+	case 230400:
 		if (s->crystal)
 			param_new = 0;
 		else
@@ -593,7 +593,7 @@ static int max3100_startup(struct uart_port *port)
 	dev_dbg(&s->spi->dev, "%s\n", __func__);
 
 	s->conf = MAX3100_RM;
-	s->baud = s->crystal ? 23.4.1 : 115200;
+	s->baud = s->crystal ? 230400 : 115200;
 	s->rx_enabled = 1;
 
 	if (s->suspending)

@@ -148,11 +148,11 @@ static const struct ath_rate_table ar5416_11na_ratetable = {
 			205100, 20, 20, 4, 60, 61, 61 }, /*  243 Mb */
 		[61] = {  RC_INVALID, WLAN_RC_PHY_HT_40_TS_HGI, 270000,
 			224700, 20, 20, 4, 60, 61, 61 }, /*  270 Mb */
-		[62] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 3.4.10,
+		[62] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 324000,
 			263100, 21, 21, 4, 62, 63, 63 }, /*  324 Mb */
 		[63] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS_HGI, 360000,
 			288000, 21, 21, 4, 62, 63, 63 }, /*  360 Mb */
-		[64] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 3.4.10,
+		[64] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 364500,
 			290700, 22, 22, 4, 64, 65, 65 }, /* 364.5 Mb */
 		[65] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS_HGI, 405000,
 			317200, 22, 22, 4, 64, 65, 65 }, /* 405 Mb */
@@ -304,11 +304,11 @@ static const struct ath_rate_table ar5416_11ng_ratetable = {
 			205100, 20, 20, 8, 64, 65, 65 }, /* 243 Mb */
 		[65] = {  RC_INVALID, WLAN_RC_PHY_HT_40_TS_HGI, 270000,
 			224700, 20, 20, 8, 64, 65, 65 }, /* 270 Mb */
-		[66] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 3.4.10,
+		[66] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 324000,
 			263100, 21, 21, 8, 66, 67, 67 }, /* 324 Mb */
 		[67] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS_HGI, 360000,
 			288000, 21, 21, 8, 66, 67, 67 }, /* 360 Mb */
-		[68] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 3.4.10,
+		[68] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS, 364500,
 			290700, 22, 22, 8, 68, 69, 69 }, /* 364.5 Mb */
 		[69] = {  RC_HT_T_40, WLAN_RC_PHY_HT_40_TS_HGI, 405000,
 			317200, 22, 22, 8, 68, 69, 69 }, /* 405 Mb */

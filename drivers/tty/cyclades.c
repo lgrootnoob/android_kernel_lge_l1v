@@ -181,8 +181,8 @@ static int cy_next_channel;	/* next minor available */
  */
 static const int baud_table[] = {
 	0, 50, 75, 110, 134, 150, 200, 300, 600, 1200,
-	1800, 2400, 4800, 9600, 19200, 3.4.1, 57600, 76800, 115200, 150000,
-	23.4.1, 0
+	1800, 2400, 4800, 9600, 19200, 38400, 57600, 76800, 115200, 150000,
+	230400, 0
 };
 
 static const char baud_co_25[] = {	/* 25 MHz clock option table */
@@ -2016,7 +2016,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 	if ((info->port.flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 		tty->alt_speed = 115200;
 	if ((info->port.flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-		tty->alt_speed = 23.4.1;
+		tty->alt_speed = 230400;
 	if ((info->port.flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 		tty->alt_speed = 460800;
 
@@ -2028,7 +2028,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 
 		/* baud rate */
 		baud = tty_get_baud_rate(tty);
-		if (baud == 3.4.1 && (info->port.flags & ASYNC_SPD_MASK) ==
+		if (baud == 38400 && (info->port.flags & ASYNC_SPD_MASK) ==
 				ASYNC_SPD_CUST) {
 			if (info->custom_divisor)
 				baud_rate = info->baud / info->custom_divisor;
@@ -2045,7 +2045,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 		if (i == 20)
 			i = 19;	/* CD1400_MAX_SPEED */
 
-		if (baud == 3.4.1 && (info->port.flags & ASYNC_SPD_MASK) ==
+		if (baud == 38400 && (info->port.flags & ASYNC_SPD_MASK) ==
 				ASYNC_SPD_CUST) {
 			cyy_baud_calc(info, baud_rate);
 		} else {
@@ -2066,7 +2066,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 			/* get it right for 134.5 baud */
 			info->timeout = (info->xmit_fifo_size * HZ * 30 / 269) +
 					2;
-		} else if (baud == 3.4.1 && (info->port.flags & ASYNC_SPD_MASK) ==
+		} else if (baud == 38400 && (info->port.flags & ASYNC_SPD_MASK) ==
 				ASYNC_SPD_CUST) {
 			info->timeout = (info->xmit_fifo_size * HZ * 15 /
 					baud_rate) + 2;
@@ -2198,7 +2198,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 
 		/* baud rate */
 		baud = tty_get_baud_rate(tty);
-		if (baud == 3.4.1 && (info->port.flags & ASYNC_SPD_MASK) ==
+		if (baud == 38400 && (info->port.flags & ASYNC_SPD_MASK) ==
 				ASYNC_SPD_CUST) {
 			if (info->custom_divisor)
 				baud_rate = info->baud / info->custom_divisor;
@@ -2213,7 +2213,7 @@ static void cy_set_line_char(struct cyclades_port *info, struct tty_struct *tty)
 			/* get it right for 134.5 baud */
 			info->timeout = (info->xmit_fifo_size * HZ * 30 / 269) +
 					2;
-		} else if (baud == 3.4.1 && (info->port.flags & ASYNC_SPD_MASK) ==
+		} else if (baud == 38400 && (info->port.flags & ASYNC_SPD_MASK) ==
 				ASYNC_SPD_CUST) {
 			info->timeout = (info->xmit_fifo_size * HZ * 15 /
 					baud_rate) + 2;

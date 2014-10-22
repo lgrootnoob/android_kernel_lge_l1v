@@ -167,7 +167,7 @@ CONFIG_XTENSA_PLATFORM_ISS=y
 # CONFIG_XTENSA_PLATFORM_S6105 is not set
 # CONFIG_GENERIC_CALIBRATE_DELAY is not set
 CONFIG_CMDLINE_BOOL=y
-CONFIG_CMDLINE="console=ttyS0,3.4.1 eth0=tuntap,,tap0 ip=192.168.168.5:192.168.168.1 root=nfs nfsroot=192.168.168.1:/opt/montavista/pro/devkit/xtensa/linux_be/target"
+CONFIG_CMDLINE="console=ttyS0,38400 eth0=tuntap,,tap0 ip=192.168.168.5:192.168.168.1 root=nfs nfsroot=192.168.168.1:/opt/montavista/pro/devkit/xtensa/linux_be/target"
 CONFIG_SELECT_MEMORY_MODEL=y
 CONFIG_FLATMEM_MANUAL=y
 # CONFIG_DISCONTIGMEM_MANUAL is not set

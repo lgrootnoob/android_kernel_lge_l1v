@@ -50,7 +50,7 @@ struct Sun_Machine_Models {
 #define SM_3_E        0x08    /* Sun 3/E series */
 
 /* Sun3x machines */
-#define SM_3.4.1      0x01    /* Sun 3.4.1 (460,470,480) series */
+#define SM_3_460      0x01    /* Sun 3/460 (460,470,480) series */
 #define SM_3_80       0x02    /* Sun 3/80 series */
 
 /* Sun4 machines */

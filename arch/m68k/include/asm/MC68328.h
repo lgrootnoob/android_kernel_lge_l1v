@@ -1223,7 +1223,7 @@ typedef volatile struct {
 #define RTCCTL_ADDR	0xfffffb0c
 #define RTCCTL		WORD_REF(RTCCTL_ADDR)
 
-#define RTCCTL_3.4.1x0020	/* Crystal Selection */
+#define RTCCTL_384	0x0020	/* Crystal Selection */
 #define RTCCTL_ENABLE	0x0080	/* RTC Enable */
 
 /* 'EZ328-compatible definitions */

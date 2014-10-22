@@ -132,7 +132,7 @@ VREG_CONSUMERS(L17) = {
 VREG_CONSUMERS(L18) = {
 	REGULATOR_SUPPLY("8921_l18",		NULL),
 #ifdef CONFIG_SII8334_MHL_TX
-	REGULATOR_SUPPLY("mhl_l18",            "sii_83.4.1"),
+	REGULATOR_SUPPLY("mhl_l18",            "sii_8334.0"),
 #endif
 };
 VREG_CONSUMERS(L21) = {

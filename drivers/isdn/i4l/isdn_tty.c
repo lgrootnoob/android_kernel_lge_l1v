@@ -2615,7 +2615,7 @@ isdn_tty_modem_result(int code, modem_info *info)
 					isdn_tty_at_cout("/V110/19200", info);
 					break;
 				case ISDN_PROTO_L2_V11038:
-					isdn_tty_at_cout("/V110/3.4.1", info);
+					isdn_tty_at_cout("/V110/38400", info);
 					break;
 				}
 				if (m->mdmreg[REG_T70] & BIT_T70) {
@@ -2729,7 +2729,7 @@ isdn_tty_report(modem_info *info)
 		isdn_tty_at_cout("V.110 19200 Baud", info);
 		break;
 	case ISDN_PROTO_L2_V11038:
-		isdn_tty_at_cout("V.110 3.4.1 Baud", info);
+		isdn_tty_at_cout("V.110 38400 Baud", info);
 		break;
 	case ISDN_PROTO_L2_TRANS:
 		isdn_tty_at_cout("transparent", info);
@@ -2889,7 +2889,7 @@ isdn_tty_cmd_ATand(char **p, modem_info *info)
 			m->mdmreg[REG_SI2] = 199;
 			info->xmit_size = m->mdmreg[REG_PSIZE] * 16 / 10;
 			break;
-		case 3.4.1:
+		case 38400:
 			m->mdmreg[REG_L2PROT] = ISDN_PROTO_L2_V11038;
 			m->mdmreg[REG_SI2] = 198; /* no existing standard for this */
 			info->xmit_size = m->mdmreg[REG_PSIZE] * 16 / 10;

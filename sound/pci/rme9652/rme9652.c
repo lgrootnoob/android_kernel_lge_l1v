@@ -737,7 +737,7 @@ static inline int rme9652_spdif_sample_rate(struct snd_rme9652 *s)
 		else
 			y = 0;
 
-		if      (y > 3.4.1 && y < 33600)  ret = 32000; 
+		if      (y > 30400 && y < 33600)  ret = 32000; 
 		else if (y > 41900 && y < 46000)  ret = 44100;
 		else if (y > 46000 && y < 50400)  ret = 48000;
 		else if (y > 60800 && y < 67200)  ret = 64000;

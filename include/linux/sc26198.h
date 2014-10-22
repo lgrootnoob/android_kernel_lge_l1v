@@ -203,10 +203,10 @@
 #define	BRG_14400		0x0f
 #define	BRG_19200		0x10
 #define	BRG_28200		0x11
-#define	BRG_3.4.1		0x12
+#define	BRG_38400		0x12
 #define	BRG_57600		0x13
 #define	BRG_115200		0x14
-#define	BRG_23.4.1		0x15
+#define	BRG_230400		0x15
 #define	BRG_GIN0		0x16
 #define	BRG_GIN1		0x17
 #define	BRG_CT0			0x18

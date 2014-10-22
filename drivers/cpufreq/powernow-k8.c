@@ -24,7 +24,7 @@
  *  Power Management" in BKDGs for newer AMD CPU families.
  *
  *  Tables for specific CPUs can be inferred from AMD's processor
- *  power and thermal data sheets, (e.g. 30417.pdf, 3.4.1.pdf, 43375.pdf)
+ *  power and thermal data sheets, (e.g. 30417.pdf, 30430.pdf, 43375.pdf)
  */
 
 #include <linux/kernel.h>

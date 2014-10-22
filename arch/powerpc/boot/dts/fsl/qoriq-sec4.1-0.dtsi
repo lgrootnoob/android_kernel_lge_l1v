@@ -102,8 +102,8 @@ crypto: crypto@300000 {
 	};
 };
 
-sec_mon: sec_mon@3.4.10 {
+sec_mon: sec_mon@314000 {
 	compatible = "fsl,sec-v4.1-mon", "fsl,sec-v4.0-mon";
-	reg = <0x3.4.10 0x1000>;
+	reg = <0x314000 0x1000>;
 	interrupts = <93 2 0 0>;
 };

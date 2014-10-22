@@ -118,7 +118,7 @@
  * Values for PWRMODE CP15 register
  */
 #define PXA3xx_PM_S3D4C4	0x07	/* aka deep sleep */
-#define PXA3xx_PM_S2D3.4.1x06	/* aka sleep */
+#define PXA3xx_PM_S2D3C4	0x06	/* aka sleep */
 #define PXA3xx_PM_S0D2C2	0x03	/* aka standby */
 #define PXA3xx_PM_S0D1C2	0x02	/* aka LCD refresh */
 #define PXA3xx_PM_S0D0C1	0x01

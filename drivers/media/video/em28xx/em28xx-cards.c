@@ -364,7 +364,7 @@ static struct em28xx_reg_seq maxmedia_ub425_tc[] = {
 	{-1,                 -1,    -1,   -1},
 };
 
-/* 23.4.1242 PCTV QuatroStick (510e)
+/* 2304:0242 PCTV QuatroStick (510e)
  * GPIO_2: decoder reset, 0=active
  * GPIO_4: decoder suspend, 0=active
  * GPIO_6: demod reset, 0=active
@@ -1957,7 +1957,7 @@ struct em28xx_board em28xx_boards[] = {
 				EM28XX_I2C_CLK_WAIT_ENABLE |
 				EM28XX_I2C_FREQ_400_KHZ,
 	},
-	/* 23.4.1242 PCTV QuatroStick (510e)
+	/* 2304:0242 PCTV QuatroStick (510e)
 	 * Empia EM2884 + Micronas DRX 3926K + NXP TDA18271HDC2 */
 	[EM2884_BOARD_PCTV_510E] = {
 		.name          = "PCTV QuatroStick (510e)",

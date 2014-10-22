@@ -7,10 +7,10 @@
  *	drew@colorado.edu
  *      +1 (303) 440-4894
  *
- * NCR53.4.1 extensions (c) 1994,1995,1996, Kevin Lentin
+ * NCR53C400 extensions (c) 1994,1995,1996, Kevin Lentin
  *    K.Lentin@cs.monash.edu.au
  *
- * NCR53.4.1A extensions (c) 1996, Ingmar Baumgart
+ * NCR53C400A extensions (c) 1996, Ingmar Baumgart
  *    ingmar@gonzo.schwaben.de
  *
  * DTC3181E extensions (c) 1997, Ronald van Cuijlenborg
@@ -66,12 +66,12 @@
  *              	mapped, resp.)
  *         ncr_dma=xx	the DMA
  *         ncr_5380=1	to set up for a NCR5380 board
- *         ncr_53.4.1=1	to set up for a NCR53.4.1 board
+ *         ncr_53c400=1	to set up for a NCR53C400 board
  *     e.g.
  *     modprobe g_NCR5380 ncr_irq=5 ncr_addr=0x350 ncr_5380=1
  *       for a port mapped NCR5380 board or
- *     modprobe g_NCR5380 ncr_irq=255 ncr_addr=0xc8000 ncr_53.4.1=1
- *       for a memory mapped NCR53.4.1 board with interrupts disabled.
+ *     modprobe g_NCR5380 ncr_irq=255 ncr_addr=0xc8000 ncr_53c400=1
+ *       for a memory mapped NCR53C400 board with interrupts disabled.
  * 
  * 255 should be specified for no or DMA interrupt, 254 to autoprobe for an 
  * 	IRQ line if overridden on the command line.
@@ -92,10 +92,10 @@
 #define AUTOSENSE
 
 
-#ifdef CONFIG_SCSI_GENERIC_NCR53.4.1
-#define NCR53.4.1_PSEUDO_DMA 1
+#ifdef CONFIG_SCSI_GENERIC_NCR53C400
+#define NCR53C400_PSEUDO_DMA 1
 #define PSEUDO_DMA
-#define NCR53.4.1
+#define NCR53C400
 #define NCR5380_STATS
 #undef NCR5380_STAT_LIMIT
 #endif
@@ -119,15 +119,15 @@ static int ncr_irq = NCR_NOT_SET;
 static int ncr_dma = NCR_NOT_SET;
 static int ncr_addr = NCR_NOT_SET;
 static int ncr_5380 = NCR_NOT_SET;
-static int ncr_53.4.1 = NCR_NOT_SET;
-static int ncr_53.4.1a = NCR_NOT_SET;
+static int ncr_53c400 = NCR_NOT_SET;
+static int ncr_53c400a = NCR_NOT_SET;
 static int dtc_3181e = NCR_NOT_SET;
 
 static struct override {
 	NCR5380_map_type NCR5380_map_name;
 	int irq;
 	int dma;
-	int board;		/* Use NCR53.4.1, Ricoh, etc. extensions ? */
+	int board;		/* Use NCR53c400, Ricoh, etc. extensions ? */
 } overrides
 #ifdef GENERIC_NCR5380_OVERRIDE
 [] __initdata = GENERIC_NCR5380_OVERRIDE;
@@ -161,15 +161,15 @@ static void __init internal_setup(int board, char *str, int *ints)
 			return;
 		}
 		break;
-	case BOARD_NCR53.4.1:
+	case BOARD_NCR53C400:
 		if (ints[0] != 2) {
-			printk(KERN_ERR "generic_NCR53.4.1_setup : usage ncr53.4.1=" STRVAL(NCR5380_map_name) ",irq\n");
+			printk(KERN_ERR "generic_NCR53C400_setup : usage ncr53c400=" STRVAL(NCR5380_map_name) ",irq\n");
 			return;
 		}
 		break;
-	case BOARD_NCR53.4.1A:
+	case BOARD_NCR53C400A:
 		if (ints[0] != 2) {
-			printk(KERN_ERR "generic_NCR53.4.1A_setup : usage ncr53.4.1a=" STRVAL(NCR5380_map_name) ",irq\n");
+			printk(KERN_ERR "generic_NCR53C400A_setup : usage ncr53c400a=" STRVAL(NCR5380_map_name) ",irq\n");
 			return;
 		}
 		break;
@@ -212,38 +212,38 @@ static int __init do_NCR5380_setup(char *str)
 }
 
 /**
- * 	do_NCR53.4.1_setup		-	set up entry point
+ * 	do_NCR53C400_setup		-	set up entry point
  *	@str: unused
  *	@ints: integer parameters from kernel setup code
  *
- *	Setup function invoked at boot to parse the ncr53.4.1= command
+ *	Setup function invoked at boot to parse the ncr53c400= command
  *	line.
  */
 
-static int __init do_NCR53.4.1_setup(char *str)
+static int __init do_NCR53C400_setup(char *str)
 {
 	int ints[10];
 
 	get_options(str, ARRAY_SIZE(ints), ints);
-	internal_setup(BOARD_NCR53.4.1, str, ints);
+	internal_setup(BOARD_NCR53C400, str, ints);
 	return 1;
 }
 
 /**
- * 	do_NCR53.4.1A_setup	-	set up entry point
+ * 	do_NCR53C400A_setup	-	set up entry point
  *	@str: unused
  *	@ints: integer parameters from kernel setup code
  *
- *	Setup function invoked at boot to parse the ncr53.4.1a= command
+ *	Setup function invoked at boot to parse the ncr53c400a= command
  *	line.
  */
 
-static int __init do_NCR53.4.1A_setup(char *str)
+static int __init do_NCR53C400A_setup(char *str)
 {
 	int ints[10];
 
 	get_options(str, ARRAY_SIZE(ints), ints);
-	internal_setup(BOARD_NCR53.4.1A, str, ints);
+	internal_setup(BOARD_NCR53C400A, str, ints);
 	return 1;
 }
 
@@ -271,7 +271,7 @@ static int __init do_DTC3181E_setup(char *str)
  * 	generic_NCR5380_detect	-	look for NCR5380 controllers
  *	@tpnt: the scsi template
  *
- *	Scan for the present of NCR5380, NCR53.4.1, NCR53.4.1A, DTC3181E
+ *	Scan for the present of NCR5380, NCR53C400, NCR53C400A, DTC3181E
  *	and DTC436(ISAPnP) controllers. If overrides have been set we use
  *	them.
  *
@@ -290,7 +290,7 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
 	int i;
 	unsigned long region_size = 16;
 #endif
-	static unsigned int __initdata ncr_53.4.1a_ports[] = {
+	static unsigned int __initdata ncr_53c400a_ports[] = {
 		0x280, 0x290, 0x300, 0x310, 0x330, 0x340, 0x348, 0x350, 0
 	};
 	static unsigned int __initdata dtc_3181e_ports[] = {
@@ -311,10 +311,10 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
 		overrides[0].NCR5380_map_name = (NCR5380_map_type) ncr_addr;
 	if (ncr_5380 != NCR_NOT_SET)
 		overrides[0].board = BOARD_NCR5380;
-	else if (ncr_53.4.1 != NCR_NOT_SET)
-		overrides[0].board = BOARD_NCR53.4.1;
-	else if (ncr_53.4.1a != NCR_NOT_SET)
-		overrides[0].board = BOARD_NCR53.4.1A;
+	else if (ncr_53c400 != NCR_NOT_SET)
+		overrides[0].board = BOARD_NCR53C400;
+	else if (ncr_53c400a != NCR_NOT_SET)
+		overrides[0].board = BOARD_NCR53C400A;
 	else if (dtc_3181e != NCR_NOT_SET)
 		overrides[0].board = BOARD_DTC3181E;
 #ifndef SCSI_G_NCR5380_MEM
@@ -361,12 +361,12 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
 		case BOARD_NCR5380:
 			flags = FLAG_NO_PSEUDO_DMA;
 			break;
-		case BOARD_NCR53.4.1:
-			flags = FLAG_NCR53.4.1;
+		case BOARD_NCR53C400:
+			flags = FLAG_NCR53C400;
 			break;
-		case BOARD_NCR53.4.1A:
+		case BOARD_NCR53C400A:
 			flags = FLAG_NO_PSEUDO_DMA;
-			ports = ncr_53.4.1a_ports;
+			ports = ncr_53c400a_ports;
 			break;
 		case BOARD_DTC3181E:
 			flags = FLAG_NO_PSEUDO_DMA | FLAG_DTC3181E;
@@ -376,7 +376,7 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
 
 #ifndef SCSI_G_NCR5380_MEM
 		if (ports) {
-			/* wakeup sequence for the NCR53.4.1A and DTC3181E */
+			/* wakeup sequence for the NCR53C400A and DTC3181E */
 
 			/* Disable the adapter and look for a free io port */
 			outb(0x59, 0x779);
@@ -419,7 +419,7 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
 		}
 		else
 		{
-			/* Not a 53.4.1A style setup - just grab */
+			/* Not a 53C400A style setup - just grab */
 			if(!(request_region(overrides[current_override].NCR5380_map_name, NCR5380_region_size, "ncr5380")))
 				continue;
 			region_size = NCR5380_region_size;
@@ -495,7 +495,7 @@ int __init generic_NCR5380_detect(struct scsi_host_template * tpnt)
  	
 const char *generic_NCR5380_info(struct Scsi_Host *host)
 {
-	static const char string[] = "Generic NCR5380/53.4.1 Driver";
+	static const char string[] = "Generic NCR5380/53C400 Driver";
 	return string;
 }
 
@@ -557,7 +557,7 @@ generic_NCR5380_biosparam(struct scsi_device *sdev, struct block_device *bdev,
 }
 #endif
 
-#ifdef NCR53.4.1_PSEUDO_DMA
+#ifdef NCR53C400_PSEUDO_DMA
 
 /**
  *	NCR5380_pread		-	pseudo DMA read
@@ -565,7 +565,7 @@ generic_NCR5380_biosparam(struct scsi_device *sdev, struct block_device *bdev,
  *	@dst: buffer to read into
  *	@len: buffer length
  *
- *	Perform a pseudo DMA mode read from an NCR53.4.1 or equivalent
+ *	Perform a pseudo DMA mode read from an NCR53C400 or equivalent
  *	controller
  */
  
@@ -585,7 +585,7 @@ static inline int NCR5380_pread(struct Scsi_Host *instance, unsigned char *dst, 
 			break;
 		}
 		if (NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_GATED_53C80_IRQ) {
-			printk(KERN_ERR "53.4.1r: Got 53C80_IRQ start=%d, blocks=%d\n", start, blocks);
+			printk(KERN_ERR "53C400r: Got 53C80_IRQ start=%d, blocks=%d\n", start, blocks);
 			return -1;
 		}
 		while (NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_HOST_BUF_NOT_RDY);
@@ -598,7 +598,7 @@ static inline int NCR5380_pread(struct Scsi_Host *instance, unsigned char *dst, 
 		}
 #else
 		/* implies SCSI_G_NCR5380_MEM */
-		memcpy_fromio(dst + start, iomem + NCR53.4.1_host_buffer, 128);
+		memcpy_fromio(dst + start, iomem + NCR53C400_host_buffer, 128);
 #endif
 		start += 128;
 		blocks--;
@@ -618,25 +618,25 @@ static inline int NCR5380_pread(struct Scsi_Host *instance, unsigned char *dst, 
 		}
 #else
 		/* implies SCSI_G_NCR5380_MEM */
-		memcpy_fromio(dst + start, iomem + NCR53.4.1_host_buffer, 128);
+		memcpy_fromio(dst + start, iomem + NCR53C400_host_buffer, 128);
 #endif
 		start += 128;
 		blocks--;
 	}
 
 	if (!(NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_GATED_53C80_IRQ))
-		printk("53.4.1r: no 53C80 gated irq after transfer");
+		printk("53C400r: no 53C80 gated irq after transfer");
 
 #if 0
 	/*
 	 *	DON'T DO THIS - THEY NEVER ARRIVE!
 	 */
-	printk("53.4.1r: Waiting for 53C80 registers\n");
+	printk("53C400r: Waiting for 53C80 registers\n");
 	while (NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_53C80_REG)
 		;
 #endif
 	if (!(NCR5380_read(BUS_AND_STATUS_REG) & BASR_END_DMA_TRANSFER))
-		printk(KERN_ERR "53.4.1r: no end dma signal\n");
+		printk(KERN_ERR "53C400r: no end dma signal\n");
 		
 	NCR5380_write(MODE_REG, MR_BASE);
 	NCR5380_read(RESET_PARITY_INTERRUPT_REG);
@@ -649,7 +649,7 @@ static inline int NCR5380_pread(struct Scsi_Host *instance, unsigned char *dst, 
  *	@dst: buffer to read into
  *	@len: buffer length
  *
- *	Perform a pseudo DMA mode read from an NCR53.4.1 or equivalent
+ *	Perform a pseudo DMA mode read from an NCR53C400 or equivalent
  *	controller
  */
 
@@ -667,7 +667,7 @@ static inline int NCR5380_pwrite(struct Scsi_Host *instance, unsigned char *src,
 	NCR5380_write(C400_BLOCK_COUNTER_REG, blocks);
 	while (1) {
 		if (NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_GATED_53C80_IRQ) {
-			printk(KERN_ERR "53.4.1w: Got 53C80_IRQ start=%d, blocks=%d\n", start, blocks);
+			printk(KERN_ERR "53C400w: Got 53C80_IRQ start=%d, blocks=%d\n", start, blocks);
 			return -1;
 		}
 
@@ -683,7 +683,7 @@ static inline int NCR5380_pwrite(struct Scsi_Host *instance, unsigned char *src,
 		}
 #else
 		/* implies SCSI_G_NCR5380_MEM */
-		memcpy_toio(iomem + NCR53.4.1_host_buffer, src + start, 128);
+		memcpy_toio(iomem + NCR53C400_host_buffer, src + start, 128);
 #endif
 		start += 128;
 		blocks--;
@@ -699,16 +699,16 @@ static inline int NCR5380_pwrite(struct Scsi_Host *instance, unsigned char *src,
 		}
 #else
 		/* implies SCSI_G_NCR5380_MEM */
-		memcpy_toio(iomem + NCR53.4.1_host_buffer, src + start, 128);
+		memcpy_toio(iomem + NCR53C400_host_buffer, src + start, 128);
 #endif
 		start += 128;
 		blocks--;
 	}
 
 #if 0
-	printk("53.4.1w: waiting for registers to be available\n");
+	printk("53C400w: waiting for registers to be available\n");
 	THEY NEVER DO ! while (NCR5380_read(C400_CONTROL_STATUS_REG) & CSR_53C80_REG);
-	printk("53.4.1w: Got em\n");
+	printk("53C400w: Got em\n");
 #endif
 
 	/* Let's wait for this instead - could be ugly */
@@ -724,13 +724,13 @@ static inline int NCR5380_pwrite(struct Scsi_Host *instance, unsigned char *src,
 	 */
 	if (i) {
 		if (!((i = NCR5380_read(BUS_AND_STATUS_REG)) & BASR_END_DMA_TRANSFER))
-			printk(KERN_ERR "53.4.1w: No END OF DMA bit - WHOOPS! BASR=%0x\n", i);
+			printk(KERN_ERR "53C400w: No END OF DMA bit - WHOOPS! BASR=%0x\n", i);
 	} else
-		printk(KERN_ERR "53.4.1w: no 53C80 gated irq after transfer (last block)\n");
+		printk(KERN_ERR "53C400w: no 53C80 gated irq after transfer (last block)\n");
 
 #if 0
 	if (!(NCR5380_read(BUS_AND_STATUS_REG) & BASR_END_DMA_TRANSFER)) {
-		printk(KERN_ERR "53.4.1w: no end dma signal\n");
+		printk(KERN_ERR "53C400w: no end dma signal\n");
 	}
 #endif
 	while (!(NCR5380_read(TARGET_COMMAND_REG) & TCR_LAST_BYTE_SENT))
@@ -820,14 +820,14 @@ static int generic_NCR5380_proc_info(struct Scsi_Host *scsi_ptr, char *buffer, c
 	PRINTP("SCSI host number %d : %s\n" ANDP scsi_ptr->host_no ANDP scsi_ptr->hostt->name);
 	PRINTP("Generic NCR5380 driver version %d\n" ANDP GENERIC_NCR5380_PUBLIC_RELEASE);
 	PRINTP("NCR5380 core version %d\n" ANDP NCR5380_PUBLIC_RELEASE);
-#ifdef NCR53.4.1
-	PRINTP("NCR53.4.1 extension version %d\n" ANDP NCR53.4.1_PUBLIC_RELEASE);
-	PRINTP("NCR53.4.1 card%s detected\n" ANDP(((struct NCR5380_hostdata *) scsi_ptr->hostdata)->flags & FLAG_NCR53.4.1) ? "" : " not");
-# if NCR53.4.1_PSEUDO_DMA
-	PRINTP("NCR53.4.1 pseudo DMA used\n");
+#ifdef NCR53C400
+	PRINTP("NCR53C400 extension version %d\n" ANDP NCR53C400_PUBLIC_RELEASE);
+	PRINTP("NCR53C400 card%s detected\n" ANDP(((struct NCR5380_hostdata *) scsi_ptr->hostdata)->flags & FLAG_NCR53C400) ? "" : " not");
+# if NCR53C400_PSEUDO_DMA
+	PRINTP("NCR53C400 pseudo DMA used\n");
 # endif
 #else
-	PRINTP("NO NCR53.4.1 driver extensions\n");
+	PRINTP("NO NCR53C400 driver extensions\n");
 #endif
 	PRINTP("Using %s mapping at %s 0x%lx, " ANDP STRVAL(NCR5380_map_config) ANDP STRVAL(NCR5380_map_name) ANDP scsi_ptr->NCR5380_instance_name);
 	if (scsi_ptr->irq == SCSI_IRQ_NONE)
@@ -912,7 +912,7 @@ static int generic_NCR5380_proc_info(struct Scsi_Host *scsi_ptr, char *buffer, c
 
 static struct scsi_host_template driver_template = {
 	.proc_info      	= generic_NCR5380_proc_info,
-	.name           	= "Generic NCR5380/NCR53.4.1 Scsi Driver",
+	.name           	= "Generic NCR5380/NCR53C400 Scsi Driver",
 	.detect         	= generic_NCR5380_detect,
 	.release        	= generic_NCR5380_release_resources,
 	.info           	= generic_NCR5380_info,
@@ -933,8 +933,8 @@ module_param(ncr_irq, int, 0);
 module_param(ncr_dma, int, 0);
 module_param(ncr_addr, int, 0);
 module_param(ncr_5380, int, 0);
-module_param(ncr_53.4.1, int, 0);
-module_param(ncr_53.4.1a, int, 0);
+module_param(ncr_53c400, int, 0);
+module_param(ncr_53c400a, int, 0);
 module_param(dtc_3181e, int, 0);
 MODULE_LICENSE("GPL");
 
@@ -951,6 +951,6 @@ MODULE_DEVICE_TABLE(isapnp, id_table);
 #endif
 
 __setup("ncr5380=", do_NCR5380_setup);
-__setup("ncr53.4.1=", do_NCR53.4.1_setup);
-__setup("ncr53.4.1a=", do_NCR53.4.1A_setup);
+__setup("ncr53c400=", do_NCR53C400_setup);
+__setup("ncr53c400a=", do_NCR53C400A_setup);
 __setup("dtc3181e=", do_DTC3181E_setup);

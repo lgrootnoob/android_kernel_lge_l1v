@@ -48,7 +48,7 @@
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_RT              (0x00030100) /* Route Table Entry not found */
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_PN              (0x00030200) /* Invalid Page Number */
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_FORM            (0x00030300) /* Invalid FORM */
-#define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_PT              (0x0003.4.1) /* Invalid Page Type */
+#define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_PT              (0x00030400) /* Invalid Page Type */
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_DNM             (0x00030500) /* Device Not Mapped */
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_PERSIST         (0x00030600) /* Persistent Page not found */
 #define IOP_LOGINFO_CODE_CONFIG_INVALID_PAGE_DEFAULT         (0x00030700) /* Default Page not found */

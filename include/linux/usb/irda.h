@@ -64,7 +64,7 @@
 #define USB_IRDA_BR_576000			(1 << 6)
 #define USB_IRDA_BR_115200			(1 << 5)
 #define USB_IRDA_BR_57600			(1 << 4)
-#define USB_IRDA_BR_3.4.1			(1 << 3)
+#define USB_IRDA_BR_38400			(1 << 3)
 #define USB_IRDA_BR_19200			(1 << 2)
 #define USB_IRDA_BR_9600			(1 << 1)
 #define USB_IRDA_BR_2400			(1 << 0)
@@ -113,7 +113,7 @@ struct usb_irda_cs_descriptor {
  * 1 - 2400 bps
  * 2 - 9600 bps
  * 3 - 19200 bps
- * 4 - 3.4.1 bps
+ * 4 - 38400 bps
  * 5 - 57600 bps
  * 6 - 115200 bps
  * 7 - 576000 bps

@@ -1531,10 +1531,10 @@ static const struct wacom_features wacom_features_0x21 =
 	{ "Wacom Intuos 6x8",     WACOM_PKGLEN_INTUOS,    20320, 16240, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x22 =
-	{ "Wacom Intuos 9x12",    WACOM_PKGLEN_INTUOS,    3.4.1, 24060, 1023,
+	{ "Wacom Intuos 9x12",    WACOM_PKGLEN_INTUOS,    30480, 24060, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x23 =
-	{ "Wacom Intuos 12x12",   WACOM_PKGLEN_INTUOS,    3.4.1, 31680, 1023,
+	{ "Wacom Intuos 12x12",   WACOM_PKGLEN_INTUOS,    30480, 31680, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x24 =
 	{ "Wacom Intuos 12x18",   WACOM_PKGLEN_INTUOS,    45720, 31680, 1023,
@@ -1585,10 +1585,10 @@ static const struct wacom_features wacom_features_0x42 =
 	{ "Wacom Intuos2 6x8",    WACOM_PKGLEN_INTUOS,    20320, 16240, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x43 =
-	{ "Wacom Intuos2 9x12",   WACOM_PKGLEN_INTUOS,    3.4.1, 24060, 1023,
+	{ "Wacom Intuos2 9x12",   WACOM_PKGLEN_INTUOS,    30480, 24060, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x44 =
-	{ "Wacom Intuos2 12x12",  WACOM_PKGLEN_INTUOS,    3.4.1, 31680, 1023,
+	{ "Wacom Intuos2 12x12",  WACOM_PKGLEN_INTUOS,    30480, 31680, 1023,
 	  31, INTUOS, WACOM_INTUOS_RES, WACOM_INTUOS_RES };
 static const struct wacom_features wacom_features_0x45 =
 	{ "Wacom Intuos2 12x18",  WACOM_PKGLEN_INTUOS,    45720, 31680, 1023,
@@ -1597,7 +1597,7 @@ static const struct wacom_features wacom_features_0xB0 =
 	{ "Wacom Intuos3 4x5",    WACOM_PKGLEN_INTUOS,    25400, 20320, 1023,
 	  63, INTUOS3S, WACOM_INTUOS3_RES, WACOM_INTUOS3_RES };
 static const struct wacom_features wacom_features_0xB1 =
-	{ "Wacom Intuos3 6x8",    WACOM_PKGLEN_INTUOS,    40640, 3.4.1, 1023,
+	{ "Wacom Intuos3 6x8",    WACOM_PKGLEN_INTUOS,    40640, 30480, 1023,
 	  63, INTUOS3, WACOM_INTUOS3_RES, WACOM_INTUOS3_RES };
 static const struct wacom_features wacom_features_0xB2 =
 	{ "Wacom Intuos3 9x12",   WACOM_PKGLEN_INTUOS,    60960, 45720, 1023,
@@ -1639,7 +1639,7 @@ static const struct wacom_features wacom_features_0xC5 =
 	{ "Wacom Cintiq 20WSX",   WACOM_PKGLEN_INTUOS,    86680, 54180, 1023,
 	  63, WACOM_BEE, WACOM_INTUOS3_RES, WACOM_INTUOS3_RES };
 static const struct wacom_features wacom_features_0xC6 =
-	{ "Wacom Cintiq 12WX",    WACOM_PKGLEN_INTUOS,    53020, 3.4.1, 1023,
+	{ "Wacom Cintiq 12WX",    WACOM_PKGLEN_INTUOS,    53020, 33440, 1023,
 	  63, WACOM_BEE, WACOM_INTUOS3_RES, WACOM_INTUOS3_RES };
 static const struct wacom_features wacom_features_0xC7 =
 	{ "Wacom DTU1931",        WACOM_PKGLEN_GRAPHIRE,  37832, 30305,  511,

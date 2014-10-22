@@ -134,7 +134,7 @@ void __init plat_mem_setup(void)
 		pnx8550_console_port = *argptr == '0' ? 0 : 1;
 
 		/* We must initialize the UART (console) before early printk */
-		/* Set LCR to 8-bit and BAUD to 3.4.1 (no 5)                */
+		/* Set LCR to 8-bit and BAUD to 38400 (no 5)                */
 		ip3106_lcr(UART_BASE, pnx8550_console_port) =
 			PNX8XXX_UART_LCR_8BIT;
 		ip3106_baud(UART_BASE, pnx8550_console_port) = 5;

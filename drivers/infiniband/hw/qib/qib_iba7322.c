@@ -7606,7 +7606,7 @@ static int serdes_7322_init_new(struct qib_pportdata *ppd)
 	} else {
 		ibsd_wr_allchans(ppd, 19, (3 << 11), BMASK(13, 11));
 	}
-	/*       Baseline Wander Correction Gain [13.4.1] (leave as default) */
+	/*       Baseline Wander Correction Gain [13:4-0] (leave as default) */
 	/*       Baseline Wander Correction Gain [3:7-5] (leave as default) */
 	/*       Data Rate Select [5:7-6] (leave as default) */
 	/*       RX Parallel Word Width [3:10-8] (leave as default) */

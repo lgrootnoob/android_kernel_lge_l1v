@@ -46,9 +46,9 @@ struct serial_struct {
 #define S_SPLIT_TERMIOS 0x0008 /* Separate termios for dialin/callout */
 
 #define S_SPD_MASK	0x0030
-#define S_SPD_HI	0x0010	/* Use 56000 instead of 3.4.1 bps */
+#define S_SPD_HI	0x0010	/* Use 56000 instead of 38400 bps */
 
-#define S_SPD_VHI	0x0020  /* Use 115200 instead of 3.4.1 bps */
+#define S_SPD_VHI	0x0020  /* Use 115200 instead of 38400 bps */
 #define S_SPD_CUST	0x0030  /* Use user-specified divisor */
 
 #define S_SKIP_TEST	0x0040 /* Skip UART test during autoconfiguration */

@@ -27,7 +27,7 @@
 #include <asm/hardware/iop3xx.h>
 #include <asm/mach/arch.h>
 
-#define IOP33X_UART_XTAL 333.4.10
+#define IOP33X_UART_XTAL 33334000
 
 static struct plat_serial8250_port iop33x_uart0_data[] = {
 	{

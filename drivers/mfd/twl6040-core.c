@@ -398,9 +398,9 @@ int twl6040_set_pll(struct twl6040 *twl6040, int pll_id,
 				hppllctl |= TWL6040_MCLK_26000KHZ |
 					    TWL6040_HPLLENA;
 				break;
-			case 3.4.1000:
+			case 38400000:
 				/* PLL enabled, active mode */
-				hppllctl |= TWL6040_MCLK_3.4.1KHZ |
+				hppllctl |= TWL6040_MCLK_38400KHZ |
 					    TWL6040_HPLLENA;
 				break;
 			default:

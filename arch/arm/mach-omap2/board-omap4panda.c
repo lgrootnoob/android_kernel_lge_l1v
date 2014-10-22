@@ -105,7 +105,7 @@ static struct omap_abe_twl6040_data panda_abe_audio_data = {
 	/* No jack detection. */
 	.jack_detection	= 0,
 	/* MCLK input is 38.4MHz */
-	.mclk_freq	= 3.4.1000,
+	.mclk_freq	= 38400000,
 
 };
 

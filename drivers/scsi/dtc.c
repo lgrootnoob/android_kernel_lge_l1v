@@ -102,7 +102,7 @@
 #define D_CR_ACCESS		0x80	/* ro set=can access 3280 registers */
 #define CSR_DIR_READ		0x40	/* rw direction, 1 = read 0 = write */
 
-#define CSR_RESET              0x80	/* wo  Resets 53.4.1 */
+#define CSR_RESET              0x80	/* wo  Resets 53c400 */
 #define CSR_5380_REG           0x80	/* ro  5380 registers can be accessed */
 #define CSR_TRANS_DIR          0x40	/* rw  Data transfer direction */
 #define CSR_SCSI_BUFF_INTR     0x20	/* rw  Enable int on transfer ready */

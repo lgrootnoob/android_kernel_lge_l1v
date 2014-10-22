@@ -16,7 +16,7 @@
  * upping major version number
  *
  * Revision 1.1.1.1  2001/06/13 20:24:49  daniela
- * PC300 initial CVS version (3.4.1-pre1)
+ * PC300 initial CVS version (3.4.0-pre1)
  *
  * Revision 1.0 2000/01/25 ivan
  * Initial version.

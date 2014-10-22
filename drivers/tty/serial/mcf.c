@@ -203,7 +203,7 @@ static void mcf_set_termios(struct uart_port *port, struct ktermios *termios,
 #endif
 	unsigned char mr1, mr2;
 
-	baud = uart_get_baud_rate(port, termios, old, 0, 23.4.1);
+	baud = uart_get_baud_rate(port, termios, old, 0, 230400);
 #if defined(CONFIG_M5272)
 	baudclk = (MCF_BUSCLK / baud) / 32;
 	baudfr = (((MCF_BUSCLK / baud) + 1) / 2) % 16;

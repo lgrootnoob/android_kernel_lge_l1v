@@ -192,10 +192,10 @@ MODULE_VERSION(HVCS_DRIVER_VERSION);
 static struct ktermios hvcs_tty_termios = {
 	.c_iflag = IGNBRK | IGNPAR,
 	.c_oflag = OPOST,
-	.c_cflag = B3.4.1 | CS8 | CREAD | HUPCL,
+	.c_cflag = B38400 | CS8 | CREAD | HUPCL,
 	.c_cc = INIT_C_CC,
-	.c_ispeed = 3.4.1,
-	.c_ospeed = 3.4.1
+	.c_ispeed = 38400,
+	.c_ospeed = 38400
 };
 
 /*

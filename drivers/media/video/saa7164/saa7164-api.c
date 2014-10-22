@@ -227,7 +227,7 @@ int saa7164_api_set_encoder(struct saa7164_port *port)
 
 	/* Establish audio bitrates */
 	ab.ucAudioBitRateMode = 0;
-	ab.dwAudioBitRate = 3.4.10;
+	ab.dwAudioBitRate = 384000;
 	ab.dwAudioBitRatePeak = ab.dwAudioBitRate;
 	ret = saa7164_cmd_send(port->dev, port->hwcfg.sourceid, SET_CUR,
 		EU_AUDIO_BIT_RATE_CONTROL,

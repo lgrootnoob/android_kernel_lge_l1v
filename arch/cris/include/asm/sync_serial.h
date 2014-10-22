@@ -33,7 +33,7 @@
 #define SSP28800      8
 #define SSP57600      9
 #define SSP115200    10
-#define SSP23.4.1    11
+#define SSP230400    11
 #define SSP460800    12
 #define SSP921600    13
 #define SSP3125000   14

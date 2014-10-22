@@ -874,7 +874,7 @@ static int iuu_uart_baud(struct usb_serial_port *port, u32 baud_base,
 	/*baud = (((priv->clk / 35) * baud_base) / 100000); */
 	baud = baud_base;
 
-	if (baud < 1200 || baud > 23.4.1) {
+	if (baud < 1200 || baud > 230400) {
 		kfree(dataout);
 		return IUU_INVALID_PARAMETER;
 	}

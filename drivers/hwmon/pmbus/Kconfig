@@ -67,15 +67,15 @@ config SENSORS_MAX16064
 	  This driver can also be built as a module. If so, the module will
 	  be called max16064.
 
-config SENSORS_MAX3.4.1
-	tristate "Maxim MAX3.4.1 and compatibles"
+config SENSORS_MAX34440
+	tristate "Maxim MAX34440 and compatibles"
 	default n
 	help
 	  If you say yes here you get hardware monitoring support for Maxim
-	  MAX3.4.1, MAX34441, and MAX34446.
+	  MAX34440, MAX34441, and MAX34446.
 
 	  This driver can also be built as a module. If so, the module will
-	  be called max3.4.1.
+	  be called max34440.
 
 config SENSORS_MAX8688
 	tristate "Maxim MAX8688"

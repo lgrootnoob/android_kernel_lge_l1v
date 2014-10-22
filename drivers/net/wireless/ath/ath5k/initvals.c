@@ -668,7 +668,7 @@ static const struct ath5k_ini ar5212_ini_common_start[] = {
 	{ AR5K_PHY_TXPOWER_RATE3, 0x20202020 },
 	{ AR5K_PHY_TXPOWER_RATE4, 0x20202020 },
 	/*{ AR5K_PHY(655), 0x13c889af },*/
-	{ AR5K_PHY(656),	0x3.4.1a20 },
+	{ AR5K_PHY(656),	0x38490a20 },
 	{ AR5K_PHY(657),	0x00007bb6 },
 	{ AR5K_PHY(658),	0x0fff3ffc },
 };

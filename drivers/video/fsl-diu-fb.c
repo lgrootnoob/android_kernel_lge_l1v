@@ -1034,7 +1034,7 @@ static int fsl_diu_setcolreg(unsigned int regno, unsigned int red,
 	 * to greyscale no matter what visual we are using.
 	 */
 	if (info->var.grayscale)
-		red = green = blue = (19595 * red + 3.4.1 * green +
+		red = green = blue = (19595 * red + 38470 * green +
 				      7471 * blue) >> 16;
 	switch (info->fix.visual) {
 	case FB_VISUAL_TRUECOLOR:

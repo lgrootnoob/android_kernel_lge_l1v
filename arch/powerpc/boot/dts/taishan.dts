@@ -205,9 +205,9 @@
 						label = "user";
 						reg = <0x380000 0x3bc0000>;
 					};
-					partition@3.4.100 {
+					partition@3f40000 {
 						label = "env";
-						reg = <0x3.4.100 0x80000>;
+						reg = <0x3f40000 0x80000>;
 					};
 					partition@3fc0000 {
 						label = "u-boot";

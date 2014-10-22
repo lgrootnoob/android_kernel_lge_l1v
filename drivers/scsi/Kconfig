@@ -844,7 +844,7 @@ config SCSI_ISCI
 	  control unit found in the Intel(R) C600 series chipset.
 
 config SCSI_GENERIC_NCR5380
-	tristate "Generic NCR5380/53.4.1 SCSI PIO support"
+	tristate "Generic NCR5380/53c400 SCSI PIO support"
 	depends on ISA && SCSI
 	select SCSI_SPI_ATTRS
 	---help---
@@ -864,7 +864,7 @@ config SCSI_GENERIC_NCR5380
 	  module will be called g_NCR5380.
 
 config SCSI_GENERIC_NCR5380_MMIO
-	tristate "Generic NCR5380/53.4.1 SCSI MMIO support"
+	tristate "Generic NCR5380/53c400 SCSI MMIO support"
 	depends on ISA && SCSI
 	select SCSI_SPI_ATTRS
 	---help---
@@ -878,11 +878,11 @@ config SCSI_GENERIC_NCR5380_MMIO
 	  To compile this driver as a module, choose M here: the
 	  module will be called g_NCR5380_mmio.
 
-config SCSI_GENERIC_NCR53.4.1
-	bool "Enable NCR53.4.1 extensions"
+config SCSI_GENERIC_NCR53C400
+	bool "Enable NCR53c400 extensions"
 	depends on SCSI_GENERIC_NCR5380
 	help
-	  This enables certain optimizations for the NCR53.4.1 SCSI cards.
+	  This enables certain optimizations for the NCR53c400 SCSI cards.
 	  You might as well try it out.  Note that this driver will only probe
 	  for the Trantor T130B in its default configuration; you might have
 	  to pass a command line option to the kernel at boot time if it does

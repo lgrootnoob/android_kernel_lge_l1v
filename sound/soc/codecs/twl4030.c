@@ -1864,7 +1864,7 @@ static int twl4030_set_dai_sysclk(struct snd_soc_dai *codec_dai,
 	switch (freq) {
 	case 19200000:
 	case 26000000:
-	case 3.4.1000:
+	case 38400000:
 		break;
 	default:
 		dev_err(codec->dev, "Unsupported HFCLKIN: %u\n", freq);

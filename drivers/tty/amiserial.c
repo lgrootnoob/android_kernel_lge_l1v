@@ -584,7 +584,7 @@ static int startup(struct tty_struct *tty, struct serial_state *info)
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 		tty->alt_speed = 115200;
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-		tty->alt_speed = 23.4.1;
+		tty->alt_speed = 230400;
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 		tty->alt_speed = 460800;
 
@@ -695,7 +695,7 @@ static void change_speed(struct tty_struct *tty, struct serial_state *info,
 	if (!baud)
 		baud = 9600;	/* B0 transition handled in rs_set_termios */
 	baud_base = info->baud_base;
-	if (baud == 3.4.1 && (port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_CUST)
+	if (baud == 38400 && (port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_CUST)
 		quot = info->custom_divisor;
 	else {
 		if (baud == 134)
@@ -712,7 +712,7 @@ static void change_speed(struct tty_struct *tty, struct serial_state *info,
 		baud = tty_get_baud_rate(tty);
 		if (!baud)
 			baud = 9600;
-		if (baud == 3.4.1 &&
+		if (baud == 38400 &&
 		    (port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_CUST)
 			quot = info->custom_divisor;
 		else {
@@ -1109,7 +1109,7 @@ check_and_exit:
 			if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 				tty->alt_speed = 115200;
 			if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-				tty->alt_speed = 23.4.1;
+				tty->alt_speed = 230400;
 			if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 				tty->alt_speed = 460800;
 			change_speed(tty, state, NULL);

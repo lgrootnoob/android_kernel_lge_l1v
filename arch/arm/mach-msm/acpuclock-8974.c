@@ -106,7 +106,7 @@ static struct msm_bus_scale_pdata bus_scale_data __initdata = {
 
 static struct l2_level l2_freq_tbl[] __initdata = {
 	[0]  = { {  300000, PLL_0, 0, 2,   0 }, LVL_LOW, 1050000, 2 },
-	[1]  = { {  3.4.10, HFPLL, 2, 0,  40 }, LVL_NOM, 1050000, 2 },
+	[1]  = { {  384000, HFPLL, 2, 0,  40 }, LVL_NOM, 1050000, 2 },
 	[2]  = { {  460800, HFPLL, 2, 0,  48 }, LVL_NOM, 1050000, 2 },
 	[3]  = { {  537600, HFPLL, 1, 0,  28 }, LVL_NOM, 1050000, 2 },
 	[4]  = { {  576000, HFPLL, 1, 0,  30 }, LVL_NOM, 1050000, 3 },
@@ -120,7 +120,7 @@ static struct l2_level l2_freq_tbl[] __initdata = {
 
 static struct acpu_level acpu_freq_tbl[] __initdata = {
 	{ 1, {  300000, PLL_0, 0, 2,   0 }, L2(0),  1050000, 3200000 },
-	{ 1, {  3.4.10, HFPLL, 2, 0,  40 }, L2(1),  1050000, 3200000 },
+	{ 1, {  384000, HFPLL, 2, 0,  40 }, L2(1),  1050000, 3200000 },
 	{ 1, {  460800, HFPLL, 2, 0,  48 }, L2(2),  1050000, 3200000 },
 	{ 1, {  537600, HFPLL, 1, 0,  28 }, L2(3),  1050000, 3200000 },
 	{ 1, {  576000, HFPLL, 1, 0,  30 }, L2(4),  1050000, 3200000 },

@@ -930,7 +930,7 @@ static int mx3fb_setcolreg(unsigned int regno, unsigned int red,
 	 * to greyscale no matter what visual we are using.
 	 */
 	if (fbi->var.grayscale)
-		red = green = blue = (19595 * red + 3.4.1 * green +
+		red = green = blue = (19595 * red + 38470 * green +
 				      7471 * blue) >> 16;
 	switch (fbi->fix.visual) {
 	case FB_VISUAL_TRUECOLOR:

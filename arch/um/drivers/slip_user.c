@@ -44,8 +44,8 @@ static int set_up_tty(int fd)
 	tios.c_cc[VMIN] = 1;
 	tios.c_cc[VTIME] = 0;
 
-	cfsetospeed(&tios, B3.4.1);
-	cfsetispeed(&tios, B3.4.1);
+	cfsetospeed(&tios, B38400);
+	cfsetispeed(&tios, B38400);
 
 	if (tcsetattr(fd, TCSAFLUSH, &tios) < 0) {
 		printk(UM_KERN_ERR "failed to set terminal attributes\n");

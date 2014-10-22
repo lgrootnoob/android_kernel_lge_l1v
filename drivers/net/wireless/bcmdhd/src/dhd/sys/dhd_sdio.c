@@ -809,7 +809,7 @@ dhdsdio_clk_kso_init(dhd_bus_t *bus)
 
 	/*
 	 * Enable KeepSdioOn (KSO) bit for normal operation
-	 * Default is 0 (43.4.1) so set it. Fixed in B0.
+	 * Default is 0 (4334A0) so set it. Fixed in B0.
 	 */
 	val = bcmsdh_cfg_read(bus->sdh, SDIO_FUNC_1, SBSDIO_FUNC1_SLEEPCSR, NULL);
 	if (!(val & SBSDIO_FUNC1_SLEEPCSR_KSO_MASK)) {

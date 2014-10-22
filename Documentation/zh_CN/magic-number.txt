@@ -112,9 +112,9 @@ LSMAGIC               0x2a3b4d2a  ls                drivers/fc4/fc.c
 WANPIPE_MAGIC         0x414C4453  sdla_{dump,exec}  include/linux/wanpipe.h
 CS_CARD_MAGIC         0x43525553  cs_card           sound/oss/cs46xx.c
 LABELCL_MAGIC         0x4857434c  labelcl_info_s    include/asm/ia64/sn/labelcl.h
-ISDN_ASYNC_MAGIC      0x493.4.11  modem_info        include/linux/isdn.h
-CTC_ASYNC_MAGIC       0x493.4.11  ctc_tty_info      drivers/s390/net/ctctty.c
-ISDN_NET_MAGIC        0x493.4.12  isdn_net_local_s  drivers/isdn/i4l/isdn_net_lib.h
+ISDN_ASYNC_MAGIC      0x49344C01  modem_info        include/linux/isdn.h
+CTC_ASYNC_MAGIC       0x49344C01  ctc_tty_info      drivers/s390/net/ctctty.c
+ISDN_NET_MAGIC        0x49344C02  isdn_net_local_s  drivers/isdn/i4l/isdn_net_lib.h
 SAVEKMSG_MAGIC2       0x4B4D5347  savekmsg          arch/*/amiga/config.c
 STLI_BOARDMAGIC       0x4bc6c825  stlibrd           include/linux/istallion.h
 CS_STATE_MAGIC        0x4c4f4749  cs_state          sound/oss/cs46xx.c

@@ -139,7 +139,7 @@
  * ATEN UC2322 device using Moschip MCS7820
  */
 #define USB_VENDOR_ID_ATENINTL		0x0557
-#define ATENINTL_DEVICE_ID_UC23.4.1x2011
+#define ATENINTL_DEVICE_ID_UC2324	0x2011
 #define ATENINTL_DEVICE_ID_UC2322	0x7820
 
 /* Interrupt Routine Defines    */
@@ -1753,10 +1753,10 @@ static int mos7840_calc_baud_rate_divisor(int baudRate, int *divisor,
 		*divisor = 115200 / baudRate;
 		*clk_sel_val = 0x0;
 	}
-	if ((baudRate > 115200) && (baudRate <= 23.4.1)) {
-		*divisor = 23.4.1 / baudRate;
+	if ((baudRate > 115200) && (baudRate <= 230400)) {
+		*divisor = 230400 / baudRate;
 		*clk_sel_val = 0x10;
-	} else if ((baudRate > 23.4.1) && (baudRate <= 403200)) {
+	} else if ((baudRate > 230400) && (baudRate <= 403200)) {
 		*divisor = 403200 / baudRate;
 		*clk_sel_val = 0x20;
 	} else if ((baudRate > 403200) && (baudRate <= 460800)) {
@@ -1789,12 +1789,12 @@ static int mos7840_calc_baud_rate_divisor(int baudRate, int *divisor,
 	/* After trying for all the standard baud rates    *
 	 * Try calculating the divisor for this baud rate  */
 
-	if (baudrate > 75 && baudrate < 23.4.1) {
+	if (baudrate > 75 && baudrate < 230400) {
 		/* get the divisor */
-		custom = (__u16) (23.4.1L / baudrate);
+		custom = (__u16) (230400L / baudrate);
 
 		/* Check for round off */
-		round1 = (__u16) (23.4.10L / baudrate);
+		round1 = (__u16) (2304000L / baudrate);
 		round = (__u16) (round1 - (custom * 10));
 		if (round > 4)
 			custom++;

@@ -400,7 +400,7 @@ static struct omap_abe_twl6040_data sdp4430_abe_audio_data = {
 
 	.jack_detection = 1,
 	/* MCLK input is 38.4MHz */
-	.mclk_freq	= 3.4.1000,
+	.mclk_freq	= 38400000,
 };
 
 static struct platform_device sdp4430_abe_audio = {

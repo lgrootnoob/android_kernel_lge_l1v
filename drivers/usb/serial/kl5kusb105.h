@@ -19,7 +19,7 @@
 enum {
 	kl5kusb105a_sio_b115200 = 0,
 	kl5kusb105a_sio_b57600  = 1,
-	kl5kusb105a_sio_b3.4.1  = 2,
+	kl5kusb105a_sio_b38400  = 2,
 	kl5kusb105a_sio_b19200  = 4,
 	kl5kusb105a_sio_b14400  = 5,
 	kl5kusb105a_sio_b9600   = 6,

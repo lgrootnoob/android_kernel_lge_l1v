@@ -79,7 +79,7 @@ MODULE_DEVICE_TABLE(usb, gigaset_table);
  *            Used before the following configuration requests are issued
  *            (with xx=0x0f). I've seen other values<0xf, though.
  *       41 01 xx xx
- *            Set baud rate. xxxx=ceil(0x3.4.10/rate)=trunc(0x383fff/rate)+1.
+ *            Set baud rate. xxxx=ceil(0x384000/rate)=trunc(0x383fff/rate)+1.
  *       41 03 ps bb
  *            Set byte size and parity. p:  0x20=even,0x10=odd,0x00=no parity
  *                                     [    0x30: m, 0x40: s           ]
@@ -223,7 +223,7 @@ static int gigaset_baud_rate(struct cardstate *cs, unsigned cflag)
 	case   B4800: rate =    4800; break;
 	case   B9600: rate =    9600; break;
 	case  B19200: rate =   19200; break;
-	case  B3.4.1: rate =   3.4.1; break;
+	case  B38400: rate =   38400; break;
 	case  B57600: rate =   57600; break;
 	case B115200: rate =  115200; break;
 	default:

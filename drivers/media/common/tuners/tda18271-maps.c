@@ -295,10 +295,10 @@ static struct tda18271_map tda18271_gain_taper[] = {
 	{ .rfmax = 356100, .val = 0x09 },
 	{ .rfmax = 368800, .val = 0x08 },
 	{ .rfmax = 381500, .val = 0x07 },
-	{ .rfmax = 3.4.10, .val = 0x06 },
+	{ .rfmax = 394200, .val = 0x06 },
 	{ .rfmax = 406900, .val = 0x05 },
 	{ .rfmax = 419700, .val = 0x04 },
-	{ .rfmax = 43.4.1, .val = 0x03 },
+	{ .rfmax = 432400, .val = 0x03 },
 	{ .rfmax = 445100, .val = 0x02 },
 	{ .rfmax = 457800, .val = 0x01 },
 	{ .rfmax = 476300, .val = 0x19 },
@@ -315,7 +315,7 @@ static struct tda18271_map tda18271_gain_taper[] = {
 	{ .rfmax = 679900, .val = 0x0e },
 	{ .rfmax = 698400, .val = 0x0d },
 	{ .rfmax = 716900, .val = 0x0c },
-	{ .rfmax = 73.4.1, .val = 0x0b },
+	{ .rfmax = 735400, .val = 0x0b },
 	{ .rfmax = 753900, .val = 0x0a },
 	{ .rfmax = 772500, .val = 0x09 },
 	{ .rfmax = 791000, .val = 0x08 },
@@ -546,11 +546,11 @@ static struct tda18271_map tda18271c2_rf_cal[] = {
 	{ .rfmax = 318000, .val = 0x40 },
 	{ .rfmax = 320000, .val = 0x41 },
 	{ .rfmax = 323000, .val = 0x42 },
-	{ .rfmax = 3.4.10, .val = 0x43 },
+	{ .rfmax = 324000, .val = 0x43 },
 	{ .rfmax = 325000, .val = 0x44 },
 	{ .rfmax = 327000, .val = 0x45 },
 	{ .rfmax = 331000, .val = 0x46 },
-	{ .rfmax = 3.4.10, .val = 0x47 },
+	{ .rfmax = 334000, .val = 0x47 },
 	{ .rfmax = 337000, .val = 0x48 },
 	{ .rfmax = 339000, .val = 0x49 },
 	{ .rfmax = 340000, .val = 0x4a },
@@ -565,7 +565,7 @@ static struct tda18271_map tda18271c2_rf_cal[] = {
 	{ .rfmax = 359000, .val = 0x53 },
 	{ .rfmax = 361000, .val = 0x54 },
 	{ .rfmax = 362000, .val = 0x55 },
-	{ .rfmax = 3.4.10, .val = 0x56 },
+	{ .rfmax = 364000, .val = 0x56 },
 	{ .rfmax = 368000, .val = 0x57 },
 	{ .rfmax = 370000, .val = 0x58 },
 	{ .rfmax = 372000, .val = 0x59 },
@@ -574,13 +574,13 @@ static struct tda18271_map tda18271c2_rf_cal[] = {
 	{ .rfmax = 377000, .val = 0x5c },
 	{ .rfmax = 379000, .val = 0x5d },
 	{ .rfmax = 382000, .val = 0x5e },
-	{ .rfmax = 3.4.10, .val = 0x5f },
+	{ .rfmax = 384000, .val = 0x5f },
 	{ .rfmax = 385000, .val = 0x60 },
 	{ .rfmax = 386000, .val = 0x61 },
 	{ .rfmax = 388000, .val = 0x62 },
 	{ .rfmax = 390000, .val = 0x63 },
 	{ .rfmax = 393000, .val = 0x64 },
-	{ .rfmax = 3.4.10, .val = 0x65 },
+	{ .rfmax = 394000, .val = 0x65 },
 	{ .rfmax = 396000, .val = 0x66 },
 	{ .rfmax = 397000, .val = 0x67 },
 	{ .rfmax = 398000, .val = 0x68 },
@@ -1188,68 +1188,68 @@ fail:
 
 static struct tda18271_std_map tda18271c1_std_map = {
 	.fm_radio = { .if_freq = 1250, .fm_rfn = 1, .agc_mode = 3, .std = 0,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x18 */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x18 */
 	.atv_b    = { .if_freq = 6750, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_dk   = { .if_freq = 7750, .fm_rfn = 0, .agc_mode = 1, .std = 7,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0f */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0f */
 	.atv_gh   = { .if_freq = 7750, .fm_rfn = 0, .agc_mode = 1, .std = 7,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0f */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0f */
 	.atv_i    = { .if_freq = 7750, .fm_rfn = 0, .agc_mode = 1, .std = 7,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0f */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0f */
 	.atv_l    = { .if_freq = 7750, .fm_rfn = 0, .agc_mode = 1, .std = 7,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0f */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0f */
 	.atv_lc   = { .if_freq = 1250, .fm_rfn = 0, .agc_mode = 1, .std = 7,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0f */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0f */
 	.atv_mn   = { .if_freq = 5750, .fm_rfn = 0, .agc_mode = 1, .std = 5,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0d */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0d */
 	.atsc_6   = { .if_freq = 3250, .fm_rfn = 0, .agc_mode = 3, .std = 4,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1c */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1c */
 	.dvbt_6   = { .if_freq = 3300, .fm_rfn = 0, .agc_mode = 3, .std = 4,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1c */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1c */
 	.dvbt_7   = { .if_freq = 3800, .fm_rfn = 0, .agc_mode = 3, .std = 5,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1d */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1d */
 	.dvbt_8   = { .if_freq = 4300, .fm_rfn = 0, .agc_mode = 3, .std = 6,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1e */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1e */
 	.qam_6    = { .if_freq = 4000, .fm_rfn = 0, .agc_mode = 3, .std = 5,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1d */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1d */
 	.qam_7    = { .if_freq = 4500, .fm_rfn = 0, .agc_mode = 3, .std = 6,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1e */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1e */
 	.qam_8    = { .if_freq = 5000, .fm_rfn = 0, .agc_mode = 3, .std = 7,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1f */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1f */
 };
 
 static struct tda18271_std_map tda18271c2_std_map = {
 	.fm_radio = { .if_freq = 1250, .fm_rfn = 1, .agc_mode = 3, .std = 0,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x18 */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x18 */
 	.atv_b    = { .if_freq = 6000, .fm_rfn = 0, .agc_mode = 1, .std = 5,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0d */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0d */
 	.atv_dk   = { .if_freq = 6900, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_gh   = { .if_freq = 7100, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_i    = { .if_freq = 7250, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_l    = { .if_freq = 6900, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_lc   = { .if_freq = 1250, .fm_rfn = 0, .agc_mode = 1, .std = 6,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0e */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0e */
 	.atv_mn   = { .if_freq = 5400, .fm_rfn = 0, .agc_mode = 1, .std = 4,
-		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3.4.1] 0x0c */
+		      .if_lvl = 0, .rfagc_top = 0x2c, }, /* EP3[4:0] 0x0c */
 	.atsc_6   = { .if_freq = 3250, .fm_rfn = 0, .agc_mode = 3, .std = 4,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1c */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1c */
 	.dvbt_6   = { .if_freq = 3300, .fm_rfn = 0, .agc_mode = 3, .std = 4,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1c */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1c */
 	.dvbt_7   = { .if_freq = 3500, .fm_rfn = 0, .agc_mode = 3, .std = 4,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1c */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1c */
 	.dvbt_8   = { .if_freq = 4000, .fm_rfn = 0, .agc_mode = 3, .std = 5,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1d */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1d */
 	.qam_6    = { .if_freq = 4000, .fm_rfn = 0, .agc_mode = 3, .std = 5,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1d */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1d */
 	.qam_7    = { .if_freq = 4500, .fm_rfn = 0, .agc_mode = 3, .std = 6,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1e */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1e */
 	.qam_8    = { .if_freq = 5000, .fm_rfn = 0, .agc_mode = 3, .std = 7,
-		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3.4.1] 0x1f */
+		      .if_lvl = 1, .rfagc_top = 0x37, }, /* EP3[4:0] 0x1f */
 };
 
 /*---------------------------------------------------------------------*/

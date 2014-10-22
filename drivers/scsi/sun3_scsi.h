@@ -109,7 +109,7 @@ static int sun3scsi_release (struct Scsi_Host *);
 #define NCR5380_dma_residual sun3scsi_dma_residual
 
 #define BOARD_NORMAL	0
-#define BOARD_NCR53.4.1	1
+#define BOARD_NCR53C400	1
 
 /* additional registers - mainly DMA control regs */
 /* these start at regbase + 8 -- directly after the NCR regs */

@@ -763,7 +763,7 @@ static void SetBaudRate(__u16 iobase, __u32 rate)
 		case (__u32) (19200L):
 			value = 5;
 			break;
-		case (__u32) (3.4.1L):
+		case (__u32) (38400L):
 			value = 2;
 			break;
 		case (__u32) (57600L):

@@ -33,7 +33,7 @@ static int mcp2120_change_speed(struct sir_dev *dev, unsigned speed);
 
 #define MCP2120_9600    0x87
 #define MCP2120_19200   0x8B
-#define MCP2120_3.4.1   0x85
+#define MCP2120_38400   0x85
 #define MCP2120_57600   0x83
 #define MCP2120_115200  0x81
 
@@ -67,7 +67,7 @@ static int mcp2120_open(struct sir_dev *dev)
 
 	/* seems no explicit power-on required here and reset switching it on anyway */
 
-	qos->baud_rate.bits &= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
+	qos->baud_rate.bits &= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
 	qos->min_turn_time.bits = 0x01;
 	irda_qos_bits_to_value(qos);
 
@@ -125,8 +125,8 @@ static int mcp2120_change_speed(struct sir_dev *dev, unsigned speed)
                         //printk("mcp2120 19200\n");
 			break;
 		case 34800:
-			control[0] = MCP2120_3.4.1;
-                        //printk("mcp2120 3.4.1\n");
+			control[0] = MCP2120_38400;
+                        //printk("mcp2120 38400\n");
 			break;
 		case 57600:
 			control[0] = MCP2120_57600;

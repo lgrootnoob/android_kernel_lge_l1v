@@ -2131,7 +2131,7 @@ static u16 MXL_IFSynthInit(struct dvb_frontend *fe)
 		if (state->IF_LO == 54000000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x10);
 			status += MXL_ControlWrite(fe, IF_VCO_BIAS, 0x0C);
-			Fref = 3.4.10000UL ;
+			Fref = 324000000UL ;
 		}
 		if (state->IF_LO == 60000000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x10);
@@ -2141,7 +2141,7 @@ static u16 MXL_IFSynthInit(struct dvb_frontend *fe)
 		if (state->IF_LO == 39250000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x08);
 			status += MXL_ControlWrite(fe, IF_VCO_BIAS, 0x0C);
-			Fref = 3.4.10000UL ;
+			Fref = 314000000UL ;
 		}
 		if (state->IF_LO == 39650000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x08);
@@ -2229,7 +2229,7 @@ static u16 MXL_IFSynthInit(struct dvb_frontend *fe)
 		if (state->IF_LO == 57400000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x10);
 			status += MXL_ControlWrite(fe, IF_VCO_BIAS, 0x08);
-			Fref = 3.4.10000UL ;
+			Fref = 344400000UL ;
 		}
 		if (state->IF_LO == 44400000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x08);
@@ -2264,7 +2264,7 @@ static u16 MXL_IFSynthInit(struct dvb_frontend *fe)
 		if (state->IF_LO == 5400000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x07);
 			status += MXL_ControlWrite(fe, IF_VCO_BIAS, 0x0C);
-			Fref = 3.4.10000UL ;
+			Fref = 324000000UL ;
 		}
 		if (state->IF_LO == 5380000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x07);
@@ -2274,7 +2274,7 @@ static u16 MXL_IFSynthInit(struct dvb_frontend *fe)
 		if (state->IF_LO == 5200000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x09);
 			status += MXL_ControlWrite(fe, IF_VCO_BIAS, 0x08);
-			Fref = 3.4.10000UL ;
+			Fref = 374400000UL ;
 		}
 		if (state->IF_LO == 4900000UL) {
 			status += MXL_ControlWrite(fe, IF_DIVVAL,   0x09);

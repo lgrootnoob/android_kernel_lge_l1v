@@ -67,7 +67,7 @@ static const char name_s3c2440a[] = "S3C2440A";
 
 static struct cpu_table cpu_ids[] __initdata = {
 	{
-		.idcode		= 0x3.4.1000,
+		.idcode		= 0x32410000,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2410_map_io,
 		.init_clocks	= s3c2410_init_clocks,
@@ -76,7 +76,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2410
 	},
 	{
-		.idcode		= 0x3.4.1002,
+		.idcode		= 0x32410002,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2410_map_io,
 		.init_clocks	= s3c2410_init_clocks,
@@ -85,7 +85,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2410a
 	},
 	{
-		.idcode		= 0x3.4.1000,
+		.idcode		= 0x32440000,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2440_map_io,
 		.init_clocks	= s3c244x_init_clocks,
@@ -94,7 +94,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2440
 	},
 	{
-		.idcode		= 0x3.4.1001,
+		.idcode		= 0x32440001,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2440_map_io,
 		.init_clocks	= s3c244x_init_clocks,
@@ -103,7 +103,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2440a
 	},
 	{
-		.idcode		= 0x3.4.1aaa,
+		.idcode		= 0x32440aaa,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2442_map_io,
 		.init_clocks	= s3c244x_init_clocks,
@@ -112,7 +112,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2442
 	},
 	{
-		.idcode		= 0x3.4.1aab,
+		.idcode		= 0x32440aab,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2442_map_io,
 		.init_clocks	= s3c244x_init_clocks,
@@ -139,7 +139,7 @@ static struct cpu_table cpu_ids[] __initdata = {
 		.name		= name_s3c2412,
 	},
 	{			/* a strange version of the s3c2416 */
-		.idcode		= 0x3.4.1003,
+		.idcode		= 0x32450003,
 		.idmask		= 0xffffffff,
 		.map_io		= s3c2416_map_io,
 		.init_clocks	= s3c2416_init_clocks,

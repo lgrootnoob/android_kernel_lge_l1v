@@ -226,7 +226,7 @@ enum {
  */
 #define CT2_PCI_CPQ_BASE		0x00030000
 #define CT2_PCI_APP_BASE		0x00030100
-#define CT2_PCI_ETH_BASE		0x0003.4.1
+#define CT2_PCI_ETH_BASE		0x00030400
 
 /*
  * APP block registers

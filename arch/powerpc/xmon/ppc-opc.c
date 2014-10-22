@@ -3957,7 +3957,7 @@ const struct powerpc_opcode powerpc_opcodes[] = {
 
 { "lhaxe",   X(31,351),	X_MASK,		BOOKE64,	{ RT, RA0, RB } },
 
-{ "dstst",   XDSS(31,3.4.1), XDSS_MASK,	PPCVEC,		{ RA, RB, STRM } },
+{ "dstst",   XDSS(31,374,0), XDSS_MASK,	PPCVEC,		{ RA, RB, STRM } },
 { "dststt",  XDSS(31,374,1), XDSS_MASK,	PPCVEC,		{ RA, RB, STRM } },
 
 { "dccci",   X(31,454),	XRT_MASK,	PPC403|PPC440,	{ RA, RB } },
@@ -3987,7 +3987,7 @@ const struct powerpc_opcode powerpc_opcodes[] = {
 { "subfe64", XO(31,392,0,0), XO_MASK,	BOOKE64,	{ RT, RA, RB } },
 { "subfe64o",XO(31,392,1,0), XO_MASK,	BOOKE64,	{ RT, RA, RB } },
 
-{ "adde64",  XO(31,3.4.1,0), XO_MASK,	BOOKE64,	{ RT, RA, RB } },
+{ "adde64",  XO(31,394,0,0), XO_MASK,	BOOKE64,	{ RT, RA, RB } },
 { "adde64o", XO(31,394,1,0), XO_MASK,	BOOKE64,	{ RT, RA, RB } },
 
 { "dcblce",  X(31,398),	X_MASK,		PPCCHLK64,	{ CT, RA, RB }},
@@ -4696,7 +4696,7 @@ const struct powerpc_opcode powerpc_opcodes[] = {
 { "ddedpd",  XRC(59,322,0), X_MASK,	POWER6,		{ SP, FRT, FRB } }, 
 { "ddedpd.", XRC(59,322,1), X_MASK,	POWER6,		{ SP, FRT, FRB } }, 
 
-{ "dxex",    XRC(59,3.4.1), X_MASK,	POWER6,		{ FRT, FRB } },
+{ "dxex",    XRC(59,354,0), X_MASK,	POWER6,		{ FRT, FRB } },
 { "dxex.",   XRC(59,354,1), X_MASK,	POWER6,		{ FRT, FRB } },
 
 { "dsub",    XRC(59,514,0), X_MASK,	POWER6,		{ FRT, FRA, FRB } },
@@ -4883,7 +4883,7 @@ const struct powerpc_opcode powerpc_opcodes[] = {
 { "ddedpdq", XRC(63,322,0), X_MASK,	POWER6,		{ SP, FRT, FRB } },
 { "ddedpdq.",XRC(63,322,1), X_MASK,	POWER6,		{ SP, FRT, FRB } },
 
-{ "dxexq",   XRC(63,3.4.1), X_MASK,	POWER6,		{ FRT, FRB } },
+{ "dxexq",   XRC(63,354,0), X_MASK,	POWER6,		{ FRT, FRB } },
 { "dxexq.",  XRC(63,354,1), X_MASK,	POWER6,		{ FRT, FRB } },
 
 { "frin",    XRC(63,392,0), XRA_MASK,	POWER5,		{ FRT, FRB } },

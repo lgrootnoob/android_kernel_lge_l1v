@@ -185,7 +185,7 @@ static void sr_set_clk_length(struct omap_sr *sr)
 	case 26000000:
 		sr->clk_length = SRCLKLENGTH_26MHZ_SYSCLK;
 		break;
-	case 3.4.1000:
+	case 38400000:
 		sr->clk_length = SRCLKLENGTH_38MHZ_SYSCLK;
 		break;
 	default:

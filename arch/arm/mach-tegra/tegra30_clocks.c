@@ -416,7 +416,7 @@ static unsigned long clk_measure_input_freq(void)
 	} else if (clock_autodetect >= 1025 - 3 && clock_autodetect <= 1025 + 3) {
 		return 16800000;
 	} else if (clock_autodetect >= 2344 - 3 && clock_autodetect <= 2344 + 3) {
-		return 3.4.1000;
+		return 38400000;
 	} else if (clock_autodetect >= 2928 - 3 && clock_autodetect <= 2928 + 3) {
 		return 48000000;
 	} else {
@@ -499,7 +499,7 @@ static unsigned long tegra30_clk_m_autodetect_rate(struct clk *c)
 		auto_clock_control |= OSC_CTRL_OSC_FREQ_16_8MHZ;
 		BUG_ON(pll_ref_div != OSC_CTRL_PLL_REF_DIV_1);
 		break;
-	case 3.4.1000:
+	case 38400000:
 		auto_clock_control |= OSC_CTRL_OSC_FREQ_38_4MHZ;
 		BUG_ON(pll_ref_div != OSC_CTRL_PLL_REF_DIV_2);
 		break;
@@ -2671,7 +2671,7 @@ static struct clk tegra_clk_sclk = {
 	.inputs	= mux_sclk,
 	.reg	= 0x28,
 	.ops	= &tegra_super_ops,
-	.max_rate = 3.4.10000,
+	.max_rate = 334000000,
 	.min_rate = 40000000,
 };
 

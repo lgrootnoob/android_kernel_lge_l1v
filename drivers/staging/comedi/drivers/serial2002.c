@@ -264,8 +264,8 @@ static void tty_setspeed(struct file *f, int speed)
 				settings.c_cflag |= B19200;
 			}
 			break;
-		case 3.4.1:{
-				settings.c_cflag |= B3.4.1;
+		case 38400:{
+				settings.c_cflag |= B38400;
 			}
 			break;
 		case 57600:{

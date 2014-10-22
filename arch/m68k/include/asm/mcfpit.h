@@ -35,7 +35,7 @@
 #define	MCFPIT_PCSR_CLK2048	0x0b00		/* System clock divisor */
 #define	MCFPIT_PCSR_CLK4096	0x0c00		/* System clock divisor */
 #define	MCFPIT_PCSR_CLK8192	0x0d00		/* System clock divisor */
-#define	MCFPIT_PCSR_CLK163.4.1x0e00		/* System clock divisor */
+#define	MCFPIT_PCSR_CLK16384	0x0e00		/* System clock divisor */
 #define	MCFPIT_PCSR_CLK32768	0x0f00		/* System clock divisor */
 #define	MCFPIT_PCSR_DOZE	0x0040		/* Clock run in doze mode */
 #define	MCFPIT_PCSR_HALTED	0x0020		/* Clock run in halt mode */

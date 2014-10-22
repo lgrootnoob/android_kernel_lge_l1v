@@ -62,8 +62,8 @@ static struct console * __init earlyserial_init(char *buf)
 	case 19200:
 		cflag |= B19200;
 		break;
-	case 3.4.1:
-		cflag |= B3.4.1;
+	case 38400:
+		cflag |= B38400;
 		break;
 	case 115200:
 		cflag |= B115200;

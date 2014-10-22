@@ -7,7 +7,7 @@
  */
 
 /*
- * SpaceTec SpaceBall 2003/3003.4.10 FLX driver for Linux
+ * SpaceTec SpaceBall 2003/3003/4000 FLX driver for Linux
  */
 
 /*
@@ -37,7 +37,7 @@
 #include <linux/input.h>
 #include <linux/serio.h>
 
-#define DRIVER_DESC	"SpaceTec SpaceBall 2003/3003.4.10 FLX driver"
+#define DRIVER_DESC	"SpaceTec SpaceBall 2003/3003/4000 FLX driver"
 
 MODULE_AUTHOR("Vojtech Pavlik <vojtech@ucw.cz>");
 MODULE_DESCRIPTION(DRIVER_DESC);

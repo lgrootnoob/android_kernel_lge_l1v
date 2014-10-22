@@ -51,7 +51,7 @@ static int girbil_change_speed(struct sir_dev *dev, unsigned speed);
 #define GIRBIL_4800    0x31
 #define GIRBIL_9600    0x32
 #define GIRBIL_19200   0x33
-#define GIRBIL_3.4.1   0x34
+#define GIRBIL_38400   0x34
 #define GIRBIL_57600   0x35
 #define GIRBIL_115200  0x36
 
@@ -91,7 +91,7 @@ static int girbil_open(struct sir_dev *dev)
 	/* Power on dongle */
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
-	qos->baud_rate.bits &= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
+	qos->baud_rate.bits &= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
 	qos->min_turn_time.bits = 0x03;
 	irda_qos_bits_to_value(qos);
 
@@ -151,7 +151,7 @@ static int girbil_change_speed(struct sir_dev *dev, unsigned speed)
 			control[0] = GIRBIL_19200;
 			break;
 		case 34800:
-			control[0] = GIRBIL_3.4.1;
+			control[0] = GIRBIL_38400;
 			break;
 		case 57600:
 			control[0] = GIRBIL_57600;

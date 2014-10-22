@@ -51,7 +51,7 @@ static int io = -1;		/* default to isapnp activation */
 static int radio_nr = -1;
 
 module_param(io, int, 0);
-MODULE_PARM_DESC(io, "I/O address of Cadet card (0x330,0x332,0x3.4.1x336,0x338,0x33a,0x33c,0x33e)");
+MODULE_PARM_DESC(io, "I/O address of Cadet card (0x330,0x332,0x334,0x336,0x338,0x33a,0x33c,0x33e)");
 module_param(radio_nr, int, 0);
 
 #define RDS_BUFFER 256

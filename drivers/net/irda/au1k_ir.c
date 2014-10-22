@@ -338,7 +338,7 @@ static int au1k_irda_set_speed(struct net_device *dev, int speed)
 		irda_write(aup, IR_WRITE_PHY_CONFIG, IR_BR(5) | IR_PW(12));
 		irda_write(aup, IR_CONFIG_1, IR_SIR_MODE);
 		break;
-	case 3.4.1:
+	case 38400:
 		irda_write(aup, IR_WRITE_PHY_CONFIG, IR_BR(2) | IR_PW(12));
 		irda_write(aup, IR_CONFIG_1, IR_SIR_MODE);
 		break;
@@ -776,7 +776,7 @@ static int __devinit au1k_irda_net_init(struct net_device *dev)
 	irda_init_max_qos_capabilies(&aup->qos);
 
 	/* The only value we must override it the baudrate */
-	aup->qos.baud_rate.bits = IR_9600 | IR_19200 | IR_3.4.1 |
+	aup->qos.baud_rate.bits = IR_9600 | IR_19200 | IR_38400 |
 		IR_57600 | IR_115200 | IR_576000 | (IR_4000000 << 8);
 
 	aup->qos.min_turn_time.bits = qos_mtt_bits;

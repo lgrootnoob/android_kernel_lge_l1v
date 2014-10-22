@@ -34,7 +34,7 @@ static struct Sun_Machine_Models Sun_Machines[NUM_SUN_MACHINES] = {
     { .name = "Sun 3/60",		.id_machtype = (SM_SUN3 | SM_3_60) },
     { .name = "Sun 3/E",		.id_machtype = (SM_SUN3 | SM_3_E) },
 /* Now, Sun3x's */
-    { .name = "Sun 3.4.1 Series",	.id_machtype = (SM_SUN3X | SM_3.4.1) },
+    { .name = "Sun 3/460 Series",	.id_machtype = (SM_SUN3X | SM_3_460) },
     { .name = "Sun 3/80",		.id_machtype = (SM_SUN3X | SM_3_80) },
 /* Then, Sun4's */
 // { .name = "Sun 4/100 Series",	.id_machtype = (SM_SUN4 | SM_4_110) },

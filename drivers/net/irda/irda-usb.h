@@ -85,7 +85,7 @@
 #define SPEED_2400     0x01
 #define SPEED_9600     0x02
 #define SPEED_19200    0x03
-#define SPEED_3.4.1    0x04
+#define SPEED_38400    0x04
 #define SPEED_57600    0x05
 #define SPEED_115200   0x06
 #define SPEED_576000   0x07

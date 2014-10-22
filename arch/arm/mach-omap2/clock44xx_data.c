@@ -124,10 +124,10 @@ static struct clk virt_27000000_ck = {
 	.rate		= 27000000,
 };
 
-static struct clk virt_3.4.1000_ck = {
-	.name		= "virt_3.4.1000_ck",
+static struct clk virt_38400000_ck = {
+	.name		= "virt_38400000_ck",
 	.ops		= &clkops_null,
-	.rate		= 3.4.1000,
+	.rate		= 38400000,
 };
 
 static const struct clksel_rate div_1_0_rates[] = {
@@ -177,13 +177,13 @@ static const struct clksel sys_clkin_sel[] = {
 	{ .parent = &virt_19200000_ck, .rates = div_1_4_rates },
 	{ .parent = &virt_26000000_ck, .rates = div_1_5_rates },
 	{ .parent = &virt_27000000_ck, .rates = div_1_6_rates },
-	{ .parent = &virt_3.4.1000_ck, .rates = div_1_7_rates },
+	{ .parent = &virt_38400000_ck, .rates = div_1_7_rates },
 	{ .parent = NULL },
 };
 
 static struct clk sys_clkin_ck = {
 	.name		= "sys_clkin_ck",
-	.rate		= 3.4.1000,
+	.rate		= 38400000,
 	.clksel		= sys_clkin_sel,
 	.init		= &omap2_init_clksel_parent,
 	.clksel_reg	= OMAP4430_CM_SYS_CLKSEL,
@@ -3135,7 +3135,7 @@ static struct omap_clk omap44xx_clks[] = {
 	CLK(NULL,	"virt_19200000_ck",		&virt_19200000_ck,	CK_443X),
 	CLK(NULL,	"virt_26000000_ck",		&virt_26000000_ck,	CK_443X),
 	CLK(NULL,	"virt_27000000_ck",		&virt_27000000_ck,	CK_443X),
-	CLK(NULL,	"virt_3.4.1000_ck",		&virt_3.4.1000_ck,	CK_443X),
+	CLK(NULL,	"virt_38400000_ck",		&virt_38400000_ck,	CK_443X),
 	CLK(NULL,	"sys_clkin_ck",			&sys_clkin_ck,	CK_443X),
 	CLK(NULL,	"tie_low_clock_ck",		&tie_low_clock_ck,	CK_443X),
 	CLK(NULL,	"utmi_phy_clkout_ck",		&utmi_phy_clkout_ck,	CK_443X),

@@ -39,7 +39,7 @@
 
 #define SNDRV_g_u_s_GF1PAGE		(0x322-0x220)
 #define SNDRV_g_u_s_GF1REGSEL		(0x323-0x220)
-#define SNDRV_g_u_s_GF1DATALOW		(0x3.4.1x220)
+#define SNDRV_g_u_s_GF1DATALOW		(0x324-0x220)
 #define SNDRV_g_u_s_GF1DATAHIGH		(0x325-0x220)
 #define SNDRV_g_u_s_IRQSTAT		(0x226-0x220)
 #define SNDRV_g_u_s_TIMERCNTRL		(0x228-0x220)

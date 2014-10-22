@@ -39,7 +39,7 @@ entry 0xc0200000
 r0 0x00000000
 r1 0x0000001d
 device /dev/ttyS1
-options "3.4.1 8N1"
+options "38400 8N1"
 baud 115200
 #otherfile ramdisk.gz
 #otherbase 0xc0800000
@@ -52,7 +52,7 @@ uncommented) would be loaded with:
 	angelboot -f angelboot.opt zImage
 
 Here it is assumed that the board is connected to ttyS1 on your PC
-and that minicom is preconfigured with /dev/ttyS1, 3.4.1 baud, 8N1, no flow
+and that minicom is preconfigured with /dev/ttyS1, 38400 baud, 8N1, no flow
 control by default.
 
 If any other bootloader is used, ensure it accomplish the same, especially

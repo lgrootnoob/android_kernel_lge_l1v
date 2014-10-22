@@ -121,7 +121,7 @@ static void sc1200_set_dmamode(struct ata_port *ap, struct ata_device *adev)
 {
 	static const u32 udma_timing[3][3] = {
 		{ 0x00921250, 0x00911140, 0x00911030 },
-		{ 0x0093.4.1, 0x00922260, 0x00922140 },
+		{ 0x00932470, 0x00922260, 0x00922140 },
 		{ 0x009436A1, 0x00933481, 0x00923261 }
 	};
 

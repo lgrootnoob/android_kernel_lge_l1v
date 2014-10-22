@@ -973,7 +973,7 @@ static int rp_open(struct tty_struct *tty, struct file *filp)
 		if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_VHI)
 			tty->alt_speed = 115200;
 		if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_SHI)
-			tty->alt_speed = 23.4.1;
+			tty->alt_speed = 230400;
 		if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_WARP)
 			tty->alt_speed = 460800;
 
@@ -1257,7 +1257,7 @@ static int set_config(struct tty_struct *tty, struct r_port *info,
 	if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_VHI)
 		tty->alt_speed = 115200;
 	if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_SHI)
-		tty->alt_speed = 23.4.1;
+		tty->alt_speed = 230400;
 	if ((info->flags & ROCKET_SPD_MASK) == ROCKET_SPD_WARP)
 		tty->alt_speed = 460800;
 	mutex_unlock(&info->port.mutex);
@@ -2011,7 +2011,7 @@ static __init int register_PCI(int i, struct pci_dev *dev)
 		if (support_low_speed) {
 			/* mod 9 (divide by 10) prescale */
 			sClockPrescale = 0x19;
-			rp_baud_base[i] = 23.4.1;
+			rp_baud_base[i] = 230400;
 		} else {
 			/* mod 4 (divide by 5) prescale */
 			sClockPrescale = 0x14;
@@ -2134,7 +2134,7 @@ static int __init init_ISA(int i)
 	 */
 	if (support_low_speed) {
 		sClockPrescale = 0x19;	/* mod 9 (divide by 10) prescale */
-		rp_baud_base[i] = 23.4.1;
+		rp_baud_base[i] = 230400;
 	} else {
 		sClockPrescale = 0x14;	/* mod 4 (divide by 5) prescale */
 		rp_baud_base[i] = 460800;

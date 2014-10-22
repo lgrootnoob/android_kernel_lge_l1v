@@ -445,7 +445,7 @@ config MACH_OSIRIS_DVS
 
 config MACH_RX3715
 	bool "HP iPAQ rx3715"
-	select S3C2440_XTAL_1693.4.1
+	select S3C2440_XTAL_16934400
 	select PM_H1940 if PM
 	select S3C_DEV_NAND
 	help
@@ -453,7 +453,7 @@ config MACH_RX3715
 
 config ARCH_S3C2440
 	bool "SMDK2440"
-	select S3C2440_XTAL_1693.4.1
+	select S3C2440_XTAL_16934400
 	select S3C24XX_SMDK
 	select S3C_DEV_USB_HOST
 	select S3C_DEV_NAND
@@ -463,7 +463,7 @@ config ARCH_S3C2440
 config SMDK2440_CPU2440
 	bool "SMDK2440 with S3C2440 CPU module"
 	default y if ARCH_S3C2440
-	select S3C2440_XTAL_1693.4.1
+	select S3C2440_XTAL_16934400
 
 endif	# CPU_S3C2440
 
@@ -496,7 +496,7 @@ config MACH_RX1950
 	select S3C2410_PWM
 	select S3C_DEV_NAND
 	select S3C2410_IOTIMING if S3C2440_CPUFREQ
-	select S3C2440_XTAL_1693.4.1
+	select S3C2440_XTAL_16934400
 	help
 	   Say Y here if you're using HP iPAQ rx1950
 

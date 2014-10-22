@@ -109,7 +109,7 @@ static struct usb_driver mcs_driver = {
 addr = (speed >> 8) & 0x0f
 
 0x1   57600	 0x2  115200	 0x4 1152000	 0x5    9600
-0x6   3.4.1	 0x9    2400	 0xa  576000	 0xb   19200
+0x6   38400	 0x9    2400	 0xa  576000	 0xb   19200
 
 4Mbps (or 2400) must be checked separately. Since it also has
 to be programmed in a different manner that is not a big problem.
@@ -120,7 +120,7 @@ static __u16 mcs_speed_set[16] = { 0,
 	0,
 	MCS_SPEED_1152000,
 	MCS_SPEED_9600,
-	MCS_SPEED_3.4.1,
+	MCS_SPEED_38400,
 	0, 0,
 	MCS_SPEED_2400,
 	MCS_SPEED_576000,
@@ -908,7 +908,7 @@ static int mcs_probe(struct usb_interface *intf,
 
 	/* That's the Rx capability. */
 	mcs->qos.baud_rate.bits &=
-	    IR_2400 | IR_9600 | IR_19200 | IR_3.4.1 | IR_57600 | IR_115200
+	    IR_2400 | IR_9600 | IR_19200 | IR_38400 | IR_57600 | IR_115200
 		| IR_576000 | IR_1152000 | (IR_4000000 << 8);
 
 

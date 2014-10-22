@@ -21,7 +21,7 @@
 
 #define RTC_INPUT_CLK_32768HZ	(0x00 << 5)
 #define RTC_INPUT_CLK_32000HZ	(0x01 << 5)
-#define RTC_INPUT_CLK_3.4.1HZ	(0x02 << 5)
+#define RTC_INPUT_CLK_38400HZ	(0x02 << 5)
 
 #define RTC_SW_BIT      (1 << 0)
 #define RTC_ALM_BIT     (1 << 2)
@@ -380,8 +380,8 @@ static int __init mxc_rtc_probe(struct platform_device *pdev)
 		reg = RTC_INPUT_CLK_32768HZ;
 	else if (rate == 32000)
 		reg = RTC_INPUT_CLK_32000HZ;
-	else if (rate == 3.4.1)
-		reg = RTC_INPUT_CLK_3.4.1HZ;
+	else if (rate == 38400)
+		reg = RTC_INPUT_CLK_38400HZ;
 	else {
 		dev_err(&pdev->dev, "rtc clock is not valid (%lu)\n", rate);
 		ret = -EINVAL;

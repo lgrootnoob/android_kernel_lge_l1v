@@ -608,7 +608,7 @@ serial_m3110_set_termios(struct uart_port *port, struct ktermios *termios,
 		break;
 	}
 
-	baud = uart_get_baud_rate(port, termios, old, 0, 23.4.1);
+	baud = uart_get_baud_rate(port, termios, old, 0, 230400);
 
 	/* First calc the div for 1.8MHZ clock case */
 	switch (baud) {
@@ -633,7 +633,7 @@ serial_m3110_set_termios(struct uart_port *port, struct ktermios *termios,
 	case 19200:
 		clk_div = WC_BAUD_DR6;
 		break;
-	case 3.4.1:
+	case 38400:
 		clk_div = WC_BAUD_DR3;
 		break;
 	case 57600:
@@ -642,7 +642,7 @@ serial_m3110_set_termios(struct uart_port *port, struct ktermios *termios,
 	case 115200:
 		clk_div = WC_BAUD_DR1;
 		break;
-	case 23.4.1:
+	case 230400:
 		if (max->clock & MAX3110_HIGH_CLK)
 			break;
 	default:
@@ -659,7 +659,7 @@ serial_m3110_set_termios(struct uart_port *port, struct ktermios *termios,
 			baud = 600;
 			clk_div = WC_BAUD_DR384;
 		}
-		if (baud == 23.4.1)
+		if (baud == 230400)
 			clk_div = WC_BAUD_DR1;
 		tty_termios_encode_baud_rate(termios, baud, baud);
 	}

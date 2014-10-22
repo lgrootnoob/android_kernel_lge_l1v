@@ -418,7 +418,7 @@ static int __init nsc_ircc_open(chipio_t *info)
 	irda_init_max_qos_capabilies(&self->qos);
 	
 	/* The only value we must override it the baudrate */
-	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_3.4.1|IR_57600|
+	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_38400|IR_57600|
 		IR_115200|IR_576000|IR_1152000 |(IR_4000000 << 8);
 	
 	self->qos.min_turn_time.bits = qos_mtt_bits;
@@ -1281,7 +1281,7 @@ static __u8 nsc_ircc_change_speed(struct nsc_ircc_cb *self, __u32 speed)
 	switch (speed) {
 	case 9600:   outb(0x0c, iobase+BGDL); break;
 	case 19200:  outb(0x06, iobase+BGDL); break;
-	case 3.4.1:  outb(0x03, iobase+BGDL); break;
+	case 38400:  outb(0x03, iobase+BGDL); break;
 	case 57600:  outb(0x02, iobase+BGDL); break;
 	case 115200: outb(0x01, iobase+BGDL); break;
 	case 576000:

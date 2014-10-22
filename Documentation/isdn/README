@@ -129,23 +129,23 @@ README for the ISDN-subsystem
                         by AT&E.
                AT&Rx    Select V.110 bitrate adaption.
                         This command enables V.110 protocol with 9600 baud
-                        (x=9600), 19200 baud (x=19200) or 3.4.1 baud
-                        (x=3.4.1). A value of x=0 disables V.110 switching
+                        (x=9600), 19200 baud (x=19200) or 38400 baud
+                        (x=38400). A value of x=0 disables V.110 switching
                         back to default X.75. This command sets the following
                         Registers:
                           Reg 14 (Layer-2 protocol):
                             x = 0:     0
                             x = 9600:  7
                             x = 19200: 8
-                            x = 3.4.1: 9
+                            x = 38400: 9
                           Reg 18.2 = 1
                           Reg 19 (Additional Service Indicator):
                             x = 0:       0
                             x = 9600:  197
                             x = 19200: 199
-                            x = 3.4.1: 198
+                            x = 38400: 198
                           Note on value in Reg 19:
-                            There is _NO_ common convention for 3.4.1 baud.
+                            There is _NO_ common convention for 38400 baud.
                             The value 198 is chosen arbitrarily. Users
                             _MUST_ negotiate this value before establishing
                             a connection.
@@ -235,7 +235,7 @@ README for the ISDN-subsystem
                                       4 = Transparent (audio)
                                       7 = V.110, 9600 baud
                                       8 = V.110, 19200 baud
-                                      9 = V.110, 3.4.1 baud
+                                      9 = V.110, 38400 baud
                                      10 = Analog Modem (only if hardware supports this)
                                      11 = Fax G3 (only if hardware supports this)
              15   0         Layer-3 protocol:

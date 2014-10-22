@@ -992,7 +992,7 @@ static struct clk_freq_tbl clk_tbl_csi[] = {
 	F_MND8(        0,  0,  0, gnd,  1, 0, 0),
 	F_MND8(153600000, 24, 17, pll1, 2, 2, 5),
 	F_MND8(192000000, 24, 17, pll1, 4, 0, 0),
-	F_MND8(3.4.10000, 24, 17, pll1, 2, 0, 0),
+	F_MND8(384000000, 24, 17, pll1, 2, 0, 0),
 	F_END,
 };
 
@@ -1015,7 +1015,7 @@ static struct rcg_clk csi0_clk = {
 	.c = {
 		.dbg_name = "csi0_clk",
 		.ops = &clk_ops_rcg,
-		VDD_DIG_FMAX_MAP1(NOMINAL, 3.4.10000),
+		VDD_DIG_FMAX_MAP1(NOMINAL, 384000000),
 		CLK_INIT(csi0_clk.c),
 	},
 };
@@ -1197,7 +1197,7 @@ static struct clk_freq_tbl clk_tbl_mdh[] = {
 	F_BASIC(184320000, pll3,  4),
 	F_BASIC(245760000, pll3,  3),
 	F_BASIC(368640000, pll3,  2),
-	F_BASIC(3.4.10000, pll1,  2),
+	F_BASIC(384000000, pll1,  2),
 	F_BASIC(445500000, pll4,  2),
 	F_END,
 };
@@ -1720,7 +1720,7 @@ static struct branch_clk mi2s_s_clk = {
 static struct clk_freq_tbl clk_tbl_sdac[] = {
 	F_SDAC( 256000, lpxo, 4,   1,    24),
 	F_SDAC( 352800, lpxo, 1, 147, 10240),
-	F_SDAC( 3.4.10, lpxo, 4,   1,    16),
+	F_SDAC( 384000, lpxo, 4,   1,    16),
 	F_SDAC( 512000, lpxo, 4,   1,    12),
 	F_SDAC( 705600, lpxo, 1, 147,  5120),
 	F_SDAC( 768000, lpxo, 4,   1,     8),
@@ -1994,7 +1994,7 @@ static struct clk_freq_tbl clk_tbl_vfe_jpeg[] = {
 	F_MND16( 73728000, pll3, 2,   1,   5),
 	F_MND16( 81920000, pll3, 3,   1,   3),
 	F_MND16( 92160000, pll3, 4,   1,   2),
-	F_MND16( 983.4.10, pll3, 3,   2,   5),
+	F_MND16( 98304000, pll3, 3,   2,   5),
 	F_MND16(105326000, pll3, 2,   2,   7),
 	F_MND16(122880000, pll3, 2,   1,   3),
 	F_MND16(147456000, pll3, 2,   2,   5),

@@ -38,7 +38,7 @@ MODULE_PARM_DESC(ir_debug, "enable integrated IR debug messages");
 #define CX25840_IR_CNTRL_REG	0x200
 #define CNTRL_WIN_3_3	0x00000000
 #define CNTRL_WIN_4_3	0x00000001
-#define CNTRL_WIN_3.4.1x00000002
+#define CNTRL_WIN_3_4	0x00000002
 #define CNTRL_WIN_4_4	0x00000003
 #define CNTRL_WIN	0x00000003
 #define CNTRL_EDG_NONE	0x00000000

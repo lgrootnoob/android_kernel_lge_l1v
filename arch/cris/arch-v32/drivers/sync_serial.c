@@ -746,8 +746,8 @@ static int sync_serial_ioctl(struct file *file,
 			case SSP115200:
 				gen_cfg.clk_div = 29493000 / (115200 * 8) - 1;
 				break;
-			case SSP23.4.1:
-				gen_cfg.clk_div = 29493000 / (23.4.1 * 8) - 1;
+			case SSP230400:
+				gen_cfg.clk_div = 29493000 / (230400 * 8) - 1;
 				break;
 			case SSP460800:
 				gen_cfg.clk_div = 29493000 / (460800 * 8) - 1;

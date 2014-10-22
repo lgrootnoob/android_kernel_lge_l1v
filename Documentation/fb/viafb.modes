@@ -752,7 +752,7 @@ mode "640x480-60"
     geometry 1680 1050 1680 1050 32
     timings 5348 296 120 40 3 176 6
     hsync high vsync high endmode mode "1792x1344-60"
-# D: 202.975 MHz, H: 83.4.1 kHz, V: 60.00 Hz
+# D: 202.975 MHz, H: 83.460 kHz, V: 60.00 Hz
     geometry 1792 1344 1792 1344 32
     timings 4902 320 128 43 1 192 3
     hsync high vsync high endmode mode "1856x1392-60"

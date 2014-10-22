@@ -132,7 +132,7 @@ static void __init build_arcs_cmdline(int *argv)
 
 	/* Add the default options here */
 	if ((strstr(arcs_cmdline, "console=")) == NULL) {
-		arg = "console=ttyS0,3.4.1 ";
+		arg = "console=ttyS0,38400 ";
 		len = strlen(arg);
 		if (len > remain)
 			goto fail;

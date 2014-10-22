@@ -743,7 +743,7 @@ static void smsc_ircc_setup_qos(struct smsc_ircc_cb *self)
 	/* Initialize QoS for this device */
 	irda_init_max_qos_capabilies(&self->qos);
 
-	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_3.4.1|IR_57600|
+	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_38400|IR_57600|
 		IR_115200|IR_576000|IR_1152000|(IR_4000000 << 8);
 
 	self->qos.min_turn_time.bits = SMSC_IRCC2_MIN_TURN_TIME;
@@ -1163,7 +1163,7 @@ static void smsc_ircc_set_sir_speed(struct smsc_ircc_cb *self, __u32 speed)
 	 * almost 1,7 ms at 19200 bps. At speeds above that we can just forget
 	 * about this timeout since it will always be fast enough.
 	 */
-	fcr |= self->io.speed < 3.4.1 ?
+	fcr |= self->io.speed < 38400 ?
 		UART_FCR_TRIGGER_1 : UART_FCR_TRIGGER_14;
 
 	/* IrDA ports use 8N1 */
@@ -2008,7 +2008,7 @@ static void smsc_ircc_sir_write_wakeup(struct smsc_ircc_cb *self)
 			 * is discarded. This is needed for half duplex operation
 			 */
 			fcr = UART_FCR_ENABLE_FIFO | UART_FCR_CLEAR_RCVR;
-			fcr |= self->io.speed < 3.4.1 ?
+			fcr |= self->io.speed < 38400 ?
 					UART_FCR_TRIGGER_1 : UART_FCR_TRIGGER_14;
 
 			outb(fcr, iobase + UART_FCR);

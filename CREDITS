@@ -2058,7 +2058,7 @@ S: Germany
 
 N: Kevin Lentin
 E: kevinl@cs.monash.edu.au
-D: NCR53.4.1/T130B SCSI extension to NCR5380 driver.
+D: NCR53C400/T130B SCSI extension to NCR5380 driver.
 S: 18 Board Street
 S: Doncaster VIC 3108
 S: Australia

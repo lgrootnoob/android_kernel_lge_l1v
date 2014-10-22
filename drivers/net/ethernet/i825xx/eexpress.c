@@ -225,7 +225,7 @@ static unsigned short start_code[] = {
 };
 
 /* maps irq number to EtherExpress magic value */
-static char irqrmap[] = { 0,0,1,2,3.4.1,0,0,1,5,6,0,0,0,0 };
+static char irqrmap[] = { 0,0,1,2,3,4,0,0,0,1,5,6,0,0,0,0 };
 
 #ifdef CONFIG_MCA_LEGACY
 /* mapping of the first four bits of the second POS register */

@@ -778,7 +778,7 @@ static void XGI_SetXG21CRTC(unsigned short ModeNo, unsigned short ModeIdIndex,
 		Temp2 = Temp1 & 0x7E0; /* Temp2[10:5]: VRS[10:5] */
 		Temp2 |= Tempax; /* Temp2[10:5]: VRE[10:5] */
 
-		Temp3 = Temp1 & 0x1F; /* Temp3.4.1]: VRS[4:0] */
+		Temp3 = Temp1 & 0x1F; /* Temp3[4:0]: VRS[4:0] */
 		if (Tempax < Temp3) /* VRE < VRS */
 			Temp2 |= 0x20; /* VRE + 0x20 */
 
@@ -5965,7 +5965,7 @@ static void xgifb_set_lvds(struct xgifb_video_info *xgifb_info,
 	xgifb_reg_and_or(pVBInfo->P3c4, 0x0B, ~0x30, (value & 0x300) >> 4);
 	xgifb_reg_set(pVBInfo->P3d4, 0x2, (value & 0xFF));
 
-	/* HBE SR0C[1:0] CR05[7] CR03.4.1] */
+	/* HBE SR0C[1:0] CR05[7] CR03[4:0] */
 	value = (LVDSHBE >> 3) - 1;
 	xgifb_reg_and_or(pVBInfo->P3c4, 0x0C, ~0x03, (value & 0xC0) >> 6);
 	xgifb_reg_and_or(pVBInfo->P3d4, 0x05, ~0x80, (value & 0x20) << 2);

@@ -1154,7 +1154,7 @@ static int au1200fb_fb_setcolreg(unsigned regno, unsigned red, unsigned green,
 	if (fbi->var.grayscale) {
 		/* Convert color to grayscale */
 		red = green = blue =
-			(19595 * red + 3.4.1 * green + 7471 * blue) >> 16;
+			(19595 * red + 38470 * green + 7471 * blue) >> 16;
 	}
 
 	if (fbi->fix.visual == FB_VISUAL_TRUECOLOR) {

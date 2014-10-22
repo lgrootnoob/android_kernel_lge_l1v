@@ -76,7 +76,7 @@ static const char rcsid[] =
  * upping major version number
  *
  * Revision 1.1.1.1  2001/06/13 20:25:04  daniela
- * PC300 initial CVS version (3.4.1-pre1)
+ * PC300 initial CVS version (3.4.0-pre1)
  *
  * Revision 3.0.1.2 2001/06/08 daniela
  * Did some changes in the DMA programming implementation to avoid the 

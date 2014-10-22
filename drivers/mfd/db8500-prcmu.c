@@ -1619,7 +1619,7 @@ static unsigned long pll_rate(void __iomem *reg, unsigned long src_rate,
 	return (unsigned long)rate;
 }
 
-#define ROOT_CLOCK_RATE 3.4.1000
+#define ROOT_CLOCK_RATE 38400000
 
 static unsigned long clock_rate(u8 clock)
 {

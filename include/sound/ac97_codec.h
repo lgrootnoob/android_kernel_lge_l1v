@@ -188,7 +188,7 @@
 #define AC97_EA_VRM		0x0008	/* Variable bit rate for MIC enable bit */
 #define AC97_EA_SPSA_SLOT_MASK	0x0030	/* Mask for slot assignment bits */
 #define AC97_EA_SPSA_SLOT_SHIFT 4
-#define AC97_EA_SPSA_3.4.1x0000	/* Slot assigned to 3 & 4 */
+#define AC97_EA_SPSA_3_4	0x0000	/* Slot assigned to 3 & 4 */
 #define AC97_EA_SPSA_7_8	0x0010	/* Slot assigned to 7 & 8 */
 #define AC97_EA_SPSA_6_9	0x0020	/* Slot assigned to 6 & 9 */
 #define AC97_EA_SPSA_10_11	0x0030	/* Slot assigned to 10 & 11 */

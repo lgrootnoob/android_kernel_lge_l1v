@@ -28,7 +28,7 @@
 #include <asm/irq.h>
 #include <asm/hardware/iop_adma.h>
 
-#define IOP13XX_UART_XTAL 333.4.10
+#define IOP13XX_UART_XTAL 33334000
 #define IOP13XX_SETUP_DEBUG 0
 #define PRINTK(x...) ((void)(IOP13XX_SETUP_DEBUG && printk(x)))
 

@@ -72,7 +72,7 @@
 #define MSG_PING188_REQ		0x09030500
 #define MSG_PING188_CONF        0x000005bc
 
-#define MSG_WATCH188	        0x0903.4.1
+#define MSG_WATCH188	        0x09030400
 
 #define MSG_API_ON              0x08020102
 #define MSG_POOL_PCBIT          0x08020400

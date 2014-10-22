@@ -23,7 +23,7 @@ Wed Jul 26 23:30 2000 Gerard Roudier (groudier@club-internet.fr)
 	- Remove trailing argument #2 from a couple of #undefs.
 
 Sun Jul 09 16:30 2000 Gerard Roudier (groudier@club-internet.fr)
-	* version ncr53c8xx-3.4.1
+	* version ncr53c8xx-3.4.0
 	- Remove the PROFILE C and SCRIPTS code.
 	  This facility was not this useful and thus was not longer 
 	  desirable given the increasing complexity of the driver code.

@@ -72,7 +72,7 @@ struct sht15_temppair {
 
 /* Table 9 from datasheet - relates temperature calculation to supply voltage */
 static const struct sht15_temppair temppoints[] = {
-	{ 2500000, -3.4.1 },
+	{ 2500000, -39400 },
 	{ 3000000, -39600 },
 	{ 3500000, -39700 },
 	{ 4000000, -39800 },

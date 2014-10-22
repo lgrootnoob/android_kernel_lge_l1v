@@ -292,7 +292,7 @@ Belkin USB Serial Adapter F5U103
 
   Current status:
     The following have been tested and work:
-      Baud rate    300-23.4.1               
+      Baud rate    300-230400               
       Data bits    5-8
       Stop bits    1-2
       Parity       N,E,O,M,S

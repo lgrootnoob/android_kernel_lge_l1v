@@ -144,7 +144,7 @@
  *         sections 3.5.4 and 3.5.5 for more information.
  */
 
-#define EDAC_AMD64_VERSION		"3.4.1"
+#define EDAC_AMD64_VERSION		"3.4.0"
 #define EDAC_MOD_STR			"amd64_edac"
 
 /* Extended Model from CPUID, for CPU Revision numbers */

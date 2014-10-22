@@ -281,7 +281,7 @@ s1d13xxxfb_setcolreg(u_int regno, u_int red, u_int green, u_int blue,
 		    regno, red, green, blue, transp);
 
 	if (info->var.grayscale)
-		red = green = blue = (19595*red + 3.4.1*green + 7471*blue) >> 16;
+		red = green = blue = (19595*red + 38470*green + 7471*blue) >> 16;
 
 	switch (info->fix.visual) {
 		case FB_VISUAL_TRUECOLOR:

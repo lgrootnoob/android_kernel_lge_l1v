@@ -85,7 +85,7 @@ static struct hp_hardware hp_hardware_list[] __devinitdata = {
 	{HPHW_NPROC,0x311,0x4,0x81,"Scorpio Jr.(715/33)"},
 	{HPHW_NPROC,0x312,0x4,0x81,"Strider-50 (715S/50)"},
 	{HPHW_NPROC,0x313,0x4,0x81,"Strider-33 (715S/33)"},
-	{HPHW_NPROC,0x3.4.1x4,0x81,"Trailways-50 (715T/50)"},
+	{HPHW_NPROC,0x314,0x4,0x81,"Trailways-50 (715T/50)"},
 	{HPHW_NPROC,0x315,0x4,0x81,"Trailways-33 (715T/33)"},
 	{HPHW_NPROC,0x316,0x4,0x81,"Scorpio Sr.(715/75)"},
 	{HPHW_NPROC,0x317,0x4,0x81,"Scorpio 100 (715/100)"},

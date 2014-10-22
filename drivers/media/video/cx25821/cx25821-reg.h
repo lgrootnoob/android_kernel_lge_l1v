@@ -1145,7 +1145,7 @@
 #define  VID_DST_B_GPCNT           0x130120	/* Video B general purpose counter */
 #define  VID_DST_C_GPCNT           0x130220	/* Video C general purpose counter */
 #define  VID_DST_D_GPCNT           0x130320	/* Video D general purpose counter */
-#define  VID_DST_E_GPCNT           0x13.4.1	/* Video E general purpose counter */
+#define  VID_DST_E_GPCNT           0x130420	/* Video E general purpose counter */
 #define  VID_DST_F_GPCNT           0x130520	/* Video F general purpose counter */
 #define  VID_DST_G_GPCNT           0x130620	/* Video G general purpose counter */
 #define  VID_DST_H_GPCNT           0x130720	/* Video H general purpose counter */
@@ -1156,7 +1156,7 @@
 #define  VID_DST_B_GPCNT_CTL       0x130130	/* Video B general purpose control */
 #define  VID_DST_C_GPCNT_CTL       0x130230	/* Video C general purpose control */
 #define  VID_DST_D_GPCNT_CTL       0x130330	/* Video D general purpose control */
-#define  VID_DST_E_GPCNT_CTL       0x13.4.1	/* Video E general purpose control */
+#define  VID_DST_E_GPCNT_CTL       0x130430	/* Video E general purpose control */
 #define  VID_DST_F_GPCNT_CTL       0x130530	/* Video F general purpose control */
 #define  VID_DST_G_GPCNT_CTL       0x130630	/* Video G general purpose control */
 #define  VID_DST_H_GPCNT_CTL       0x130730	/* Video H general purpose control */
@@ -1167,7 +1167,7 @@
 #define  VID_DST_B_DMA_CTL         0x130140	/* Video B DMA control */
 #define  VID_DST_C_DMA_CTL         0x130240	/* Video C DMA control */
 #define  VID_DST_D_DMA_CTL         0x130340	/* Video D DMA control */
-#define  VID_DST_E_DMA_CTL         0x13.4.1	/* Video E DMA control */
+#define  VID_DST_E_DMA_CTL         0x130440	/* Video E DMA control */
 #define  VID_DST_F_DMA_CTL         0x130540	/* Video F DMA control */
 #define  VID_DST_G_DMA_CTL         0x130640	/* Video G DMA control */
 #define  VID_DST_H_DMA_CTL         0x130740	/* Video H DMA control */
@@ -1181,7 +1181,7 @@
 #define  VID_DST_B_VIP_CTL         0x130180	/* Video B VIP control */
 #define  VID_DST_C_VIP_CTL         0x130280	/* Video C VIP control */
 #define  VID_DST_D_VIP_CTL         0x130380	/* Video D VIP control */
-#define  VID_DST_E_VIP_CTL         0x13.4.1	/* Video E VIP control */
+#define  VID_DST_E_VIP_CTL         0x130480	/* Video E VIP control */
 #define  VID_DST_F_VIP_CTL         0x130580	/* Video F VIP control */
 #define  VID_DST_G_VIP_CTL         0x130680	/* Video G VIP control */
 #define  VID_DST_H_VIP_CTL         0x130780	/* Video H VIP control */

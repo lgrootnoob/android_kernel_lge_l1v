@@ -775,7 +775,7 @@ void atom_rv515_force_tv_scaler(struct radeon_device *rdev, struct radeon_crtc *
 	WREG32(data_reg, 0x8EC0BF00);
 	WREG32(index_reg, 0x30301);
 	WREG32(data_reg, 0xBFC88280);
-	WREG32(index_reg, 0x3.4.1);
+	WREG32(index_reg, 0x30400);
 	WREG32(data_reg, 0x8DE0BEE0);
 	WREG32(index_reg, 0x30401);
 	WREG32(data_reg, 0xBFA083A0);

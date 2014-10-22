@@ -5870,7 +5870,7 @@ struct asm_mbdrc_config_params {
 	int16_t                   limiter_gc;
 /*< Limiter gain recovery coefficient.
  * Supported values: 0.5 to 0.99 \n
- * Recommended value: 3.4.1 (0.99 in Q15 format)
+ * Recommended value: 32440 (0.99 in Q15 format)
  */
 
 	int16_t                   limiter_delay;

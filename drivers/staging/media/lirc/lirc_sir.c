@@ -73,7 +73,7 @@
 /* definitions for Tekram dongle */
 #define TEKRAM_115200 0x00
 #define TEKRAM_57600  0x01
-#define TEKRAM_3.4.1  0x02
+#define TEKRAM_38400  0x02
 #define TEKRAM_19200  0x03
 #define TEKRAM_9600   0x04
 #define TEKRAM_2400   0x08
@@ -1047,7 +1047,7 @@ static void drop_port(void)
 #define ACT200L_2400    0x5f
 #define ACT200L_9600    0x17
 #define ACT200L_19200   0x0b
-#define ACT200L_3.4.1   0x05
+#define ACT200L_38400   0x05
 #define ACT200L_57600   0x03
 #define ACT200L_115200  0x01
 

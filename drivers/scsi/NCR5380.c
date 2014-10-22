@@ -3,7 +3,7 @@
  *      to implement 5380 SCSI drivers under Linux with a non-trantor
  *      architecture.
  *
- *      Note that these routines also work with NR53.4.1 family chips.
+ *      Note that these routines also work with NR53c400 family chips.
  *
  * Copyright 1993, Drew Eckhardt
  *      Visionary Computing 
@@ -43,7 +43,7 @@
 
  * Revision 1.8			Ingmar Baumgart
  *				(ingmar@gonzo.schwaben.de)
- * added support for NCR53.4.1a card
+ * added support for NCR53C400a card
  *
 
  * Revision 1.7  1996/3/2       Ray Van Tassle (rayvt@comm.mot.com)
@@ -660,8 +660,8 @@ NCR5380_print_options(struct Scsi_Host *instance)
 	    );
 	printk(" USLEEP, USLEEP_POLL=%d USLEEP_SLEEP=%d", USLEEP_POLL, USLEEP_SLEEP);
 	printk(" generic release=%d", NCR5380_PUBLIC_RELEASE);
-	if (((struct NCR5380_hostdata *) instance->hostdata)->flags & FLAG_NCR53.4.1) {
-		printk(" ncr53.4.1 release=%d", NCR53.4.1_PUBLIC_RELEASE);
+	if (((struct NCR5380_hostdata *) instance->hostdata)->flags & FLAG_NCR53C400) {
+		printk(" ncr53c400 release=%d", NCR53C400_PUBLIC_RELEASE);
 	}
 }
 
@@ -723,8 +723,8 @@ static int __maybe_unused NCR5380_proc_info(struct Scsi_Host *instance,
 		return (-ENOSYS);	/* Currently this is a no-op */
 	}
 	SPRINTF("NCR5380 core release=%d.   ", NCR5380_PUBLIC_RELEASE);
-	if (((struct NCR5380_hostdata *) instance->hostdata)->flags & FLAG_NCR53.4.1)
-		SPRINTF("ncr53.4.1 release=%d.  ", NCR53.4.1_PUBLIC_RELEASE);
+	if (((struct NCR5380_hostdata *) instance->hostdata)->flags & FLAG_NCR53C400)
+		SPRINTF("ncr53c400 release=%d.  ", NCR53C400_PUBLIC_RELEASE);
 #ifdef DTC_PUBLIC_RELEASE
 	SPRINTF("DTC 3180/3280 release %d", DTC_PUBLIC_RELEASE);
 #endif
@@ -824,13 +824,13 @@ static int __devinit NCR5380_init(struct Scsi_Host *instance, int flags)
 	if(in_interrupt())
 		printk(KERN_ERR "NCR5380_init called with interrupts off!\n");
 	/* 
-	 * On NCR53.4.1 boards, NCR5380 registers are mapped 8 past 
+	 * On NCR53C400 boards, NCR5380 registers are mapped 8 past 
 	 * the base address.
 	 */
 
-#ifdef NCR53.4.1
-	if (flags & FLAG_NCR53.4.1)
-		instance->NCR5380_instance_name += NCR53.4.1_address_adjust;
+#ifdef NCR53C400
+	if (flags & FLAG_NCR53C400)
+		instance->NCR5380_instance_name += NCR53C400_address_adjust;
 #endif
 
 	NCR5380_setup(instance);
@@ -864,8 +864,8 @@ static int __devinit NCR5380_init(struct Scsi_Host *instance, int flags)
 	hostdata->pendingr = 0;
 #endif
 
-	/* The CHECK code seems to break the 53.4.1. Will check it later maybe */
-	if (flags & FLAG_NCR53.4.1)
+	/* The CHECK code seems to break the 53C400. Will check it later maybe */
+	if (flags & FLAG_NCR53C400)
 		hostdata->flags = FLAG_HAS_LAST_BYTE_SENT | flags;
 	else
 		hostdata->flags = FLAG_CHECK_LAST_BYTE_SENT | flags;
@@ -884,8 +884,8 @@ static int __devinit NCR5380_init(struct Scsi_Host *instance, int flags)
 	NCR5380_write(TARGET_COMMAND_REG, 0);
 	NCR5380_write(SELECT_ENABLE_REG, 0);
 
-#ifdef NCR53.4.1
-	if (hostdata->flags & FLAG_NCR53.4.1) {
+#ifdef NCR53C400
+	if (hostdata->flags & FLAG_NCR53C400) {
 		NCR5380_write(C400_CONTROL_STATUS_REG, CSR_BASE);
 	}
 #endif
@@ -1855,8 +1855,8 @@ static int NCR5380_transfer_dma(struct Scsi_Host *instance, unsigned char *phase
 #if defined(PSEUDO_DMA) && defined(UNSAFE)
 	spin_unlock_irq(instance->host_lock);
 #endif
-	/* KLL May need eop and parity in 53.4.1 */
-	if (hostdata->flags & FLAG_NCR53.4.1)
+	/* KLL May need eop and parity in 53c400 */
+	if (hostdata->flags & FLAG_NCR53C400)
 		NCR5380_write(MODE_REG, MR_BASE | MR_DMA_MODE |
 				MR_ENABLE_PAR_CHECK | MR_ENABLE_PAR_INTR |
 				MR_ENABLE_EOP_INTR | MR_MONITOR_BSY);
@@ -1981,7 +1981,7 @@ static int NCR5380_transfer_dma(struct Scsi_Host *instance, unsigned char *phase
 		foo = NCR5380_pread(instance, d, c);
 #else
 		int diff = 1;
-		if (hostdata->flags & FLAG_NCR53.4.1) {
+		if (hostdata->flags & FLAG_NCR53C400) {
 			diff = 0;
 		}
 		if (!(foo = NCR5380_pread(instance, d, c - diff))) {
@@ -2007,7 +2007,7 @@ static int NCR5380_transfer_dma(struct Scsi_Host *instance, unsigned char *phase
 			 * byte.
 			 */
 
-			if (!(hostdata->flags & FLAG_NCR53.4.1)) {
+			if (!(hostdata->flags & FLAG_NCR53C400)) {
 				while (!(NCR5380_read(BUS_AND_STATUS_REG) & BASR_DRQ));
 				/* Wait for clean handshake */
 				while (NCR5380_read(STATUS_REG) & SR_REQ);
@@ -2051,13 +2051,13 @@ static int NCR5380_transfer_dma(struct Scsi_Host *instance, unsigned char *phase
 	NCR5380_write(MODE_REG, MR_BASE);
 	NCR5380_write(INITIATOR_COMMAND_REG, ICR_BASE);
 
-	if ((!(p & SR_IO)) && (hostdata->flags & FLAG_NCR53.4.1)) {
-		dprintk(NDEBUG_C400_PWRITE, ("53.4.1w: Checking for IRQ\n"));
+	if ((!(p & SR_IO)) && (hostdata->flags & FLAG_NCR53C400)) {
+		dprintk(NDEBUG_C400_PWRITE, ("53C400w: Checking for IRQ\n"));
 		if (NCR5380_read(BUS_AND_STATUS_REG) & BASR_IRQ) {
-			dprintk(NDEBUG_C400_PWRITE, ("53.4.1w:    got it, reading reset interrupt reg\n"));
+			dprintk(NDEBUG_C400_PWRITE, ("53C400w:    got it, reading reset interrupt reg\n"));
 			NCR5380_read(RESET_PARITY_INTERRUPT_REG);
 		} else {
-			printk("53.4.1w:    IRQ NOT THERE!\n");
+			printk("53C400w:    IRQ NOT THERE!\n");
 		}
 	}
 	*data = d + c;

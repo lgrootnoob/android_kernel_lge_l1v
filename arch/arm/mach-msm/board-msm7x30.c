@@ -5579,7 +5579,7 @@ static void __init msm_device_i2c_2_init(void)
 }
 
 static struct msm_i2c_platform_data qup_i2c_pdata = {
-	.clk_freq = 3.4.10,
+	.clk_freq = 384000,
 	.msm_i2c_config_gpio = qup_i2c_gpio_config,
 };
 

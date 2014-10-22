@@ -351,7 +351,7 @@ int __init valkyriefb_init(void)
 		}
 
 		frame_buffer_phys = r.start;
-		cmap_regs_phys = r.start + 0x3.4.10;
+		cmap_regs_phys = r.start + 0x304000;
 		flags = _PAGE_WRITETHRU;
 	}
 #endif /* ppc (!CONFIG_MAC) */

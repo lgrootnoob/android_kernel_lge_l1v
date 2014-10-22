@@ -126,7 +126,7 @@ static struct resource fsi_resources[] = {
 	[0] = {
 		.name	= "FSI",
 		.start	= 0xEC230000,
-		.end	= 0xEC23.4.1 - 1,
+		.end	= 0xEC230400 - 1,
 		.flags	= IORESOURCE_MEM,
 	},
 	[1] = {

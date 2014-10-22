@@ -56,7 +56,7 @@ This driver supports the following hardware:
 	3CCFE656 Cyclone CardBus
 	3CCFEM656B Cyclone+Winmodem CardBus
 	3CXFEM656C Tornado+Winmodem CardBus
-	3.4.1 HomePNA Tornado
+	3c450 HomePNA Tornado
 	3c920 Tornado
 	3c982 Hydra Dual Port A
 	3c982 Hydra Dual Port B

@@ -32,7 +32,7 @@
  */
 #define OMAP_SERIAL_NAME	"ttyO"
 
-#define OMAP_MODE13X_SPEED	23.4.1
+#define OMAP_MODE13X_SPEED	230400
 
 #define OMAP_UART_SCR_TX_EMPTY	0x08
 

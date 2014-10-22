@@ -42,7 +42,7 @@
 	dc.l	$ff7e48ee,$7fffffc0,$2d7c0000,$0000ff88
 	dc.l	$2d7cffff,$ffffff8c,$61ff0000,$4cb84a00
 	dc.l	$66ff0000,$4cde52ae,$ff784cfb,$3fff0170
-	dc.l	$00004cda,$223.4.10,$00007400,$76043d7c
+	dc.l	$00004cda,$223c4000,$00007400,$76043d7c
 	dc.l	$0000ff7c,$44fc0000,$48ee7fff,$ff804c01
 	dc.l	$340242ee,$ff7e48ee,$7fffffc0,$2d7c0000
 	dc.l	$0001ff88,$2d7c0000,$0000ff8c,$61ff0000
@@ -753,7 +753,7 @@
 	dc.l	$ff7c44fc,$000048ee,$ffffff80,$4c1f3402
 	dc.l	$42eeff7e,$48eeffff,$ffc02d7c,$00000004
 	dc.l	$ff8c43ee,$ff782d49,$ffbc2e48,$61ff0000
-	dc.l	$203.4.10,$66ff0000,$205a52ae,$ff784cfb
+	dc.l	$20344a00,$66ff0000,$205a52ae,$ff784cfb
 	dc.l	$3fff0170,$00002056,$42827602,$43eeef74
 	dc.l	$3d7c0000,$ff7c44fc,$000048ee,$ffffff80
 	dc.l	$4c293402,$100042ee,$ff7e48ee,$ffffffc0
@@ -801,7 +801,7 @@
 	dc.l	$760247ee,$ff7478f0,$3d7c0000,$ff7c44fc
 	dc.l	$000048ee,$ffffff80,$4c333402,$401042ee
 	dc.l	$ff7e48ee,$ffffffc0,$2d7c0000,$0004ff8c
-	dc.l	$61ff0000,$1d3.4.10,$66ff0000,$1d5652ae
+	dc.l	$61ff0000,$1d304a00,$66ff0000,$1d5652ae
 	dc.l	$ff784cfb,$3fff0170,$00001d52,$42827602
 	dc.l	$47eeff74,$78f83d7c,$0000ff7c,$44fc0000
 	dc.l	$48eeffff,$ff804c33,$34024210,$42eeff7e
@@ -1088,7 +1088,7 @@
 	dc.l	$99fc0000,$00107802,$3d7c0000,$ff7c44fc
 	dc.l	$000048ee,$ffffff80,$4c343402,$4f260010
 	dc.l	$001042ee,$ff7e48ee,$ffffffc0,$2d7c0000
-	dc.l	$0004ff8c,$61ff0000,$0b3.4.10,$66ff0000
+	dc.l	$0004ff8c,$61ff0000,$0b3c4a00,$66ff0000
 	dc.l	$0b6252ae,$ff784cfb,$3fff0170,$00000b5e
 	dc.l	$42827602,$47eeff54,$49eeff70,$288b99fc
 	dc.l	$00000010,$78023d7c,$0000ff7c,$44fc0000

@@ -316,7 +316,7 @@ static unsigned short snd_fm801_codec_read(struct snd_ac97 *ac97, unsigned short
 static unsigned int rates[] = {
   5500,  8000,  9600, 11025,
   16000, 19200, 22050, 32000,
-  3.4.1, 44100, 48000
+  38400, 44100, 48000
 };
 
 static struct snd_pcm_hw_constraint_list hw_constraints_rates = {

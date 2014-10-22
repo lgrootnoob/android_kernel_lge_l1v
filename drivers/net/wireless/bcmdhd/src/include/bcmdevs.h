@@ -59,9 +59,9 @@
 #define BCM_DNGL_BL_PID_43236   0xbd17
 #define BCM_DNGL_BL_PID_4332	0xbd18
 #define BCM_DNGL_BL_PID_4330	0xbd19
-#define BCM_DNGL_BL_PID_43.4.1xbd1a
+#define BCM_DNGL_BL_PID_4334	0xbd1a
 #define BCM_DNGL_BL_PID_43239   0xbd1b
-#define BCM_DNGL_BL_PID_43.4.1xbd1c
+#define BCM_DNGL_BL_PID_4324	0xbd1c
 #define BCM_DNGL_BL_PID_4360	0xbd1d
 
 #define BCM_DNGL_BDC_PID	0x0bdc

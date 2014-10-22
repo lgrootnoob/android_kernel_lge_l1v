@@ -378,7 +378,7 @@ nvc0_graph_init_gpc_0(struct drm_device *dev)
 	/*
 	 *      TP      ROP UNKVAL(magic_not_rop_nr)
 	 * 450: 4/0/0/0 2        3
-	 * 460: 3.4.1/0 4        1
+	 * 460: 3/4/0/0 4        1
 	 * 465: 3/4/4/0 4        7
 	 * 470: 3/3/4/4 5        5
 	 * 480: 3/4/4/4 6        6
@@ -852,7 +852,7 @@ nvc0_graph_create(struct drm_device *dev)
 	case 0xc3: /* 450, 4/0/0/0, 2 */
 		priv->magic_not_rop_nr = 0x03;
 		break;
-	case 0xc4: /* 460, 3.4.1/0, 4 */
+	case 0xc4: /* 460, 3/4/0/0, 4 */
 		priv->magic_not_rop_nr = 0x01;
 		break;
 	case 0xc1: /* 2/0/0/0, 1 */

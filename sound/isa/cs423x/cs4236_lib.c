@@ -139,14 +139,14 @@ static unsigned char snd_cs4236_ctrl_in(struct snd_wss *chip, unsigned char reg)
 #define CLOCKS 8
 
 static struct snd_ratnum clocks[CLOCKS] = {
-	{ .num = 1693.4.1, .den_min = 353, .den_max = 353, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 529, .den_max = 529, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 617, .den_max = 617, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 1058, .den_max = 1058, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 1764, .den_max = 1764, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 2117, .den_max = 2117, .den_step = 1 },
-	{ .num = 1693.4.1, .den_min = 2558, .den_max = 2558, .den_step = 1 },
-	{ .num = 1693.4.1/16, .den_min = 21, .den_max = 192, .den_step = 1 }
+	{ .num = 16934400, .den_min = 353, .den_max = 353, .den_step = 1 },
+	{ .num = 16934400, .den_min = 529, .den_max = 529, .den_step = 1 },
+	{ .num = 16934400, .den_min = 617, .den_max = 617, .den_step = 1 },
+	{ .num = 16934400, .den_min = 1058, .den_max = 1058, .den_step = 1 },
+	{ .num = 16934400, .den_min = 1764, .den_max = 1764, .den_step = 1 },
+	{ .num = 16934400, .den_min = 2117, .den_max = 2117, .den_step = 1 },
+	{ .num = 16934400, .den_min = 2558, .den_max = 2558, .den_step = 1 },
+	{ .num = 16934400/16, .den_min = 21, .den_max = 192, .den_step = 1 }
 };
 
 static struct snd_pcm_hw_constraint_ratnums hw_constraints_clocks = {

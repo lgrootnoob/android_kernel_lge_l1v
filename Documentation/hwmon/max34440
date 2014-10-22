@@ -1,11 +1,11 @@
-Kernel driver max3.4.1
+Kernel driver max34440
 ======================
 
 Supported chips:
-  * Maxim MAX3.4.1
-    Prefixes: 'max3.4.1'
+  * Maxim MAX34440
+    Prefixes: 'max34440'
     Addresses scanned: -
-    Datasheet: http://datasheets.maxim-ic.com/en/ds/MAX3.4.1.pdf
+    Datasheet: http://datasheets.maxim-ic.com/en/ds/MAX34440.pdf
   * Maxim MAX34441
     PMBus 5-Channel Power-Supply Manager and Intelligent Fan Controller
     Prefixes: 'max34441'
@@ -23,7 +23,7 @@ Author: Guenter Roeck <guenter.roeck@ericsson.com>
 Description
 -----------
 
-This driver supports hardware montoring for Maxim MAX3.4.1 PMBus 6-Channel
+This driver supports hardware montoring for Maxim MAX34440 PMBus 6-Channel
 Power-Supply Manager, MAX34441 PMBus 5-Channel Power-Supply Manager
 and Intelligent Fan Controller, and MAX34446 PMBus Power-Supply Data Logger.
 
@@ -84,7 +84,7 @@ curr[1-4]_average	Historical average current (MAX34446 only).
 curr[1-6]_highest	Historical maximum current.
 curr[1-6]_reset_history	Write any value to reset history.
 
-			in6 and curr6 attributes only exist for MAX3.4.1.
+			in6 and curr6 attributes only exist for MAX34440.
 			MAX34446 only supports curr[1-4].
 
 power[1,3]_label	"pout[1,3]"
@@ -97,7 +97,7 @@ power[1,3]_highest	Historical maximum power.
 temp[1-8]_input		Measured temperatures. From READ_TEMPERATURE_1 register.
 			temp1 is the chip's internal temperature. temp2..temp5
 			are remote I2C temperature sensors. For MAX34441, temp6
-			is a remote thermal-diode sensor. For MAX3.4.1, temp6..8
+			is a remote thermal-diode sensor. For MAX34440, temp6..8
 			are remote I2C temperature sensors.
 temp[1-8]_max		Maximum temperature. From OT_WARN_LIMIT register.
 temp[1-8]_crit		Critical high temperature. From OT_FAULT_LIMIT register.
@@ -107,5 +107,5 @@ temp[1-8]_average	Historical average temperature (MAX34446 only).
 temp[1-8]_highest	Historical maximum temperature.
 temp[1-8]_reset_history	Write any value to reset history.
 
-			temp7 and temp8 attributes only exist for MAX3.4.1.
+			temp7 and temp8 attributes only exist for MAX34440.
 			MAX34446 only supports temp[1-3].

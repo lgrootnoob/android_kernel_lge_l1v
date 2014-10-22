@@ -107,12 +107,12 @@
 #define DIGI_BAUD_14400				13
 #define DIGI_BAUD_19200				14
 #define DIGI_BAUD_28800				15
-#define DIGI_BAUD_3.4.1				16
+#define DIGI_BAUD_38400				16
 #define DIGI_BAUD_57600				17
 #define DIGI_BAUD_76800				18
 #define DIGI_BAUD_115200			19
 #define DIGI_BAUD_153600			20
-#define DIGI_BAUD_23.4.1			21
+#define DIGI_BAUD_230400			21
 #define DIGI_BAUD_460800			22
 
 /* arguments */
@@ -743,10 +743,10 @@ static void digi_set_termios(struct tty_struct *tty,
 		case 4800: arg = DIGI_BAUD_4800; break;
 		case 9600: arg = DIGI_BAUD_9600; break;
 		case 19200: arg = DIGI_BAUD_19200; break;
-		case 3.4.1: arg = DIGI_BAUD_3.4.1; break;
+		case 38400: arg = DIGI_BAUD_38400; break;
 		case 57600: arg = DIGI_BAUD_57600; break;
 		case 115200: arg = DIGI_BAUD_115200; break;
-		case 23.4.1: arg = DIGI_BAUD_23.4.1; break;
+		case 230400: arg = DIGI_BAUD_230400; break;
 		case 460800: arg = DIGI_BAUD_460800; break;
 		default:
 			arg = DIGI_BAUD_9600;

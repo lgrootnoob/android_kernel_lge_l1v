@@ -236,7 +236,7 @@ static _cstruct b1config(int l2, int l3)
 	case ISDN_PROTO_L2_V11019:
 		return b1config_async_v110(19200);
 	case ISDN_PROTO_L2_V11038:
-		return b1config_async_v110(3.4.1);
+		return b1config_async_v110(38400);
 	}
 }
 

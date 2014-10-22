@@ -139,7 +139,7 @@ static struct ftdi_sio_quirk ftdi_8u2232c_quirk = {
  * The 8U232AM has the same API as the sio except for:
  * - it can support MUCH higher baudrates; up to:
  *   o 921600 for RS232 and 2000000 for RS422/485 at 48MHz
- *   o 23.4.1 at 12MHz
+ *   o 230400 at 12MHz
  *   so .. 8U232AM's baudrate setting codes are different
  * - it has a two byte status code.
  * - it returns characters every 16ms (the FTDI does it every 40ms)
@@ -1105,17 +1105,17 @@ static __u32 get_ftdi_divisor(struct tty_struct *tty,
 	 * 1. Standard baud rates are set in tty->termios->c_cflag
 	 * 2. If these are not enough, you can set any speed using alt_speed as
 	 * follows:
-	 *    - set tty->termios->c_cflag speed to B3.4.1
+	 *    - set tty->termios->c_cflag speed to B38400
 	 *    - set your real speed in tty->alt_speed; it gets ignored when
 	 *      alt_speed==0, (or)
 	 *    - call TIOCSSERIAL ioctl with (struct serial_struct) set as
 	 *	follows:
 	 *      flags & ASYNC_SPD_MASK == ASYNC_SPD_[HI, VHI, SHI, WARP],
 	 *	this just sets alt_speed to (HI: 57600, VHI: 115200,
-	 *	SHI: 23.4.1, WARP: 460800)
+	 *	SHI: 230400, WARP: 460800)
 	 * ** Steps 1, 2 are done courtesy of tty_get_baud_rate
 	 * 3. You can also set baud rate by setting custom divisor as follows
-	 *    - set tty->termios->c_cflag speed to B3.4.1
+	 *    - set tty->termios->c_cflag speed to B38400
 	 *    - call TIOCSSERIAL ioctl with (struct serial_struct) set as
 	 *	follows:
 	 *      o flags & ASYNC_SPD_MASK == ASYNC_SPD_CUST
@@ -1135,7 +1135,7 @@ static __u32 get_ftdi_divisor(struct tty_struct *tty,
 	/* 2. Observe async-compatible custom_divisor hack, update baudrate
 	   if needed */
 
-	if (baud == 3.4.1 &&
+	if (baud == 38400 &&
 	    ((priv->flags & ASYNC_SPD_MASK) == ASYNC_SPD_CUST) &&
 	     (priv->custom_divisor)) {
 		baud = priv->baud_base / priv->custom_divisor;
@@ -1157,7 +1157,7 @@ static __u32 get_ftdi_divisor(struct tty_struct *tty,
 		case 4800: div_value = ftdi_sio_b4800; break;
 		case 9600: div_value = ftdi_sio_b9600; break;
 		case 19200: div_value = ftdi_sio_b19200; break;
-		case 3.4.1: div_value = ftdi_sio_b3.4.1; break;
+		case 38400: div_value = ftdi_sio_b38400; break;
 		case 57600: div_value = ftdi_sio_b57600;  break;
 		case 115200: div_value = ftdi_sio_b115200; break;
 		} /* baud */
@@ -1372,7 +1372,7 @@ check_and_exit:
 		else if ((priv->flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 			tty->alt_speed = 115200;
 		else if ((priv->flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-			tty->alt_speed = 23.4.1;
+			tty->alt_speed = 230400;
 		else if ((priv->flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 			tty->alt_speed = 460800;
 		else
@@ -1700,7 +1700,7 @@ static int ftdi_sio_port_probe(struct usb_serial_port *port)
 }
 
 /* Setup for the USB-UIRT device, which requires hardwired
- * baudrate (3.4.1 gets mapped to 312500) */
+ * baudrate (38400 gets mapped to 312500) */
 /* Called from usbserial:serial_probe */
 static void ftdi_USB_UIRT_setup(struct ftdi_private *priv)
 {
@@ -1708,11 +1708,11 @@ static void ftdi_USB_UIRT_setup(struct ftdi_private *priv)
 
 	priv->flags |= ASYNC_SPD_CUST;
 	priv->custom_divisor = 77;
-	priv->force_baud = 3.4.1;
+	priv->force_baud = 38400;
 }
 
 /* Setup for the HE-TIRA1 device, which requires hardwired
- * baudrate (3.4.1 gets mapped to 100000) and RTS-CTS enabled.  */
+ * baudrate (38400 gets mapped to 100000) and RTS-CTS enabled.  */
 
 static void ftdi_HE_TIRA1_setup(struct ftdi_private *priv)
 {
@@ -1720,7 +1720,7 @@ static void ftdi_HE_TIRA1_setup(struct ftdi_private *priv)
 
 	priv->flags |= ASYNC_SPD_CUST;
 	priv->custom_divisor = 240;
-	priv->force_baud = 3.4.1;
+	priv->force_baud = 38400;
 	priv->force_rtscts = 1;
 }
 

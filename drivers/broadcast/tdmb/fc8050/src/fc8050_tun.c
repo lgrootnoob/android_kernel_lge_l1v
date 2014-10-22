@@ -62,7 +62,7 @@ static int fc8050_set_filter(HANDLE hDevice)
 
 	fc8050_write(hDevice, 0x3B, 0x71);
 	fc8050_write(hDevice, 0x32, 0x09);
-#elif (FC8050_FREQ_XTAL == 3.4.1)
+#elif (FC8050_FREQ_XTAL == 38400)
 	fc8050_write(hDevice, 0x02, 0x86);
 
 	fc8050_write(hDevice, 0x3B, 0xA1);

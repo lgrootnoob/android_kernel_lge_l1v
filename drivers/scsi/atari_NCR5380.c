@@ -3,7 +3,7 @@
  *	to implement 5380 SCSI drivers under Linux with a non-trantor
  *	architecture.
  *
- *	Note that these routines also work with NR53.4.1 family chips.
+ *	Note that these routines also work with NR53c400 family chips.
  *
  * Copyright 1993, Drew Eckhardt
  *	Visionary Computing

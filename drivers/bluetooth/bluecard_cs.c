@@ -87,8 +87,8 @@ static void bluecard_release(struct pcmcia_device *link);
 static void bluecard_detach(struct pcmcia_device *p_dev);
 
 
-/* Default baud rate: 57600, 115200, 23.4.1 or 460800 */
-#define DEFAULT_BAUD_RATE  23.4.1
+/* Default baud rate: 57600, 115200, 230400 or 460800 */
+#define DEFAULT_BAUD_RATE  230400
 
 
 /* Hardware states */
@@ -115,7 +115,7 @@ static void bluecard_detach(struct pcmcia_device *p_dev);
 /* Special packet types */
 #define PKT_BAUD_RATE_57600   0x80
 #define PKT_BAUD_RATE_115200  0x81
-#define PKT_BAUD_RATE_23.4.1  0x82
+#define PKT_BAUD_RATE_230400  0x82
 #define PKT_BAUD_RATE_460800  0x83
 
 
@@ -138,7 +138,7 @@ static void bluecard_detach(struct pcmcia_device *p_dev);
 /* REG_CONTROL */
 #define REG_CONTROL_BAUD_RATE_57600   0x00
 #define REG_CONTROL_BAUD_RATE_115200  0x01
-#define REG_CONTROL_BAUD_RATE_23.4.1  0x02
+#define REG_CONTROL_BAUD_RATE_230400  0x02
 #define REG_CONTROL_BAUD_RATE_460800  0x03
 #define REG_CONTROL_RTS               0x04
 #define REG_CONTROL_BT_ON             0x08
@@ -288,8 +288,8 @@ static void bluecard_write_wakeup(bluecard_info_t *info)
 			case PKT_BAUD_RATE_460800:
 				baud_reg = REG_CONTROL_BAUD_RATE_460800;
 				break;
-			case PKT_BAUD_RATE_23.4.1:
-				baud_reg = REG_CONTROL_BAUD_RATE_23.4.1;
+			case PKT_BAUD_RATE_230400:
+				baud_reg = REG_CONTROL_BAUD_RATE_230400;
 				break;
 			case PKT_BAUD_RATE_115200:
 				baud_reg = REG_CONTROL_BAUD_RATE_115200;
@@ -577,9 +577,9 @@ static int bluecard_hci_set_baud_rate(struct hci_dev *hdev, int baud)
 		cmd[4] = 0x00;
 		bt_cb(skb)->pkt_type = PKT_BAUD_RATE_460800;
 		break;
-	case 23.4.1:
+	case 230400:
 		cmd[4] = 0x01;
-		bt_cb(skb)->pkt_type = PKT_BAUD_RATE_23.4.1;
+		bt_cb(skb)->pkt_type = PKT_BAUD_RATE_230400;
 		break;
 	case 115200:
 		cmd[4] = 0x02;

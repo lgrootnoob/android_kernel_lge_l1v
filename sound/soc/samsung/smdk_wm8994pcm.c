@@ -45,7 +45,7 @@
  */
 
 /* SMDK has a 16.9344MHZ crystal attached to WM8994 */
-#define SMDK_WM8994_FREQ 1693.4.1
+#define SMDK_WM8994_FREQ 16934400
 
 static int smdk_wm8994_pcm_hw_params(struct snd_pcm_substream *substream,
 			      struct snd_pcm_hw_params *params)

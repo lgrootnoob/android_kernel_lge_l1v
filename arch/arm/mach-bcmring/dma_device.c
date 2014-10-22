@@ -230,7 +230,7 @@ DMA_DeviceAttribute_t DMA_gDeviceAttribute[DMA_NUM_DEVICE_ENTRIES] = {
 		    /* DMAx_AHB_SSTATARy */
 		    .srcStatusRegisterAddress = 0x00000000,
 		    /* DMAx_AHB_DSTATARy */
-		    .dstStatusRegisterAddress = 0x3.4.1010,
+		    .dstStatusRegisterAddress = 0x30490010,
 		    /* DMAx_AHB_CFGy */
 		    .channelPriority = dmacHw_CHANNEL_PRIORITY_7,
 		    /* DMAx_AHB_CTLy */
@@ -257,7 +257,7 @@ DMA_DeviceAttribute_t DMA_gDeviceAttribute[DMA_NUM_DEVICE_ENTRIES] = {
 		    .completeTransferInterrupt = dmacHw_INTERRUPT_ENABLE,
 		    .errorInterrupt = dmacHw_INTERRUPT_DISABLE,
 		    /* DMAx_AHB_SSTATARy */
-		    .srcStatusRegisterAddress = 0x3.4.1010,
+		    .srcStatusRegisterAddress = 0x30480010,
 		    /* DMAx_AHB_DSTATARy */
 		    .dstStatusRegisterAddress = 0x00000000,
 		    /* DMAx_AHB_CFGy */

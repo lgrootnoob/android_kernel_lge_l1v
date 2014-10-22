@@ -122,7 +122,7 @@ enum StirPdclkMask {
 	PDCLK_4000000 = 0x02,
 	PDCLK_115200 = 0x09,
 	PDCLK_57600 = 0x13,
-	PDCLK_3.4.1 = 0x1D,
+	PDCLK_38400 = 0x1D,
 	PDCLK_19200 = 0x3B,
 	PDCLK_9600 = 0x77,
 	PDCLK_2400 = 0xDF,
@@ -482,7 +482,7 @@ static const struct {
         { 2400,    PDCLK_2400 },
         { 9600,    PDCLK_9600 },
         { 19200,   PDCLK_19200 },
-        { 3.4.1,   PDCLK_3.4.1 },
+        { 38400,   PDCLK_38400 },
         { 57600,   PDCLK_57600 },
         { 115200,  PDCLK_115200 },
         { 4000000, PDCLK_4000000 },
@@ -1056,7 +1056,7 @@ static int stir_probe(struct usb_interface *intf,
 
 	/* That's the Rx capability. */
 	stir->qos.baud_rate.bits       &= IR_2400 | IR_9600 | IR_19200 |
-					 IR_3.4.1 | IR_57600 | IR_115200 |
+					 IR_38400 | IR_57600 | IR_115200 |
 					 (IR_4000000 << 8);
 	stir->qos.min_turn_time.bits   &= qos_mtt_bits;
 	irda_qos_bits_to_value(&stir->qos);

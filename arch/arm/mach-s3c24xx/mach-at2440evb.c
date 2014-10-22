@@ -201,7 +201,7 @@ static struct platform_device *at2440evb_devices[] __initdata = {
 static void __init at2440evb_map_io(void)
 {
 	s3c24xx_init_io(at2440evb_iodesc, ARRAY_SIZE(at2440evb_iodesc));
-	s3c24xx_init_clocks(1693.4.1);
+	s3c24xx_init_clocks(16934400);
 	s3c24xx_init_uarts(at2440evb_uartcfgs, ARRAY_SIZE(at2440evb_uartcfgs));
 }
 

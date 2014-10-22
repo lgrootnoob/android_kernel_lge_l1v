@@ -35,7 +35,7 @@
 #endif
 
 #define NCR5380_PUBLIC_RELEASE 7
-#define NCR53.4.1_PUBLIC_RELEASE 2
+#define NCR53C400_PUBLIC_RELEASE 2
 
 #define NDEBUG_ARBITRATION	0x1
 #define NDEBUG_AUTOSENSE	0x2
@@ -167,9 +167,9 @@
 /* Write any value to this register to start an ini mode DMA receive */
 #define START_DMA_INITIATOR_RECEIVE_REG 7	/* wo */
 
-#define C400_CONTROL_STATUS_REG NCR53.4.1_register_offset-8	/* rw */
+#define C400_CONTROL_STATUS_REG NCR53C400_register_offset-8	/* rw */
 
-#define CSR_RESET              0x80	/* wo  Resets 53.4.1 */
+#define CSR_RESET              0x80	/* wo  Resets 53c400 */
 #define CSR_53C80_REG          0x80	/* ro  5380 registers busy */
 #define CSR_TRANS_DIR          0x40	/* rw  Data transfer direction */
 #define CSR_SCSI_BUFF_INTR     0x20	/* rw  Enable int on transfer ready */
@@ -186,13 +186,13 @@
 #endif
 
 /* Number of 128-byte blocks to be transferred */
-#define C400_BLOCK_COUNTER_REG   NCR53.4.1_register_offset-7	/* rw */
+#define C400_BLOCK_COUNTER_REG   NCR53C400_register_offset-7	/* rw */
 
 /* Resume transfer after disconnect */
-#define C400_RESUME_TRANSFER_REG NCR53.4.1_register_offset-6	/* wo */
+#define C400_RESUME_TRANSFER_REG NCR53C400_register_offset-6	/* wo */
 
 /* Access to host buffer stack */
-#define C400_HOST_BUFFER         NCR53.4.1_register_offset-4	/* rw */
+#define C400_HOST_BUFFER         NCR53C400_register_offset-4	/* rw */
 
 
 /* Note : PHASE_* macros are based on the values of the STATUS register */
@@ -243,11 +243,11 @@
 #define DMA_NONE	255
 #define IRQ_AUTO	254
 #define DMA_AUTO	254
-#define PORT_AUTO	0xffff	/* autoprobe io port for 53.4.1a */
+#define PORT_AUTO	0xffff	/* autoprobe io port for 53c400a */
 
 #define FLAG_HAS_LAST_BYTE_SENT		1	/* NCR53c81 or better */
 #define FLAG_CHECK_LAST_BYTE_SENT	2	/* Only test once */
-#define FLAG_NCR53.4.1			4	/* NCR53.4.1 */
+#define FLAG_NCR53C400			4	/* NCR53c400 */
 #define FLAG_NO_PSEUDO_DMA		8	/* Inhibit DMA */
 #define FLAG_DTC3181E			16	/* DTC3181E */
 

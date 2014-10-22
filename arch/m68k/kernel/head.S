@@ -2759,7 +2759,7 @@ L(scc_initable_mac):
 	.byte	9,0		/* no interrupts */
 	.byte	10,0		/* NRZ */
 	.byte	11,0x50		/* use baud rate generator */
-	.byte	12,1,13,0	/* 3.4.1 baud */
+	.byte	12,1,13,0	/* 38400 baud */
 	.byte	14,1		/* Baud rate generator enable */
 	.byte	3,0xc1		/* enable receiver */
 	.byte	5,0xea		/* enable transmitter */

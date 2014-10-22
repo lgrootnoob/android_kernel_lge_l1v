@@ -41,7 +41,7 @@
 #define UART_CSR	0x0008
 #define UART_CSR_115200	0xFF
 #define UART_CSR_57600	0xEE
-#define UART_CSR_3.4.1	0xDD
+#define UART_CSR_38400	0xDD
 #define UART_CSR_28800	0xCC
 #define UART_CSR_19200	0xBB
 #define UART_CSR_14400	0xAA

@@ -35,7 +35,7 @@
 #define	MCFPP_DTR1	0x0004
 #define	MCFPP_DTR0	0x0008
 
-#define	NETtel_LEDADDR	0x3.4.1000
+#define	NETtel_LEDADDR	0x30400000
 
 #ifndef __ASSEMBLY__
 
