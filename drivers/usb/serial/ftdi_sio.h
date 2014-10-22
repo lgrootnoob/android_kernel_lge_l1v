@@ -169,7 +169,7 @@ enum ftdi_sio_baudrate {
 	ftdi_sio_b4800 = 4,
 	ftdi_sio_b9600 = 5,
 	ftdi_sio_b19200 = 6,
-	ftdi_sio_b38400 = 7,
+	ftdi_sio_b3.4.1 = 7,
 	ftdi_sio_b57600 = 8,
 	ftdi_sio_b115200 = 9
 };

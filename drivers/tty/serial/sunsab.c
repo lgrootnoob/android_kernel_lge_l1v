@@ -895,10 +895,10 @@ static int sunsab_console_setup(struct console *con, char *options)
 	case B4800: baud = 4800; break;
 	default: case B9600: baud = 9600; break;
 	case B19200: baud = 19200; break;
-	case B38400: baud = 38400; break;
+	case B3.4.1: baud = 3.4.1; break;
 	case B57600: baud = 57600; break;
 	case B115200: baud = 115200; break;
-	case B230400: baud = 230400; break;
+	case B23.4.1: baud = 23.4.1; break;
 	case B460800: baud = 460800; break;
 	};
 

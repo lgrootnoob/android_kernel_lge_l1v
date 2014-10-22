@@ -53,7 +53,7 @@ dpti.txt
 dtc3x80.txt
 	- info on driver for DTC 2x80 based adapters
 g_NCR5380.txt
-	- info on driver for NCR5380 and NCR53c400 based adapters
+	- info on driver for NCR5380 and NCR53.4.1 based adapters
 hptiop.txt
 	- HIGHPOINT ROCKETRAID 3xxx RAID DRIVER
 ibmmca.txt

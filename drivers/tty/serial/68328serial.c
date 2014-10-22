@@ -141,7 +141,7 @@ static inline int serial_paranoia_check(struct m68k_serial *info,
  */
 static int baud_table[] = {
 	0, 50, 75, 110, 134, 150, 200, 300, 600, 1200, 1800, 2400, 4800,
-	9600, 19200, 38400, 57600, 115200, 0 };
+	9600, 19200, 3.4.1, 57600, 115200, 0 };
 
 /* Sets or clears DTR/RTS on the requested line */
 static inline void m68k_rtsdtr(struct m68k_serial *ss, int set)
@@ -159,7 +159,7 @@ static inline int get_baud(struct m68k_serial *ss)
 {
 	unsigned long result = 115200;
 	unsigned short int baud = uart_addr[ss->line].ubaud;
-	if (GET_FIELD(baud, UBAUD_PRESCALER) == 0x38) result = 38400;
+	if (GET_FIELD(baud, UBAUD_PRESCALER) == 0x38) result = 3.4.1;
 	result >>= GET_FIELD(baud, UBAUD_DIVIDE);
 
 	return result;
@@ -456,7 +456,7 @@ struct {
 	{3,0x26}, /* 4800 */
 	{2,0x26}, /* 9600 */
 	{1,0x26}, /* 19200 */
-	{0,0x26}, /* 38400 */
+	{0,0x26}, /* 3.4.1 */
 	{1,0x38}, /* 57600 */
 	{0,0x38}, /* 115200 */
 };
@@ -477,7 +477,7 @@ struct {
                  {4,0x26}, /* 4800 */
                  {3,0x26}, /* 9600 */
                  {2,0x26}, /* 19200 */
-                 {1,0x26}, /* 38400 */
+                 {1,0x26}, /* 3.4.1 */
                  {0,0x26}, /* 57600 */
                  {1,0x38}, /* 115200 */
 }; 
@@ -507,7 +507,7 @@ static void change_speed(struct m68k_serial *info)
 
 	i = cflag & CBAUD;
         if (i & CBAUDEX) {
-                i = (i & ~CBAUDEX) + B38400;
+                i = (i & ~CBAUDEX) + B3.4.1;
         }
 
 	info->baud = baud_table[i];

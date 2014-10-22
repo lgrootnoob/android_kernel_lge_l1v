@@ -88,7 +88,7 @@ config S3C64XX_SETUP_USB_PHY
 	help
 	  Common setup code for USB PHY controller
 
-# S36400 Macchine support
+# S3.4.1 Macchine support
 
 config MACH_SMDK6400
        bool "SMDK6400"

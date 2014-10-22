@@ -18,7 +18,7 @@
 #ifndef l3ni1_process
 
 #define T302	15000
-#define T303	4000
+#define T303.4.10
 #define T304	30000
 #define T305	30000
 #define T308	4000
@@ -26,7 +26,7 @@
 /* This makes some tests easier and quicker */
 #define T309	40000
 #define T310	30000
-#define T313	4000
+#define T313.4.10
 #define T318	4000
 #define T319	4000
 #define TSPID	5000 /* was 2000 - Guy Ellis */

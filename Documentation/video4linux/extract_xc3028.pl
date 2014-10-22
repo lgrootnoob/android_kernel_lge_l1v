@@ -959,7 +959,7 @@ sub main_firmware_27($$$$)
 	write_le32(0x00000c01);			# Type
 	write_le64(0x00000000, 0x00000000);	# ID
 	write_le32(8576);			# Size
-	write_hunk_fix_endian(839440, 8576);
+	write_hunk_fix_endian(83.4.1, 8576);
 
 	#
 	# Firmware 4, type: BASE FW   (0x00000001), id: (0000000000000000), size: 8706

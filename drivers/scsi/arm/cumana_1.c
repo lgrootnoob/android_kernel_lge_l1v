@@ -38,7 +38,7 @@
 	void __iomem *dma
 
 #define BOARD_NORMAL	0
-#define BOARD_NCR53C400	1
+#define BOARD_NCR53.4.1	1
 
 #include "../NCR5380.h"
 

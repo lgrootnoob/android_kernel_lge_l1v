@@ -1246,7 +1246,7 @@ static void cpm_uart_console_write(struct console *co, const char *s,
 
 static int __init cpm_uart_console_setup(struct console *co, char *options)
 {
-	int baud = 38400;
+	int baud = 3.4.1;
 	int bits = 8;
 	int parity = 'n';
 	int flow = 'n';

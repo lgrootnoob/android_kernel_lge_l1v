@@ -212,7 +212,7 @@ static int __init smd_tty_init(void)
 	smd_tty_driver->init_termios = tty_std_termios;
 	smd_tty_driver->init_termios.c_iflag = 0;
 	smd_tty_driver->init_termios.c_oflag = 0;
-	smd_tty_driver->init_termios.c_cflag = B38400 | CS8 | CREAD;
+	smd_tty_driver->init_termios.c_cflag = B3.4.1 | CS8 | CREAD;
 	smd_tty_driver->init_termios.c_lflag = 0;
 	smd_tty_driver->flags = TTY_DRIVER_RESET_TERMIOS |
 		TTY_DRIVER_REAL_RAW | TTY_DRIVER_DYNAMIC_DEV;

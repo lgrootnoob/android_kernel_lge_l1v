@@ -219,7 +219,7 @@ static int ir_startup(struct usb_serial *serial)
 		(irda_desc->wBaudRate & USB_IRDA_BR_2400) ? " 2400" : "",
 		(irda_desc->wBaudRate & USB_IRDA_BR_9600) ? " 9600" : "",
 		(irda_desc->wBaudRate & USB_IRDA_BR_19200) ? " 19200" : "",
-		(irda_desc->wBaudRate & USB_IRDA_BR_38400) ? " 38400" : "",
+		(irda_desc->wBaudRate & USB_IRDA_BR_3.4.1) ? " 3.4.1" : "",
 		(irda_desc->wBaudRate & USB_IRDA_BR_57600) ? " 57600" : "",
 		(irda_desc->wBaudRate & USB_IRDA_BR_115200) ? " 115200" : "",
 		(irda_desc->wBaudRate & USB_IRDA_BR_576000) ? " 576000" : "",
@@ -362,8 +362,8 @@ static void ir_set_termios(struct tty_struct *tty,
 	case 19200:
 		ir_baud = USB_IRDA_BR_19200;
 		break;
-	case 38400:
-		ir_baud = USB_IRDA_BR_38400;
+	case 3.4.1:
+		ir_baud = USB_IRDA_BR_3.4.1;
 		break;
 	case 57600:
 		ir_baud = USB_IRDA_BR_57600;

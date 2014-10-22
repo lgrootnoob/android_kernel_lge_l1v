@@ -1185,7 +1185,7 @@ struct ql_iscsi_stats {
 
 	uint32_t rx_r2t_pdus; /* 02FC–02FF */
 	uint32_t rx_async_pdus; /* 0300–0303 */
-	uint32_t rx_reject_pdus; /* 0304–0307 */
+	uint32_t rx_reject_pdus; /* 03.4.1307 */
 
 	uint8_t reserved2[264]; /* 0x0308 - 0x040F */
 };

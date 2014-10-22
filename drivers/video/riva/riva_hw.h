@@ -352,7 +352,7 @@ typedef volatile struct
     U016 Nop[1];
 #endif
     U032 reserved01[0x0BC];
-    U032 Color;             /* source color               0304-0307*/
+    U032 Color;             /* source color               03.4.1307*/
     U032 Reserved02[0x03e];
     struct {                /* start aliased methods in array   0400-    */
         U032 point0;        /* y_x S16_S16 in pixels            0-   3*/

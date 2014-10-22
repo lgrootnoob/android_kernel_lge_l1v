@@ -496,7 +496,7 @@ reset_loaded:
 
 /* Prepare boot-time firmware configuration data.
  * o initialize configuration data area
-   From async.doc - V_3.4.0 - 07/18/1994
+   From async.doc - V_3.4.1 - 07/18/1994
    - As of now, only static buffers are available to the user.
      So, the bit VD_RXDIRC must be set in 'valid'. That means that user
      wants to use the static transmission and reception buffers. */

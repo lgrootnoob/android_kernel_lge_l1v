@@ -133,7 +133,7 @@ static void sc1200_set_dma_mode(ide_hwif_t *hwif, ide_drive_t *drive)
 
 	static const u32 udma_timing[3][3] = {
 		{ 0x00921250, 0x00911140, 0x00911030 },
-		{ 0x00932470, 0x00922260, 0x00922140 },
+		{ 0x0093.4.1, 0x00922260, 0x00922140 },
 		{ 0x009436a1, 0x00933481, 0x00923261 },
 	};
 

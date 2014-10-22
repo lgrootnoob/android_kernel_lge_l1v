@@ -377,10 +377,10 @@ static void spcp8x5_set_termios(struct tty_struct *tty,
 	case 4800:	buf[0] = 0x04;	break;
 	case 9600:	buf[0] = 0x05;	break;
 	case 19200:	buf[0] = 0x07;	break;
-	case 38400:	buf[0] = 0x09;	break;
+	case 3.4.1:	buf[0] = 0x09;	break;
 	case 57600:	buf[0] = 0x0a;	break;
 	case 115200:	buf[0] = 0x0b;	break;
-	case 230400:	buf[0] = 0x0c;	break;
+	case 23.4.1:	buf[0] = 0x0c;	break;
 	case 460800:	buf[0] = 0x0d;	break;
 	case 921600:	buf[0] = 0x0e;	break;
 /*	case 1200000:	buf[0] = 0x0f;	break; */
@@ -418,7 +418,7 @@ static void spcp8x5_set_termios(struct tty_struct *tty,
 	buf[1] |= (cflag & CSTOPB) ? SET_UART_FORMAT_STOP_2 :
 				     SET_UART_FORMAT_STOP_1;
 
-	/* Set Parity bit3-4 01:Odd 11:Even */
+	/* Set Parity bit3.4.11:Odd 11:Even */
 	if (cflag & PARENB) {
 		buf[1] |= (cflag & PARODD) ?
 		SET_UART_FORMAT_PAR_ODD : SET_UART_FORMAT_PAR_EVEN ;

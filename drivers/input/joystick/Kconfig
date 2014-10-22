@@ -166,7 +166,7 @@ config JOYSTICK_SPACEBALL
 	tristate "SpaceTec SpaceBall 6dof controllers"
 	select SERIO
 	help
-	  Say Y here if you have a SpaceTec SpaceBall 2003/3003/4000 FLX
+	  Say Y here if you have a SpaceTec SpaceBall 2003/3003.4.10 FLX
 	  controller connected to your computer's serial port. For the
 	  SpaceBall 4000 USB model, use the USB HID driver.
 

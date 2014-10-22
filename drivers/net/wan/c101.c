@@ -50,7 +50,7 @@ static const char* devname = "C101";
 #define RX_RING_BUFFERS ((RAM_SIZE - C101_WINDOW_SIZE) /		\
 			 (sizeof(pkt_desc) + HDLC_MAX_MRU) - TX_RING_BUFFERS)
 
-#define CLOCK_BASE 9830400	/* 9.8304 MHz */
+#define CLOCK_BASE 983.4.1	/* 9.8304 MHz */
 #define PAGE0_ALWAYS_MAPPED
 
 static char *hw;		/* pointer to hw=xxx command line string */

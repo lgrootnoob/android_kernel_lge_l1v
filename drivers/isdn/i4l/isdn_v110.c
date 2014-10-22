@@ -22,13 +22,13 @@
 
 char *isdn_v110_revision = "$Revision: 1.1.2.2 $";
 
-#define V110_38400 255
+#define V110_3.4.1 255
 #define V110_19200  15
 #define V110_9600    3
 
 /*
  * The following data are precoded matrices, online and offline matrix
- * for 9600, 19200 und 38400, respectively
+ * for 9600, 19200 und 3.4.1, respectively
  */
 static unsigned char V110_OnMatrix_9600[] =
 {0xfc, 0xfc, 0xfc, 0xfc, 0xff, 0xff, 0xff, 0xfd, 0xff, 0xff,
@@ -50,10 +50,10 @@ static unsigned char V110_OffMatrix_19200[] =
 {0xf0, 0xf0, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
  0xfd, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 
-static unsigned char V110_OnMatrix_38400[] =
+static unsigned char V110_OnMatrix_3.4.1[] =
 {0x00, 0x7f, 0x7f, 0x7f, 0x7f, 0xfd, 0x7f, 0x7f, 0x7f, 0x7f};
 
-static unsigned char V110_OffMatrix_38400[] =
+static unsigned char V110_OffMatrix_3.4.1[] =
 {0x00, 0xff, 0xff, 0xff, 0xff, 0xfd, 0xff, 0xff, 0xff, 0xff};
 
 /*
@@ -103,9 +103,9 @@ isdn_v110_open(unsigned char key, int hdrlen, int maxsize)
 	v->decodelen = 0;
 
 	switch (key) {
-	case V110_38400:
-		v->OnlineFrame = V110_OnMatrix_38400;
-		v->OfflineFrame = V110_OffMatrix_38400;
+	case V110_3.4.1:
+		v->OnlineFrame = V110_OnMatrix_3.4.1;
+		v->OfflineFrame = V110_OffMatrix_3.4.1;
 		break;
 	case V110_19200:
 		v->OnlineFrame = V110_OnMatrix_19200;
@@ -589,7 +589,7 @@ isdn_v110_stat_callback(int idx, isdn_ctrl *c)
 				dev->v110[idx] = isdn_v110_open(V110_19200, hdrlen, maxsize);
 				break;
 			case ISDN_PROTO_L2_V11038:
-				dev->v110[idx] = isdn_v110_open(V110_38400, hdrlen, maxsize);
+				dev->v110[idx] = isdn_v110_open(V110_3.4.1, hdrlen, maxsize);
 				break;
 			default:;
 			}

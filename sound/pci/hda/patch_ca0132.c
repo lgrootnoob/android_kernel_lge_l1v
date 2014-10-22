@@ -217,7 +217,7 @@ enum ca0132_sample_rate {
 	SR_144_000      = 0x0C,
 	SR_176_400      = 0x0D,
 	SR_192_000      = 0x0E,
-	SR_384_000      = 0x0F,
+	SR_3.4.100      = 0x0F,
 
 	SR_COUNT        = 0x10,
 

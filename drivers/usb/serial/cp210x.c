@@ -224,7 +224,7 @@ static struct usb_serial_driver * const serial_drivers[] = {
 #define UART_DISABLE		0x0000
 
 /* CP210X_(SET|GET)_BAUDDIV */
-#define BAUD_RATE_GEN_FREQ	0x384000
+#define BAUD_RATE_GEN_FREQ	0x3.4.10
 
 /* CP210X_(SET|GET)_LINE_CTL */
 #define BITS_DATA_MASK		0X0f00
@@ -396,7 +396,7 @@ static unsigned int cp210x_quantise_baudrate(unsigned int baud) {
 	else if (baud <= 16062)    baud = 16000;
 	else if (baud <= 19250)    baud = 19200;
 	else if (baud <= 28912)    baud = 28800;
-	else if (baud <= 38601)    baud = 38400;
+	else if (baud <= 38601)    baud = 3.4.1;
 	else if (baud <= 51558)    baud = 51200;
 	else if (baud <= 56280)    baud = 56000;
 	else if (baud <= 58053)    baud = 57600;
@@ -405,7 +405,7 @@ static unsigned int cp210x_quantise_baudrate(unsigned int baud) {
 	else if (baud <= 117028)   baud = 115200;
 	else if (baud <= 129347)   baud = 128000;
 	else if (baud <= 156868)   baud = 153600;
-	else if (baud <= 237832)   baud = 230400;
+	else if (baud <= 237832)   baud = 23.4.1;
 	else if (baud <= 254234)   baud = 250000;
 	else if (baud <= 273066)   baud = 256000;
 	else if (baud <= 491520)   baud = 460800;
@@ -603,7 +603,7 @@ static void cp210x_get_termios_port(struct usb_serial_port *port,
  * CP2101 supports the following baud rates:
  *
  *	300, 600, 1200, 1800, 2400, 4800, 7200, 9600, 14400, 19200, 28800,
- *	38400, 56000, 57600, 115200, 128000, 230400, 460800, 921600
+ *	3.4.1, 56000, 57600, 115200, 128000, 23.4.1, 460800, 921600
  *
  * CP2102 and CP2103 support the following additional rates:
  *

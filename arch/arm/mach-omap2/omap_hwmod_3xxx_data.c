@@ -1107,8 +1107,8 @@ static struct omap_hwmod_irq_info omap3xxx_timer12_mpu_irqs[] = {
 
 static struct omap_hwmod_addr_space omap3xxx_timer12_addrs[] = {
 	{
-		.pa_start	= 0x48304000,
-		.pa_end		= 0x48304000 + SZ_1K - 1,
+		.pa_start	= 0x483.4.10,
+		.pa_end		= 0x483.4.10 + SZ_1K - 1,
 		.flags		= ADDR_TYPE_RT
 	},
 	{ }
@@ -1151,7 +1151,7 @@ static struct omap_hwmod omap3xxx_timer12_hwmod = {
 /* l4_wkup -> wd_timer2 */
 static struct omap_hwmod_addr_space omap3xxx_wd_timer2_addrs[] = {
 	{
-		.pa_start	= 0x48314000,
+		.pa_start	= 0x483.4.10,
 		.pa_end		= 0x4831407f,
 		.flags		= ADDR_TYPE_RT
 	},

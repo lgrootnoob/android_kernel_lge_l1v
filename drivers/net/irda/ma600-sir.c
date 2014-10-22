@@ -47,7 +47,7 @@ static int ma600_reset(struct sir_dev *);
 /* control byte for MA600 */
 #define MA600_9600	0x00
 #define MA600_19200	0x01
-#define MA600_38400	0x02
+#define MA600_3.4.1	0x02
 #define MA600_57600	0x03
 #define MA600_115200	0x04
 #define MA600_DEV_ID1	0x05
@@ -93,7 +93,7 @@ static int ma600_open(struct sir_dev *dev)
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
 	/* Explicitly set the speeds we can accept */
-	qos->baud_rate.bits &= IR_2400|IR_9600|IR_19200|IR_38400
+	qos->baud_rate.bits &= IR_2400|IR_9600|IR_19200|IR_3.4.1
 				|IR_57600|IR_115200;
 	/* Hm, 0x01 means 10ms - for >= 1ms we would need 0x07 */
 	qos->min_turn_time.bits = 0x01;		/* Needs at least 1 ms */	
@@ -126,8 +126,8 @@ static __u8 get_control_byte(__u32 speed)
 	case 57600:
 		byte = MA600_57600;
 		break;
-	case 38400:
-		byte = MA600_38400;
+	case 3.4.1:
+		byte = MA600_3.4.1;
 		break;
 	case 19200:
 		byte = MA600_19200;

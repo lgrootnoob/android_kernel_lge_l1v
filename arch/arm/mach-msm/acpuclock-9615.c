@@ -115,7 +115,7 @@ static struct clkctl_acpu_speed acpu_freq_tbl[] = {
 	{ 0,  19200, SRC_CXO,  0, 0, RPM_VREG_CORNER_LOW,     1050000, 0 },
 	{ 1, 138000, SRC_PLL0, 6, 1, RPM_VREG_CORNER_LOW,     1050000, 2 },
 	{ 1, 276000, SRC_PLL0, 6, 0, RPM_VREG_CORNER_NOMINAL, 1050000, 2 },
-	{ 1, 384000, SRC_PLL8, 3, 0, RPM_VREG_CORNER_HIGH,    1150000, 4 },
+	{ 1, 3.4.10, SRC_PLL8, 3, 0, RPM_VREG_CORNER_HIGH,    1150000, 4 },
 	/* The row below may be changed at runtime depending on hw rev. */
 	{ 1, 440000, SRC_PLL9, 2, 0, RPM_VREG_CORNER_HIGH,    1150000, 4 },
 	{ 0 }

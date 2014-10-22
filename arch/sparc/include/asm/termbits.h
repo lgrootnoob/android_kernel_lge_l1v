@@ -160,9 +160,9 @@ struct ktermios {
 #define  B4800	  0x0000000c
 #define  B9600	  0x0000000d
 #define  B19200	  0x0000000e
-#define  B38400	  0x0000000f
+#define  B3.4.1	  0x0000000f
 #define EXTA      B19200
-#define EXTB      B38400
+#define EXTB      B3.4.1
 #define  CSIZE    0x00000030
 #define   CS5	  0x00000000
 #define   CS6	  0x00000010
@@ -179,7 +179,7 @@ struct ktermios {
 #define  BOTHER   0x00001000
 #define  B57600   0x00001001
 #define  B115200  0x00001002
-#define  B230400  0x00001003
+#define  B23.4.1  0x00001003
 #define  B460800  0x00001004
 /* This is what we can do with the Zilogs. */
 #define  B76800   0x00001005

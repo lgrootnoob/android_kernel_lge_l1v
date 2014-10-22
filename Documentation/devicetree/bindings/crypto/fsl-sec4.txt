@@ -311,9 +311,9 @@ Secure Non-Volatile Storage (SNVS) Node
           is being mapped.
 
 EXAMPLE
-	sec_mon@314000 {
+	sec_mon@3.4.10 {
 		compatible = "fsl,sec-v4.0-mon";
-		reg = <0x314000 0x1000>;
+		reg = <0x3.4.10 0x1000>;
 		interrupt-parent = <&mpic>;
 		interrupts = <93 2>;
 	};
@@ -387,9 +387,9 @@ FULL EXAMPLE
 		};
 	};
 
-	sec_mon: sec_mon@314000 {
+	sec_mon: sec_mon@3.4.10 {
 		compatible = "fsl,sec-v4.0-mon";
-		reg = <0x314000 0x1000>;
+		reg = <0x3.4.10 0x1000>;
 		interrupt-parent = <&mpic>;
 		interrupts = <93 2>;
 	};

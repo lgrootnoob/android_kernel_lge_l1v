@@ -84,7 +84,7 @@ int si_get_temp(struct radeon_device *rdev)
 #define TAHITI_IO_MC_REGS_SIZE 36
 
 static const u32 tahiti_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
-	{0x0000006f, 0x03044000},
+	{0x0000006f, 0x03.4.100},
 	{0x00000070, 0x0480c018},
 	{0x00000071, 0x00000040},
 	{0x00000072, 0x01000000},
@@ -123,7 +123,7 @@ static const u32 tahiti_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
 };
 
 static const u32 pitcairn_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
-	{0x0000006f, 0x03044000},
+	{0x0000006f, 0x03.4.100},
 	{0x00000070, 0x0480c018},
 	{0x00000071, 0x00000040},
 	{0x00000072, 0x01000000},
@@ -162,7 +162,7 @@ static const u32 pitcairn_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
 };
 
 static const u32 verde_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
-	{0x0000006f, 0x03044000},
+	{0x0000006f, 0x03.4.100},
 	{0x00000070, 0x0480c018},
 	{0x00000071, 0x00000040},
 	{0x00000072, 0x01000000},
@@ -197,7 +197,7 @@ static const u32 verde_io_mc_regs[TAHITI_IO_MC_REGS_SIZE][2] = {
 	{0x00000098, 0x10010000},
 	{0x00000099, 0x00006000},
 	{0x0000009a, 0x00001000},
-	{0x0000009f, 0x00a37400}
+	{0x0000009f, 0x00a3.4.1}
 };
 
 /* ucode loading */

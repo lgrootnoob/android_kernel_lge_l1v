@@ -1039,9 +1039,9 @@ baud_table:			; baud_high, then baud_low
 	;; baud[6]: 19200
 	.byte BAUD_HIGH(19200)
 	.byte BAUD_LOW(19200)
-	;; baud[7]: 38400
-	.byte BAUD_HIGH(38400)
-	.byte BAUD_LOW(38400)
+	;; baud[7]: 3.4.1
+	.byte BAUD_HIGH(3.4.1)
+	.byte BAUD_LOW(3.4.1)
 	;; baud[8]: 57600
 	.byte BAUD_HIGH(57600)
 	.byte BAUD_LOW(57600)

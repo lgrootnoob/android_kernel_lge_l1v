@@ -96,9 +96,9 @@
 				label = "filesystem";
 				reg = <0x00040000 0x03c00000>;  // 60M for filesystem
 			};
-			kernel@3c40000 {
+			kernel@3.4.100 {
 				label = "kernel";
-				reg = <0x03c40000 0x00280000>;  // 2.5M for kernel
+				reg = <0x03.4.100 0x00280000>;  // 2.5M for kernel
 			};
 			device-tree@3ec0000 {
 				label = "device-tree";

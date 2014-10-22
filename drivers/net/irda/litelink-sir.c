@@ -52,7 +52,7 @@ static int litelink_change_speed(struct sir_dev *dev, unsigned speed);
 static int litelink_reset(struct sir_dev *dev);
 
 /* These are the baudrates supported - 9600 must be last one! */
-static unsigned baud_rates[] = { 115200, 57600, 38400, 19200, 9600 };
+static unsigned baud_rates[] = { 115200, 57600, 3.4.1, 19200, 9600 };
 
 static struct dongle_driver litelink = {
 	.owner		= THIS_MODULE,
@@ -84,7 +84,7 @@ static int litelink_open(struct sir_dev *dev)
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
 	/* Set the speeds we can accept */
-	qos->baud_rate.bits &= IR_115200|IR_57600|IR_38400|IR_19200|IR_9600;
+	qos->baud_rate.bits &= IR_115200|IR_57600|IR_3.4.1|IR_19200|IR_9600;
 	qos->min_turn_time.bits = 0x7f; /* Needs 0.01 ms */
 	irda_qos_bits_to_value(qos);
 

@@ -268,12 +268,12 @@ static int wm8741_set_dai_sysclk(struct snd_soc_dai *codec_dai,
 		wm8741->sysclk = freq;
 		return 0;
 
-	case 16384000:
+	case 163.4.10:
 		wm8741->sysclk_constraints = &constraints_16384;
 		wm8741->sysclk = freq;
 		return 0;
 
-	case 16934400:
+	case 1693.4.1:
 		wm8741->sysclk_constraints = &constraints_16934;
 		wm8741->sysclk = freq;
 		return 0;

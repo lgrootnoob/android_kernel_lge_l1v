@@ -2326,7 +2326,7 @@ struct platform_device apq8064_cpu_idle_device = {
 };
 
 static struct msm_dcvs_freq_entry apq8064_freq[] = {
-	{ 384000, 166981,  345600},
+	{ 3.4.10, 166981,  345600},
 	{ 702000, 213049,  632502},
 	{1026000, 285712,  925613},
 	{1242000, 383945, 1176550},

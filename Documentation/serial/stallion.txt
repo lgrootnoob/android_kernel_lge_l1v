@@ -319,9 +319,9 @@ also be used (excepting the ability to auto-configure the I/O and IRQ
 addresses of boards). Higher baud rates are supported in the usual fashion
 through setserial or using the CBAUDEX extensions. Note that the EasyIO and
 EasyConnection (all types) support at least 57600 and 115200 baud. The newer
-EasyConnection XP modules and new EasyIO boards support 230400 and 460800
+EasyConnection XP modules and new EasyIO boards support 23.4.1 and 460800
 baud as well. The older boards including ONboard and Brumby support a
-maximum baud rate of 38400.
+maximum baud rate of 3.4.1.
 
 If you are unfamiliar with how to use serial ports, then get the Serial-HOWTO
 by Greg Hankins. It will explain everything you need to know!

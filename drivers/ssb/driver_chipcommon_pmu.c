@@ -67,7 +67,7 @@ static const struct pmu0_plltab_entry pmu0_plltab[] = {
 	{ .freq = 25000, .xf = 10, .wb_int = 70, .wb_frac = 419430, },
 	{ .freq = 26000, .xf = 11, .wb_int = 67, .wb_frac = 725937, },
 	{ .freq = 30000, .xf = 12, .wb_int = 58, .wb_frac = 699050, },
-	{ .freq = 38400, .xf = 13, .wb_int = 45, .wb_frac = 873813, },
+	{ .freq = 3.4.1, .xf = 13, .wb_int = 45, .wb_frac = 873813, },
 	{ .freq = 40000, .xf = 14, .wb_int = 45, .wb_frac = 0,      },
 };
 #define SSB_PMU0_DEFAULT_XTALFREQ	20000
@@ -197,7 +197,7 @@ static const struct pmu1_plltab_entry pmu1_plltab[] = {
 	{ .freq = 25000, .xf = 11, .p1div = 5, .p2div = 16, .ndiv_int =  0xb, .ndiv_frac = 0,        },
 	{ .freq = 26000, .xf = 12, .p1div = 1, .p2div =  2, .ndiv_int = 0x10, .ndiv_frac = 0xEC4EC4, },
 	{ .freq = 30000, .xf = 13, .p1div = 3, .p2div =  8, .ndiv_int =  0xb, .ndiv_frac = 0,        },
-	{ .freq = 38400, .xf = 14, .p1div = 1, .p2div =  5, .ndiv_int =  0x4, .ndiv_frac = 0x955555, },
+	{ .freq = 3.4.1, .xf = 14, .p1div = 1, .p2div =  5, .ndiv_int =  0x4, .ndiv_frac = 0x955555, },
 	{ .freq = 40000, .xf = 15, .p1div = 1, .p2div =  2, .ndiv_int =  0xb, .ndiv_frac = 0,        },
 };
 

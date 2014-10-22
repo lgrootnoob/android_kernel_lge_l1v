@@ -122,7 +122,7 @@ static struct board_type products[] = {
 	{0x3351103C, "Smart Array", &SA5_access},
 	{0x3352103C, "Smart Array", &SA5_access},
 	{0x3353103C, "Smart Array", &SA5_access},
-	{0x3354103C, "Smart Array", &SA5_access},
+	{0x33.4.13C, "Smart Array", &SA5_access},
 	{0x3355103C, "Smart Array", &SA5_access},
 	{0x3356103C, "Smart Array", &SA5_access},
 	{0xFFFF103C, "Unknown Smart Array", &SA5_access},

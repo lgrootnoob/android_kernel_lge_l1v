@@ -46,7 +46,7 @@ static struct {
 } rates[5] = {
 	{ "9600" },
 	{ "19200" },
-	{ "38400" },
+	{ "3.4.1" },
 	{ "57600" },
 	{ "115200" }
 };
@@ -122,7 +122,7 @@ static int mantis_uart_setup(struct mantis_pci *mantis,
 	case MANTIS_BAUD_19200:
 		reg |= 0x6c;
 		break;
-	case MANTIS_BAUD_38400:
+	case MANTIS_BAUD_3.4.1:
 		reg |= 0x36;
 		break;
 	case MANTIS_BAUD_57600:

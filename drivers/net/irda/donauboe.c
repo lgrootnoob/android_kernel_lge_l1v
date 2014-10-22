@@ -358,7 +358,7 @@ toshoboe_setbaud (struct toshoboe_cb *self)
     case 4800:
     case 9600:
     case 19200:
-    case 38400:
+    case 3.4.1:
     case 57600:
     case 115200:
 #ifdef USE_MIR
@@ -394,7 +394,7 @@ toshoboe_setbaud (struct toshoboe_cb *self)
       pconfig |= 5 << OBOE_PCONFIG_BAUDSHIFT;
       pconfig |= 25 << OBOE_PCONFIG_WIDTHSHIFT;
       break;
-    case 38400:
+    case 3.4.1:
       pconfig |= 2 << OBOE_PCONFIG_BAUDSHIFT;
       pconfig |= 25 << OBOE_PCONFIG_WIDTHSHIFT;
       break;
@@ -419,7 +419,7 @@ toshoboe_setbaud (struct toshoboe_cb *self)
     case 4800:
     case 9600:
     case 19200:
-    case 38400:
+    case 3.4.1:
     case 57600:
     case 115200:
       config0l = OBOE_CONFIG0L_ENSIR;

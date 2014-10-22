@@ -17,7 +17,7 @@
 #include <linux/ceph/libceph.h>
 
 /* f_type in struct statfs */
-#define CEPH_SUPER_MAGIC 0x00c36400
+#define CEPH_SUPER_MAGIC 0x00c3.4.1
 
 /* large granularity for statfs utilization stats to facilitate
  * large volume sizes on 32-bit machines. */

@@ -363,7 +363,7 @@ hamachi_start_xmit() and hamachi_interrupt() code.  There is still some
 re-structuring I would like to do.
 
 03/01/2000 KDU Experimenting with a WIDE range of interrupt mitigation
-parameters on a dual P3-450 setup yielded the new default interrupt
+parameters on a dual P3.4.1 setup yielded the new default interrupt
 mitigation parameters.  Tx should interrupt VERY infrequently due to
 Eric's scheme.  Rx should be more often...
 

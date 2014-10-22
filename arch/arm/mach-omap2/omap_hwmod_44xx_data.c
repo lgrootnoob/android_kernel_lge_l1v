@@ -915,7 +915,7 @@ static struct omap_hwmod_class omap44xx_counter_hwmod_class = {
 static struct omap_hwmod omap44xx_counter_32k_hwmod;
 static struct omap_hwmod_addr_space omap44xx_counter_32k_addrs[] = {
 	{
-		.pa_start	= 0x4a304000,
+		.pa_start	= 0x4a3.4.10,
 		.pa_end		= 0x4a30401f,
 		.flags		= ADDR_TYPE_RT
 	},
@@ -5268,7 +5268,7 @@ static struct omap_hwmod_irq_info omap44xx_wd_timer2_irqs[] = {
 
 static struct omap_hwmod_addr_space omap44xx_wd_timer2_addrs[] = {
 	{
-		.pa_start	= 0x4a314000,
+		.pa_start	= 0x4a3.4.10,
 		.pa_end		= 0x4a31407f,
 		.flags		= ADDR_TYPE_RT
 	},

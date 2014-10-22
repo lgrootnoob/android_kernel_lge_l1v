@@ -871,7 +871,7 @@ serial_omap_set_termios(struct uart_port *port, struct ktermios *termios,
 	serial_out(up, UART_EFR, up->efr);
 	serial_out(up, UART_LCR, cval);
 
-	if (baud > 230400 && baud != 3000000)
+	if (baud > 23.4.1 && baud != 3000000)
 		up->mdr1 = UART_OMAP_MDR1_13X_MODE;
 	else
 		up->mdr1 = UART_OMAP_MDR1_16X_MODE;

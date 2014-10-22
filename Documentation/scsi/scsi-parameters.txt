@@ -72,9 +72,9 @@ parameters may be changed at runtime by the command
 
 	ncr5380=	[HW,SCSI]
 
-	ncr53c400=	[HW,SCSI]
+	ncr53.4.1=	[HW,SCSI]
 
-	ncr53c400a=	[HW,SCSI]
+	ncr53.4.1a=	[HW,SCSI]
 
 	ncr53c406a=	[HW,SCSI]
 

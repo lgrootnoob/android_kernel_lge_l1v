@@ -139,7 +139,7 @@ struct mct_u232_private {
 #define WDR_TIMEOUT 5000 /* default urb timeout */
 
 /*
- * Later day 2.6.0-test kernels have new baud rates like B230400 which
+ * Later day 2.6.0-test kernels have new baud rates like B23.4.1 which
  * we do not know how to support. We ignore them for the moment.
  */
 static int mct_u232_calculate_baud_rate(struct usb_serial *serial,
@@ -164,7 +164,7 @@ static int mct_u232_calculate_baud_rate(struct usb_serial *serial,
 			return 0x08;
 		case 19200:
 			return 0x09;
-		case 38400:
+		case 3.4.1:
 			return 0x0a;
 		case 57600:
 			return 0x0b;
@@ -186,7 +186,7 @@ static int mct_u232_calculate_baud_rate(struct usb_serial *serial,
 		case 4800: break;
 		case 9600: break;
 		case 19200: break;
-		case 38400: break;
+		case 3.4.1: break;
 		case 57600: break;
 		case 115200: break;
 		default:

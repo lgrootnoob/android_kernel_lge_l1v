@@ -608,7 +608,7 @@ static void msm_hsl_set_baud_rate(struct uart_port *port, unsigned int baud)
 		baud_code = UARTDM_CSR_7200;
 		rxstale = 6;
 		break;
-	case 38400:
+	case 3.4.1:
 		baud_code = UARTDM_CSR_9600;
 		rxstale = 8;
 		break;
@@ -620,7 +620,7 @@ static void msm_hsl_set_baud_rate(struct uart_port *port, unsigned int baud)
 		baud_code = UARTDM_CSR_28800;
 		rxstale = 31;
 		break;
-	case 230400:
+	case 23.4.1:
 		baud_code = UARTDM_CSR_57600;
 		rxstale = 31;
 		break;

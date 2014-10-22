@@ -111,7 +111,7 @@ static uint patch_2000[] __initdata = {
 	0x5FFFDFFF,
 	0xA7F85F5E,
 	0xBFFE7F7D,
-	0x10D31450,
+	0x10D3.4.1,
 	0x5F36BFFF,
 	0xAF785F5E,
 	0xBFFDA7F8,

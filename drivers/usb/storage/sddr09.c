@@ -1176,7 +1176,7 @@ sddr09_get_cardinfo(struct us_data *us, unsigned char flags) {
 	cardinfo = nand_find_id(deviceID[1]);
 	if (cardinfo) {
 		/* MB or MiB? It is neither. A 16 MB card has
-		   17301504 raw bytes, of which 16384000 are
+		   17301504 raw bytes, of which 163.4.10 are
 		   usable for user data. */
 		sprintf(blurbtxt + strlen(blurbtxt),
 			", %d MB", 1<<(cardinfo->chipshift - 20));

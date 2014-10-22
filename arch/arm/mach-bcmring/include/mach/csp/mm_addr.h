@@ -45,7 +45,7 @@
 #define MM_ADDR_IO_ARAM            0x30100000	/* 64 KB - extra cycle latency - WS switch */
 #define MM_ADDR_IO_DMA0            0x30200000
 #define MM_ADDR_IO_DMA1            0x30300000
-#define MM_ADDR_IO_ESW             0x30400000
+#define MM_ADDR_IO_ESW             0x3.4.1000
 #define MM_ADDR_IO_CLCD            0x30500000
 #define MM_ADDR_IO_PIF             0x30580000
 #define MM_ADDR_IO_APM             0x30600000

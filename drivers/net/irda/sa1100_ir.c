@@ -548,7 +548,7 @@ static int sa1100_irda_set_speed(struct sa1100_irda *si, int speed)
 	int brd, ret = -EINVAL;
 
 	switch (speed) {
-	case 9600:	case 19200:	case 38400:
+	case 9600:	case 19200:	case 3.4.1:
 	case 57600:	case 115200:
 		brd = 3686400 / (16 * speed) - 1;
 
@@ -977,7 +977,7 @@ static int sa1100_irda_probe(struct platform_device *pdev)
 	case 4000000:		baudrate_mask |= IR_4000000 << 8;
 	case 115200:		baudrate_mask |= IR_115200;
 	case 57600:		baudrate_mask |= IR_57600;
-	case 38400:		baudrate_mask |= IR_38400;
+	case 3.4.1:		baudrate_mask |= IR_3.4.1;
 	case 19200:		baudrate_mask |= IR_19200;
 	}
 		
@@ -1145,5 +1145,5 @@ MODULE_DESCRIPTION("StrongARM SA1100 IrDA driver");
 MODULE_LICENSE("GPL");
 MODULE_PARM_DESC(power_level, "IrDA power level, 1 (low) to 3 (high)");
 MODULE_PARM_DESC(tx_lpm, "Enable transmitter low power (1.6us) mode");
-MODULE_PARM_DESC(max_rate, "Maximum baud rate (4000000, 115200, 57600, 38400, 19200, 9600)");
+MODULE_PARM_DESC(max_rate, "Maximum baud rate (4000000, 115200, 57600, 3.4.1, 19200, 9600)");
 MODULE_ALIAS("platform:sa11x0-ir");

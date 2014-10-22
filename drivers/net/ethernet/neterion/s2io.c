@@ -1453,15 +1453,15 @@ static int init_nic(struct s2io_nic *nic)
 		writeq(val64, &bar0->tx_w_round_robin_4);
 		break;
 	case 5:
-		val64 = 0x0001020304000102ULL;
+		val64 = 0x00010203.4.10102ULL;
 		writeq(val64, &bar0->tx_w_round_robin_0);
-		val64 = 0x0304000102030400ULL;
+		val64 = 0x03.4.1010203.4.1ULL;
 		writeq(val64, &bar0->tx_w_round_robin_1);
-		val64 = 0x0102030400010203ULL;
+		val64 = 0x010203.4.1010203ULL;
 		writeq(val64, &bar0->tx_w_round_robin_2);
-		val64 = 0x0400010203040001ULL;
+		val64 = 0x0400010203.4.101ULL;
 		writeq(val64, &bar0->tx_w_round_robin_3);
-		val64 = 0x0203040000000000ULL;
+		val64 = 0x0203.4.100000000ULL;
 		writeq(val64, &bar0->tx_w_round_robin_4);
 		break;
 	case 6:
@@ -1560,15 +1560,15 @@ static int init_nic(struct s2io_nic *nic)
 		writeq(val64, &bar0->rts_qos_steering);
 		break;
 	case 5:
-		val64 = 0x0001020304000102ULL;
+		val64 = 0x00010203.4.10102ULL;
 		writeq(val64, &bar0->rx_w_round_robin_0);
-		val64 = 0x0304000102030400ULL;
+		val64 = 0x03.4.1010203.4.1ULL;
 		writeq(val64, &bar0->rx_w_round_robin_1);
-		val64 = 0x0102030400010203ULL;
+		val64 = 0x010203.4.1010203ULL;
 		writeq(val64, &bar0->rx_w_round_robin_2);
-		val64 = 0x0400010203040001ULL;
+		val64 = 0x0400010203.4.101ULL;
 		writeq(val64, &bar0->rx_w_round_robin_3);
-		val64 = 0x0203040000000000ULL;
+		val64 = 0x0203.4.100000000ULL;
 		writeq(val64, &bar0->rx_w_round_robin_4);
 
 		val64 = 0x8080404020201008ULL;

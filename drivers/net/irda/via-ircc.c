@@ -339,12 +339,12 @@ static __devinit int via_ircc_open(struct pci_dev *pdev, chipio_t * info,
 	switch( self->io.dongle_id ){
 	case 0x0d:
 		self->qos.baud_rate.bits =
-		    IR_9600 | IR_19200 | IR_38400 | IR_57600 | IR_115200 |
+		    IR_9600 | IR_19200 | IR_3.4.1 | IR_57600 | IR_115200 |
 		    IR_576000 | IR_1152000 | (IR_4000000 << 8);
 		break;
 	default:
 		self->qos.baud_rate.bits =
-		    IR_9600 | IR_19200 | IR_38400 | IR_57600 | IR_115200;
+		    IR_9600 | IR_19200 | IR_3.4.1 | IR_57600 | IR_115200;
 		break;
 	}
 
@@ -691,7 +691,7 @@ static void via_ircc_change_speed(struct via_ircc_cb *self, __u32 speed)
 	case 2400:
 	case 9600:
 	case 19200:
-	case 38400:
+	case 3.4.1:
 	case 57600:
 	case 115200:
 		value = (115200/speed)-1;

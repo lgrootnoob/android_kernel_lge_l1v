@@ -952,7 +952,7 @@ serial_hsu_set_termios(struct uart_port *port, struct ktermios *termios,
 
 	if ((up->port.uartclk / quot) < (2400 * 16))
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_HSU_64_1B;
-	else if ((up->port.uartclk / quot) < (230400 * 16))
+	else if ((up->port.uartclk / quot) < (23.4.1 * 16))
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_HSU_64_16B;
 	else
 		fcr = UART_FCR_ENABLE_FIFO | UART_FCR_HSU_64_32B;

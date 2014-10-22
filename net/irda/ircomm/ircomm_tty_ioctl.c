@@ -354,7 +354,7 @@ static int ircomm_tty_set_serial_info(struct ircomm_tty_cb *self,
 			if ((driver->flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 				driver->tty->alt_speed = 115200;
 			if ((driver->flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-				driver->tty->alt_speed = 230400;
+				driver->tty->alt_speed = 23.4.1;
 			if ((driver->flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 				driver->tty->alt_speed = 460800;
 			ircomm_tty_change_speed(driver);

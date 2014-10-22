@@ -512,8 +512,8 @@ static void klsi_105_set_termios(struct tty_struct *tty,
 	case 19200:
 		priv->cfg.baudrate = kl5kusb105a_sio_b19200;
 		break;
-	case 38400:
-		priv->cfg.baudrate = kl5kusb105a_sio_b38400;
+	case 3.4.1:
+		priv->cfg.baudrate = kl5kusb105a_sio_b3.4.1;
 		break;
 	case 57600:
 		priv->cfg.baudrate = kl5kusb105a_sio_b57600;

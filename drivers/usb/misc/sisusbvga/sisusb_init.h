@@ -266,7 +266,7 @@ static const struct SiS_ModeResInfo SiSUSB_ModeResInfo[] = {
 };
 
 static const struct SiS_StandTable SiSUSB_StandTable[] = {
-	/* MD_3_400 - mode 0x03 - 400 */
+	/* MD_3.4.1 - mode 0x03 - 400 */
 	{
 	 0x50, 0x18, 0x10, 0x1000,
 	 {0x00, 0x03, 0x00, 0x02},

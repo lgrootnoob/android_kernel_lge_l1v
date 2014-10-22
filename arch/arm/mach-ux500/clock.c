@@ -299,7 +299,7 @@ static struct clk clk_32khz = {
 static DEFINE_PRCMU_CLK(svaclk,		0x0, 2, SVAMMDSPCLK);
 static DEFINE_PRCMU_CLK(siaclk,		0x0, 3, SIAMMDSPCLK);
 static DEFINE_PRCMU_CLK(sgaclk,		0x0, 4, SGACLK);
-static DEFINE_PRCMU_CLK_RATE(uartclk,	0x0, 5, UARTCLK, 38400000);
+static DEFINE_PRCMU_CLK_RATE(uartclk,	0x0, 5, UARTCLK, 3.4.1000);
 static DEFINE_PRCMU_CLK(msp02clk,	0x0, 6, MSP02CLK);
 static DEFINE_PRCMU_CLK(msp1clk,	0x0, 7, MSP1CLK); /* v1 */
 static DEFINE_PRCMU_CLK_RATE(i2cclk,	0x0, 8, I2CCLK, 48000000);

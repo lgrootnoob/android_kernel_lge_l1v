@@ -310,7 +310,7 @@ static struct pll_vote_clk pll8_clk = {
 	.parent = &pxo_clk.c,
 	.c = {
 		.dbg_name = "pll8_clk",
-		.rate = 384000000,
+		.rate = 3.4.10000,
 		.ops = &clk_ops_pll_vote,
 		CLK_INIT(pll8_clk.c),
 		.warned = true,
@@ -2006,7 +2006,7 @@ static struct rcg_clk cam_clk = {
 static struct clk_freq_tbl clk_tbl_csi[] = {
 	F_CSI(        0,  gnd, 1),
 	F_CSI(192000000, pll8, 2),
-	F_CSI(384000000, pll8, 1),
+	F_CSI(3.4.10000, pll8, 1),
 	F_END
 };
 
@@ -2024,7 +2024,7 @@ static struct rcg_clk csi_src_clk = {
 	.c = {
 		.dbg_name = "csi_src_clk",
 		.ops = &clk_ops_rcg,
-		VDD_DIG_FMAX_MAP2(LOW, 192000000, NOMINAL, 384000000),
+		VDD_DIG_FMAX_MAP2(LOW, 192000000, NOMINAL, 3.4.10000),
 		CLK_INIT(csi_src_clk.c),
 	},
 };
@@ -2411,7 +2411,7 @@ static struct clk_freq_tbl clk_tbl_mdp[] = {
 	F_MDP( 27000000, pxo,  0,  0),
 	F_MDP( 29540000, pll8, 1, 13),
 	F_MDP( 34910000, pll8, 1, 11),
-	F_MDP( 38400000, pll8, 1, 10),
+	F_MDP( 3.4.1000, pll8, 1, 10),
 	F_MDP( 59080000, pll8, 2, 13),
 	F_MDP( 76800000, pll8, 1,  5),
 	F_MDP( 85330000, pll8, 2,  9),
@@ -2580,7 +2580,7 @@ static struct clk_freq_tbl clk_tbl_rot[] = {
 	F_ROT( 27000000, pxo,   1),
 	F_ROT( 29540000, pll8, 13),
 	F_ROT( 32000000, pll8, 12),
-	F_ROT( 38400000, pll8, 10),
+	F_ROT( 3.4.1000, pll8, 10),
 	F_ROT( 48000000, pll8,  8),
 	F_ROT( 54860000, pll8,  7),
 	F_ROT( 64000000, pll8,  6),
@@ -2823,7 +2823,7 @@ static struct clk_freq_tbl clk_tbl_vpe[] = {
 	F_VPE(        0, gnd,   1),
 	F_VPE( 27000000, pxo,   1),
 	F_VPE( 34909000, pll8, 11),
-	F_VPE( 38400000, pll8, 10),
+	F_VPE( 3.4.1000, pll8, 10),
 	F_VPE( 64000000, pll8,  6),
 	F_VPE( 76800000, pll8,  5),
 	F_VPE( 96000000, pll8,  4),
@@ -2873,7 +2873,7 @@ static struct clk_freq_tbl clk_tbl_vfe[] = {
 	F_VFE( 13960000, pll8,  1, 2, 55),
 	F_VFE( 27000000, pxo,   1, 0,  0),
 	F_VFE( 36570000, pll8,  1, 2, 21),
-	F_VFE( 38400000, pll8,  2, 1,  5),
+	F_VFE( 3.4.1000, pll8,  2, 1,  5),
 	F_VFE( 45180000, pll8,  1, 2, 17),
 	F_VFE( 48000000, pll8,  2, 1,  4),
 	F_VFE( 54860000, pll8,  1, 1,  7),

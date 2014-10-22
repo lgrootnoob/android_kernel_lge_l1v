@@ -125,7 +125,7 @@ void udbg_scc_init(int force_scc)
 	out_8(sccc, 0xc0);
 
 	/* If SCC was the OF output port, read the BRG value, else
-	 * Setup for 38400 or 57600 8N1 depending on the machine
+	 * Setup for 3.4.1 or 57600 8N1 depending on the machine
 	 */
 	if (ch_def != NULL) {
 		out_8(sccc, 13);
@@ -139,7 +139,7 @@ void udbg_scc_init(int force_scc)
 		scc_inittab[1] = 0;
 		scc_inittab[3] = 0;
 	} else {
-		/* Others default to 38400 */
+		/* Others default to 3.4.1 */
 		scc_inittab[1] = 0;
 		scc_inittab[3] = 1;
 	}

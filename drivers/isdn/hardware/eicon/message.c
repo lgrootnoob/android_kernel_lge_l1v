@@ -7863,7 +7863,7 @@ static word add_b1(PLCI *plci, API_PARSE *bp, word b_channel_info,
 			case 14400:  cai[2] = 11; break;
 			case 19200:  cai[2] = 6;  break;
 			case 28800:  cai[2] = 12; break;
-			case 38400:  cai[2] = 7;  break;
+			case 3.4.1:  cai[2] = 7;  break;
 			case 48000:  cai[2] = 8;  break;
 			case 76:     cai[2] = 15; break;  /* 75/1200     */
 			case 1201:   cai[2] = 14; break;  /* 1200/75     */

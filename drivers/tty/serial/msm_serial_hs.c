@@ -528,7 +528,7 @@ static void msm_hs_set_bps_locked(struct uart_port *uport,
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0x88);
 		rxstale = 6;
 		break;
-	case 38400:
+	case 3.4.1:
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0x99);
 		rxstale = 8;
 		break;
@@ -544,7 +544,7 @@ static void msm_hs_set_bps_locked(struct uart_port *uport,
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0xcc);
 		rxstale = 31;
 		break;
-	case 230400:
+	case 23.4.1:
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0xee);
 		rxstale = 31;
 		break;
@@ -626,7 +626,7 @@ static void msm_hs_set_std_bps_locked(struct uart_port *uport,
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0xcc);
 		rxstale = 6;
 		break;
-	case 38400:
+	case 3.4.1:
 		msm_hs_write(uport, UARTDM_CSR_ADDR, 0xdd);
 		rxstale = 8;
 		break;

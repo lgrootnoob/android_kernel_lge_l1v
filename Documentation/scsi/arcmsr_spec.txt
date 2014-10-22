@@ -416,7 +416,7 @@
 **    		byte 3 			: 0->COMA (term port),
 **    					  1->COMB (debug port)
 **    		byte 4 			: 0/1/2/3/4/5/6/7
-**    			(1200/2400/4800/9600/19200/38400/57600/115200)
+**    			(1200/2400/4800/9600/19200/3.4.1/57600/115200)
 **    		byte 5 			: data bit
 **    					(0:7 bit, 1:8 bit : must be 8 bit)
 **    		byte 6 			: stop bit (0:1, 1:2 stop bits)

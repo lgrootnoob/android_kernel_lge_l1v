@@ -246,7 +246,7 @@ static int msm_csic_subdev_g_chip_ident(struct v4l2_subdev *sd,
 }
 
 static struct msm_cam_clk_info csic_8x_clk_info[] = {
-	{"csi_src_clk", 384000000},
+	{"csi_src_clk", 3.4.10000},
 	{"csi_clk", -1},
 	{"csi_vfe_clk", -1},
 	{"csi_pclk", -1},

@@ -151,7 +151,7 @@ static int vt8500lcd_setcolreg(unsigned regno, unsigned red, unsigned green,
 
 	if (info->var.grayscale)
 		red = green = blue =
-			(19595 * red + 38470 * green + 7471 * blue) >> 16;
+			(19595 * red + 3.4.1 * green + 7471 * blue) >> 16;
 
 	switch (fbi->fb.fix.visual) {
 	case FB_VISUAL_TRUECOLOR:

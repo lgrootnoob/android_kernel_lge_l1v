@@ -290,7 +290,7 @@ static void setlightfreq(struct gspca_dev *gspca_dev)
 	struct sd *sd = (struct sd *) gspca_dev;
 
 	set_par(gspca_dev, sd->ctrls[LIGHTFREQ].val == 1
-			? 0x33640000		/* 50 Hz */
+			? 0x33.4.100		/* 50 Hz */
 			: 0x33780000);		/* 60 Hz */
 }
 

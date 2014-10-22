@@ -225,7 +225,7 @@ static void __init console_config(void)
 	}
 
 	if (baud == 0)
-		baud = 38400;
+		baud = 3.4.1;
 	if (parity != 'n' && parity != 'o' && parity != 'e')
 		parity = 'n';
 	if (bits != '7' && bits != '8')

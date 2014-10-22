@@ -292,12 +292,12 @@ static void kurobox_pro_power_off(void)
 	const unsigned char watchdogkill[]	= {0x01, 0x35, 0x00};
 	const unsigned char shutdownwait[]	= {0x00, 0x0c};
 	const unsigned char poweroff[]		= {0x00, 0x06};
-	/* 38400 baud divisor */
-	const unsigned divisor = ((orion5x_tclk + (8 * 38400)) / (16 * 38400));
+	/* 3.4.1 baud divisor */
+	const unsigned divisor = ((orion5x_tclk + (8 * 3.4.1)) / (16 * 3.4.1));
 
 	pr_info("%s: triggering power-off...\n", __func__);
 
-	/* hijack uart1 and reset into sane state (38400,8n1,even parity) */
+	/* hijack uart1 and reset into sane state (3.4.1,8n1,even parity) */
 	writel(0x83, UART1_REG(LCR));
 	writel(divisor & 0xff, UART1_REG(DLL));
 	writel((divisor >> 8) & 0xff, UART1_REG(DLM));

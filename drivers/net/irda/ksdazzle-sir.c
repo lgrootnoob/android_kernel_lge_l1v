@@ -177,7 +177,7 @@ static void ksdazzle_speed_irq(struct urb *urb)
 /* Send a control request to change speed of the dongle */
 static int ksdazzle_change_speed(struct ksdazzle_cb *kingsun, unsigned speed)
 {
-	static unsigned int supported_speeds[] = { 2400, 9600, 19200, 38400,
+	static unsigned int supported_speeds[] = { 2400, 9600, 19200, 3.4.1,
 		57600, 115200, 576000, 1152000, 4000000, 0
 	};
 	int err;
@@ -683,7 +683,7 @@ static int ksdazzle_probe(struct usb_interface *intf,
 	   with this dongle.
 	 */
 	kingsun->qos.baud_rate.bits =
-	    IR_2400 | IR_9600 | IR_19200 | IR_38400 | IR_57600 | IR_115200;
+	    IR_2400 | IR_9600 | IR_19200 | IR_3.4.1 | IR_57600 | IR_115200;
 	kingsun->qos.min_turn_time.bits &= KINGSUN_MTT;
 	irda_qos_bits_to_value(&kingsun->qos);
 

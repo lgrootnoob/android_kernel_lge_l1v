@@ -168,7 +168,7 @@ struct atmel_lcdfb_info {
 #define ATMEL_LCDC_DP3_5	0x0824
 #define ATMEL_LCDC_DP2_3	0x0828
 #define ATMEL_LCDC_DP5_7	0x082c
-#define ATMEL_LCDC_DP3_4	0x0830
+#define ATMEL_LCDC_DP3.4.1x0830
 #define ATMEL_LCDC_DP4_5	0x0834
 #define ATMEL_LCDC_DP6_7	0x0838
 #define	ATMEL_LCDC_DP1_2_VAL	(0xff)

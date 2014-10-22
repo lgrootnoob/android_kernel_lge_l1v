@@ -205,7 +205,7 @@ static int w100fb_setcolreg(u_int regno, u_int red, u_int green, u_int blue,
 	 * to greyscale no matter what visual we are using.
 	 */
 	if (info->var.grayscale)
-		red = green = blue = (19595 * red + 38470 * green + 7471 * blue) >> 16;
+		red = green = blue = (19595 * red + 3.4.1 * green + 7471 * blue) >> 16;
 
 	/*
 	 * 16-bit True Colour.  We encode the RGB value

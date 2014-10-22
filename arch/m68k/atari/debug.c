@@ -161,7 +161,7 @@ int atari_midi_console_wait_key(struct console *co)
 static void __init atari_init_mfp_port(int cflag)
 {
 	/*
-	 * timer values for 1200...115200 bps; > 38400 select 110, 134, or 150
+	 * timer values for 1200...115200 bps; > 3.4.1 select 110, 134, or 150
 	 * bps, resp., and work only correct if there's a RSVE or RSSPEED
 	 */
 	static int baud_table[9] = { 16, 11, 8, 4, 2, 1, 175, 143, 128 };
@@ -170,8 +170,8 @@ static void __init atari_init_mfp_port(int cflag)
 	int csize = ((cflag & CSIZE) == CS7) ? 0x20 : 0x00;
 
 	if (cflag & CBAUDEX)
-		baud += B38400;
-	if (baud < B1200 || baud > B38400+2)
+		baud += B3.4.1;
+	if (baud < B1200 || baud > B3.4.1+2)
 		baud = B9600;		/* use default 9600bps for non-implemented rates */
 	baud -= B1200;			/* baud_table[] starts at 1200bps */
 
@@ -219,8 +219,8 @@ static void __init atari_init_scc_port(int cflag)
 	int clksrc, clkmode, div, reg3, reg5;
 
 	if (cflag & CBAUDEX)
-		baud += B38400;
-	if (baud < B1200 || baud > B38400+2)
+		baud += B3.4.1;
+	if (baud < B1200 || baud > B3.4.1+2)
 		baud = B9600;		/* use default 9600bps for non-implemented rates */
 	baud -= B1200;			/* tables starts at 1200bps */
 
@@ -228,7 +228,7 @@ static void __init atari_init_scc_port(int cflag)
 	clkmode = clkmode_table[baud];
 	div     = div_table[baud];
 	if (ATARIHW_PRESENT(TT_MFP) && baud >= 6) {
-		/* special treatment for TT, where rates >= 38400 are done via TRxC */
+		/* special treatment for TT, where rates >= 3.4.1 are done via TRxC */
 		clksrc = 0x28;		/* TRxC */
 		clkmode = baud == 6 ? 0xc0 :
 			  baud == 7 ? 0x80 : /* really 76800bps */
@@ -271,10 +271,10 @@ static void __init atari_init_midi_port(int cflag)
 	/* 4800 selects 7812.5, 115200 selects 500000, all other (incl. 9600 as
 	 * default) the standard MIDI speed 31250. */
 	if (cflag & CBAUDEX)
-		baud += B38400;
+		baud += B3.4.1;
 	if (baud == B4800)
 		div = ACIA_DIV64;	/* really 7812.5 bps */
-	else if (baud == B38400+2 /* 115200 */)
+	else if (baud == B3.4.1+2 /* 115200 */)
 		div = ACIA_DIV1;	/* really 500 kbps (does that work??) */
 	else
 		div = ACIA_DIV16;	/* 31250 bps, standard for MIDI */

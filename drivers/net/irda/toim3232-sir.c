@@ -147,7 +147,7 @@ static int toim3232_reset(struct sir_dev *);
 
 #define TOIM3232_115200 0x00
 #define TOIM3232_57600  0x01
-#define TOIM3232_38400  0x02
+#define TOIM3232_3.4.1  0x02
 #define TOIM3232_19200  0x03
 #define TOIM3232_9600   0x06
 #define TOIM3232_2400   0x0A
@@ -196,8 +196,8 @@ static int toim3232_open(struct sir_dev *dev)
 
 	/* The TOI3232 supports many speeds between 1200bps and 115000bps.
 	 * We really only care about those supported by the IRDA spec, but
-	 * 38400 seems to be implemented in many places */
-	qos->baud_rate.bits &= IR_2400|IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
+	 * 3.4.1 seems to be implemented in many places */
+	qos->baud_rate.bits &= IR_2400|IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
 
 	/* From the tekram driver. Not sure what a reasonable value is -- DGB */
 	qos->min_turn_time.bits = 0x01; /* Needs at least 10 ms */
@@ -262,8 +262,8 @@ static int toim3232_change_speed(struct sir_dev *dev, unsigned speed)
 		case 19200:
 			byte = TOIM3232_PW|TOIM3232_19200;
 			break;
-		case 38400:
-			byte = TOIM3232_PW|TOIM3232_38400;
+		case 3.4.1:
+			byte = TOIM3232_PW|TOIM3232_3.4.1;
 			break;
 		case 57600:
 			byte = TOIM3232_PW|TOIM3232_57600;

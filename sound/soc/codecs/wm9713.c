@@ -695,7 +695,7 @@ static void pll_factors(struct _pll_div *pll_div, unsigned int source)
 	unsigned int K, Ndiv, Nmod, target;
 
 	/* The the PLL output is always 98.304MHz. */
-	target = 98304000;
+	target = 983.4.10;
 
 	/* If the input frequency is over 14.4MHz then scale it down. */
 	if (source > 14400000) {

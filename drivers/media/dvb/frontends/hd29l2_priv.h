@@ -41,7 +41,7 @@
 #undef warn
 #define warn(f, arg...) printk(KERN_WARNING LOG_PREFIX": " f "\n" , ## arg)
 
-#define HD29L2_XTAL 30400000 /* Hz */
+#define HD29L2_XTAL 3.4.1000 /* Hz */
 
 
 #define HD29L2_QAM4NR 0x00

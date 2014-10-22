@@ -67,7 +67,7 @@ static int act200l_change_speed(struct sir_dev *dev, unsigned speed);
 #define ACT200L_2400    0x5f
 #define ACT200L_9600    0x17
 #define ACT200L_19200   0x0b
-#define ACT200L_38400   0x05
+#define ACT200L_3.4.1   0x05
 #define ACT200L_57600   0x03
 #define ACT200L_115200  0x01
 
@@ -113,7 +113,7 @@ static int act200l_open(struct sir_dev *dev)
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
 	/* Set the speeds we can accept */
-	qos->baud_rate.bits &= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
+	qos->baud_rate.bits &= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
 	qos->min_turn_time.bits = 0x03;
 	irda_qos_bits_to_value(qos);
 
@@ -160,9 +160,9 @@ static int act200l_change_speed(struct sir_dev *dev, unsigned speed)
 		control[0] = ACT200L_REG8 |  (ACT200L_19200       & 0x0f);
 		control[1] = ACT200L_REG9 | ((ACT200L_19200 >> 4) & 0x0f);
 		break;
-	case 38400:
-		control[0] = ACT200L_REG8 |  (ACT200L_38400       & 0x0f);
-		control[1] = ACT200L_REG9 | ((ACT200L_38400 >> 4) & 0x0f);
+	case 3.4.1:
+		control[0] = ACT200L_REG8 |  (ACT200L_3.4.1       & 0x0f);
+		control[1] = ACT200L_REG9 | ((ACT200L_3.4.1 >> 4) & 0x0f);
 		break;
 	case 57600:
 		control[0] = ACT200L_REG8 |  (ACT200L_57600       & 0x0f);

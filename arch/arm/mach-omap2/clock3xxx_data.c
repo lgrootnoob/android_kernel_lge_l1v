@@ -108,7 +108,7 @@ static struct clk virt_26m_ck = {
 static struct clk virt_38_4m_ck = {
 	.name		= "virt_38_4m_ck",
 	.ops		= &clkops_null,
-	.rate		= 38400000,
+	.rate		= 3.4.1000,
 };
 
 static const struct clksel_rate osc_sys_12m_rates[] = {

@@ -142,9 +142,9 @@ struct ktermios {
 #define  B4800	0000014
 #define  B9600	0000015
 #define  B19200	0000016
-#define  B38400	0000017
+#define  B3.4.1	0000017
 #define EXTA B19200
-#define EXTB B38400
+#define EXTB B3.4.1
 #define CSIZE	0000060
 #define   CS5	0000000
 #define   CS6	0000020
@@ -160,7 +160,7 @@ struct ktermios {
 #define	   BOTHER 0010000
 #define    B57600 0010001
 #define   B115200 0010002
-#define   B230400 0010003
+#define   B23.4.1 0010003
 #define   B460800 0010004
 #define   B500000 0010005
 #define   B576000 0010006

@@ -603,7 +603,7 @@ static int wm8940_set_dai_sysclk(struct snd_soc_dai *codec_dai,
 	case 11289600:
 	case 12000000:
 	case 12288000:
-	case 16934400:
+	case 1693.4.1:
 	case 18432000:
 		wm8940->sysclk = freq;
 		return 0;

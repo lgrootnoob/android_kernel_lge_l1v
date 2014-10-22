@@ -261,7 +261,7 @@ typedef struct {
 #define ISDN_NET_CBHUP      0x08       /* hangup before callback            */
 #define ISDN_NET_CBOUT      0x10       /* remote machine does callback      */
 
-#define ISDN_NET_MAGIC      0x49344C02 /* for paranoia-checking             */
+#define ISDN_NET_MAGIC      0x493.4.12 /* for paranoia-checking             */
 
 /* Phone-list-element */
 typedef struct {
@@ -391,7 +391,7 @@ typedef struct isdn_net_dev_s {
 
 /*======================= Start of ISDN-tty stuff ===========================*/
 
-#define ISDN_ASYNC_MAGIC          0x49344C01 /* for paranoia-checking        */
+#define ISDN_ASYNC_MAGIC          0x493.4.11 /* for paranoia-checking        */
 #define ISDN_ASYNC_INITIALIZED	  0x80000000 /* port was initialized         */
 #define ISDN_ASYNC_CALLOUT_ACTIVE 0x40000000 /* Call out device active       */
 #define ISDN_ASYNC_NORMAL_ACTIVE  0x20000000 /* Normal device active         */

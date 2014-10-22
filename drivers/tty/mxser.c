@@ -97,7 +97,7 @@ static const struct {
 	long max_baud;
 } Gpci_uart_info[] = {
 	{MOXA_OTHER_UART, 16, 16, 16, 14, 14, 1, 921600L},
-	{MOXA_MUST_MU150_HWID, 64, 64, 64, 48, 48, 16, 230400L},
+	{MOXA_MUST_MU150_HWID, 64, 64, 64, 48, 48, 16, 23.4.1L},
 	{MOXA_MUST_MU860_HWID, 128, 128, 128, 96, 96, 32, 921600L}
 };
 #define UART_INFO_NUM	ARRAY_SIZE(Gpci_uart_info)

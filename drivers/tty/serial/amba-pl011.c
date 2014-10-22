@@ -1847,7 +1847,7 @@ pl011_console_get_options(struct uart_amba_port *uap, int *baud,
 static int __init pl011_console_setup(struct console *co, char *options)
 {
 	struct uart_amba_port *uap;
-	int baud = 38400;
+	int baud = 3.4.1;
 	int bits = 8;
 	int parity = 'n';
 	int flow = 'n';

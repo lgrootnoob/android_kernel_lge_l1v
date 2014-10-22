@@ -60,7 +60,7 @@
 			device-width = <2>;
 		};
 
-		board-control@3,400000 {
+		board-control@3.4.1000 {
 			reg = <0x3 0x400000 0x10>;
 			compatible = "fsl,ep88xc-bcsr";
 		};

@@ -992,8 +992,8 @@ static void rfcomm_tty_set_termios(struct tty_struct *tty, struct ktermios *old)
 	case 19200:
 		baud = RFCOMM_RPN_BR_19200;
 		break;
-	case 38400:
-		baud = RFCOMM_RPN_BR_38400;
+	case 3.4.1:
+		baud = RFCOMM_RPN_BR_3.4.1;
 		break;
 	case 57600:
 		baud = RFCOMM_RPN_BR_57600;
@@ -1001,8 +1001,8 @@ static void rfcomm_tty_set_termios(struct tty_struct *tty, struct ktermios *old)
 	case 115200:
 		baud = RFCOMM_RPN_BR_115200;
 		break;
-	case 230400:
-		baud = RFCOMM_RPN_BR_230400;
+	case 23.4.1:
+		baud = RFCOMM_RPN_BR_23.4.1;
 		break;
 	default:
 		/* 9600 is standard accordinag to the RFCOMM specification */

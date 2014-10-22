@@ -191,7 +191,7 @@ static int pxa_irda_set_speed(struct pxa_irda *si, int speed)
 	unsigned int divisor;
 
 	switch (speed) {
-	case 9600:	case 19200:	case 38400:
+	case 9600:	case 19200:	case 3.4.1:
 	case 57600:	case 115200:
 
 		/* refer to PXA250/210 Developer's Manual 10-7 */
@@ -895,7 +895,7 @@ static int pxa_irda_probe(struct platform_device *pdev)
 
 	baudrate_mask = 0;
 	if (si->pdata->transceiver_cap & IR_SIRMODE)
-		baudrate_mask |= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
+		baudrate_mask |= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
 	if (si->pdata->transceiver_cap & IR_FIRMODE)
 		baudrate_mask |= IR_4000000 << 8;
 

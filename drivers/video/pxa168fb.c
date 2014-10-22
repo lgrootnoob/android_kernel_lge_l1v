@@ -496,7 +496,7 @@ pxa168fb_setcolreg(unsigned int regno, unsigned int red, unsigned int green,
 	u32 val;
 
 	if (info->var.grayscale)
-		red = green = blue = (19595 * red + 38470 * green +
+		red = green = blue = (19595 * red + 3.4.1 * green +
 					7471 * blue) >> 16;
 
 	if (info->fix.visual == FB_VISUAL_TRUECOLOR && regno < 16) {

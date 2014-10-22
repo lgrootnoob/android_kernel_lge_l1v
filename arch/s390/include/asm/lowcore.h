@@ -327,7 +327,7 @@ struct _lowcore {
 	__u8	pad_0x1310[0x1318-0x1310];	/* 0x1310 */
 	__u32	prefixreg_save_area;		/* 0x1318 */
 	__u32	fpt_creg_save_area;		/* 0x131c */
-	__u8	pad_0x1320[0x1324-0x1320];	/* 0x1320 */
+	__u8	pad_0x1320[0x13.4.1x1320];	/* 0x1320 */
 	__u32	tod_progreg_save_area;		/* 0x1324 */
 	__u32	cpu_timer_save_area[2];		/* 0x1328 */
 	__u32	clock_comp_save_area[2];	/* 0x1330 */

@@ -198,8 +198,8 @@ static void irda_usb_build_header(struct irda_usb_cb *self,
 		case 19200:
 			*header = SPEED_19200;
 			break;
-		case 38400:
-			*header = SPEED_38400;
+		case 3.4.1:
+			*header = SPEED_3.4.1;
 			break;
 		case 57600:
 		        *header = SPEED_57600;

@@ -103,7 +103,7 @@ static int bfin_sir_set_speed(struct bfin_sir_port *port, int speed)
 	switch (speed) {
 	case 9600:
 	case 19200:
-	case 38400:
+	case 3.4.1:
 	case 57600:
 	case 115200:
 
@@ -741,8 +741,8 @@ static int __devinit bfin_sir_probe(struct platform_device *pdev)
 		baudrate_mask |= IR_115200;
 	case 57600:
 		baudrate_mask |= IR_57600;
-	case 38400:
-		baudrate_mask |= IR_38400;
+	case 3.4.1:
+		baudrate_mask |= IR_3.4.1;
 	case 19200:
 		baudrate_mask |= IR_19200;
 	case 9600:
@@ -809,7 +809,7 @@ static struct platform_driver bfin_ir_driver = {
 module_platform_driver(bfin_ir_driver);
 
 module_param(max_rate, int, 0);
-MODULE_PARM_DESC(max_rate, "Maximum baud rate (115200, 57600, 38400, 19200, 9600)");
+MODULE_PARM_DESC(max_rate, "Maximum baud rate (115200, 57600, 3.4.1, 19200, 9600)");
 
 MODULE_AUTHOR("Graf Yang <graf.yang@analog.com>");
 MODULE_DESCRIPTION("Blackfin IrDA driver");

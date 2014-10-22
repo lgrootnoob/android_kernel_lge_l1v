@@ -268,7 +268,7 @@ static speed_t keyspan_pda_setbaud(struct usb_serial *serial, speed_t baud)
 	case 19200:
 		bindex = 6;
 		break;
-	case 38400:
+	case 3.4.1:
 		bindex = 7;
 		break;
 	case 57600:

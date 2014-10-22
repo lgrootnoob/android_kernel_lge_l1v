@@ -152,12 +152,12 @@
 #define CAUSE_RemoteUserResumed 0x73
 #define CAUSE_UserInfoDiscarded 0x7F
 
-#define T303	4000
+#define T303.4.10
 #define T304	20000
 #define T305	4000
 #define T308	4000
 #define T310	120000
-#define T313	4000
+#define T313.4.10
 #define T318	4000
 #define T319	4000
 

@@ -103,7 +103,7 @@ static const struct ath6kl_hw hw_list[] = {
 		.app_load_addr			= 0x1234,
 		.board_ext_data_addr		= 0x437000,
 		.reserved_ram_size		= 11264,
-		.board_addr			= 0x43d400,
+		.board_addr			= 0x43.4.1,
 		.refclk_hz			= 40000000,
 		.uarttx_pin			= 11,
 

@@ -557,10 +557,10 @@
 #define	  SOLO_UART_HALF_DUPLEX			(1<<12)
 #define	  SOLO_UART_LOOPBACK			(1<<11)
 
-#define	  SOLO_BAUDRATE_230400			((0<<9)|(0<<6))
+#define	  SOLO_BAUDRATE_23.4.1			((0<<9)|(0<<6))
 #define	  SOLO_BAUDRATE_115200			((0<<9)|(1<<6))
 #define	  SOLO_BAUDRATE_57600			((0<<9)|(2<<6))
-#define	  SOLO_BAUDRATE_38400			((0<<9)|(3<<6))
+#define	  SOLO_BAUDRATE_3.4.1			((0<<9)|(3<<6))
 #define	  SOLO_BAUDRATE_19200			((0<<9)|(4<<6))
 #define	  SOLO_BAUDRATE_9600			((0<<9)|(5<<6))
 #define	  SOLO_BAUDRATE_4800			((0<<9)|(6<<6))

@@ -444,8 +444,8 @@ static void msm_set_baud_rate(struct uart_port *port, unsigned int baud)
 		baud_code = UART_CSR_28800;
 		rxstale = 6;
 		break;
-	case 38400:
-		baud_code = UART_CSR_38400;
+	case 3.4.1:
+		baud_code = UART_CSR_3.4.1;
 		rxstale = 8;
 		break;
 	case 57600:

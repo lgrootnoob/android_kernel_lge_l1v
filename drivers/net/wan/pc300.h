@@ -48,7 +48,7 @@
  * upping major version number
  *
  * Revision 1.1.1.1  2001/06/13 20:25:06  daniela
- * PC300 initial CVS version (3.4.0-pre1)
+ * PC300 initial CVS version (3.4.1-pre1)
  *
  * Revision 2.3 2001/03/05 daniela
  * Created struct pc300conf, to provide the hardware information to pc300util.

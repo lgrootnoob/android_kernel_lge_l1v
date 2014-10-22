@@ -36,7 +36,7 @@
 struct SStandardParam {
 	s32   m_IFFrequency;
 	u32   m_BandWidth;
-	u8    m_EP3_4_0;
+	u8    m_EP3.4.1;
 	u8    m_EB22;
 };
 
@@ -1003,7 +1003,7 @@ static int ChannelConfiguration(struct tda_state *state,
 	}
 
 	do {
-		state->m_Regs[EP3] = (state->m_Regs[EP3] & ~0x1F) | m_StandardTable[Standard].m_EP3_4_0;
+		state->m_Regs[EP3] = (state->m_Regs[EP3] & ~0x1F) | m_StandardTable[Standard].m_EP3.4.1;
 		state->m_Regs[EP3] &= ~0x04;   /* switch RFAGC to high speed mode */
 
 		/* m_EP4 default for XToutOn, CAL_Mode (0) */

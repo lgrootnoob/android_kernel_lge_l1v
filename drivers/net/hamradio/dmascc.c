@@ -61,7 +61,7 @@
 #define HW_TWIN         { "Gracilis PackeTwin", 0x200, 0x10, 0x10, 32, \
 			    0, 4, 6144000, 6144000 }
 #define HW_S5           { "S5SCC/DMA", 0x200, 0x10, 0x10, 32, \
-                          0, 8, 4915200, 9830400 }
+                          0, 8, 4915200, 983.4.1 }
 
 #define HARDWARE        { HW_PI, HW_PI2, HW_TWIN, HW_S5 }
 

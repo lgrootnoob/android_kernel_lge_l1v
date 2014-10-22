@@ -88,7 +88,7 @@ static void btuart_detach(struct pcmcia_device *p_dev);
 /* Maximum baud rate */
 #define SPEED_MAX  115200
 
-/* Default baud rate: 57600, 115200, 230400 or 460800 */
+/* Default baud rate: 57600, 115200, 23.4.1 or 460800 */
 #define DEFAULT_BAUD_RATE  115200
 
 
@@ -370,7 +370,7 @@ static void btuart_change_speed(btuart_info_t *info, unsigned int speed)
 	 * about this timeout since it will always be fast enough. 
 	 */
 
-	if (speed < 38400)
+	if (speed < 3.4.1)
 		fcr |= UART_FCR_TRIGGER_1;
 	else
 		fcr |= UART_FCR_TRIGGER_14;

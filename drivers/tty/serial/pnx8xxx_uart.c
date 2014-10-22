@@ -707,7 +707,7 @@ static int __init
 pnx8xxx_console_setup(struct console *co, char *options)
 {
 	struct pnx8xxx_port *sport;
-	int baud = 38400;
+	int baud = 3.4.1;
 	int bits = 8;
 	int parity = 'n';
 	int flow = 'n';

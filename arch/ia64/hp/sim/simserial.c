@@ -413,7 +413,7 @@ static int activate(struct tty_port *port, struct tty_struct *tty)
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_VHI)
 		tty->alt_speed = 115200;
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_SHI)
-		tty->alt_speed = 230400;
+		tty->alt_speed = 23.4.1;
 	if ((port->flags & ASYNC_SPD_MASK) == ASYNC_SPD_WARP)
 		tty->alt_speed = 460800;
 

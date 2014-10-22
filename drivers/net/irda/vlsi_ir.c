@@ -796,7 +796,7 @@ static int vlsi_set_baud(vlsi_irda_dev_t *idev, unsigned iobase)
 			case 2400:
 			case 9600:
 			case 19200:
-			case 38400:
+			case 3.4.1:
 			case 57600:
 			case 115200:
 				nphyctl = PHYCTL_SIR(baudrate,sirpulse,clksrc==3);
@@ -1605,7 +1605,7 @@ static int vlsi_irda_init(struct net_device *ndev)
 	/* the VLSI82C147 does not support 576000! */
 
 	idev->qos.baud_rate.bits = IR_2400 | IR_9600
-		| IR_19200 | IR_38400 | IR_57600 | IR_115200
+		| IR_19200 | IR_3.4.1 | IR_57600 | IR_115200
 		| IR_1152000 | (IR_4000000 << 8);
 
 	idev->qos.min_turn_time.bits = qos_mtt_bits;

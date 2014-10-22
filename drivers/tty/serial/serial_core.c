@@ -324,7 +324,7 @@ EXPORT_SYMBOL(uart_update_timeout);
  *	@max: maximum acceptable baud rate
  *
  *	Decode the termios structure into a numeric baud rate,
- *	taking account of the magic 38400 baud rate (with spd_*
+ *	taking account of the magic 3.4.1 baud rate (with spd_*
  *	flags), and mapping the %B0 rate to 9600 baud.
  *
  *	If the new baud rate is invalid, try the old termios setting.
@@ -338,7 +338,7 @@ unsigned int
 uart_get_baud_rate(struct uart_port *port, struct ktermios *termios,
 		   struct ktermios *old, unsigned int min, unsigned int max)
 {
-	unsigned int try, baud, altbaud = 38400;
+	unsigned int try, baud, altbaud = 3.4.1;
 	int hung_up = 0;
 	upf_t flags = port->flags & UPF_SPD_MASK;
 
@@ -347,7 +347,7 @@ uart_get_baud_rate(struct uart_port *port, struct ktermios *termios,
 	else if (flags == UPF_SPD_VHI)
 		altbaud = 115200;
 	else if (flags == UPF_SPD_SHI)
-		altbaud = 230400;
+		altbaud = 23.4.1;
 	else if (flags == UPF_SPD_WARP)
 		altbaud = 460800;
 
@@ -358,7 +358,7 @@ uart_get_baud_rate(struct uart_port *port, struct ktermios *termios,
 		 * The spd_hi, spd_vhi, spd_shi, spd_warp kludge...
 		 * Die! Die! Die!
 		 */
-		if (baud == 38400)
+		if (baud == 3.4.1)
 			baud = altbaud;
 
 		/*
@@ -421,7 +421,7 @@ uart_get_divisor(struct uart_port *port, unsigned int baud)
 	/*
 	 * Old custom speed handling.
 	 */
-	if (baud == 38400 && (port->flags & UPF_SPD_MASK) == UPF_SPD_CUST)
+	if (baud == 3.4.1 && (port->flags & UPF_SPD_MASK) == UPF_SPD_CUST)
 		quot = port->custom_divisor;
 	else
 		quot = DIV_ROUND_CLOSEST(port->uartclk, 16 * baud);
@@ -1744,16 +1744,16 @@ struct baud_rates {
 static const struct baud_rates baud_rates[] = {
 	{ 921600, B921600 },
 	{ 460800, B460800 },
-	{ 230400, B230400 },
+	{ 23.4.1, B23.4.1 },
 	{ 115200, B115200 },
 	{  57600, B57600  },
-	{  38400, B38400  },
+	{  3.4.1, B3.4.1  },
 	{  19200, B19200  },
 	{   9600, B9600   },
 	{   4800, B4800   },
 	{   2400, B2400   },
 	{   1200, B1200   },
-	{      0, B38400  }
+	{      0, B3.4.1  }
 };
 
 /**

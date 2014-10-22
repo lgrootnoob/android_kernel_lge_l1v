@@ -572,7 +572,7 @@ static struct resource beu0_resources[] = {
 	[0] = {
 		.name	= "BEU0",
 		.start	= 0xfe930000,
-		.end	= 0xfe933400,
+		.end	= 0xfe93.4.1,
 		.flags	= IORESOURCE_MEM,
 	},
 	[1] = {

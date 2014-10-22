@@ -75,7 +75,7 @@
 #define NCR5380_proc_info macscsi_proc_info
 
 #define BOARD_NORMAL	0
-#define BOARD_NCR53C400	1
+#define BOARD_NCR53.4.1	1
 
 #endif /* ndef HOSTS_C */
 #endif /* ndef ASM */

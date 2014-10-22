@@ -4159,7 +4159,7 @@ void cx23885_dif_setup(struct i2c_client *client, u32 ifHz)
 		cx25840_write4(client, DIF_BPF_COEFF2021, 0x073b0000);
 		cx25840_write4(client, DIF_BPF_COEFF2223, 0xf7110000);
 		cx25840_write4(client, DIF_BPF_COEFF2425, 0x0aac0000);
-		cx25840_write4(client, DIF_BPF_COEFF2627, 0xf3a40000);
+		cx25840_write4(client, DIF_BPF_COEFF2627, 0xf3.4.100);
 		cx25840_write4(client, DIF_BPF_COEFF2829, 0x0de70000);
 		cx25840_write4(client, DIF_BPF_COEFF3031, 0xf0c90000);
 		cx25840_write4(client, DIF_BPF_COEFF3233, 0x10360000);

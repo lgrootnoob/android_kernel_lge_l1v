@@ -1025,7 +1025,7 @@ static void pmz_convert_to_zs(struct uart_pmac_port *uap, unsigned int cflag,
 		uap->flags |= PMACZILOG_FLAG_IS_EXTCLK;
 	} else {
 		switch (baud) {
-		case ZS_CLOCK/16:	/* 230400 */
+		case ZS_CLOCK/16:	/* 23.4.1 */
 			uap->curregs[R4] = X16CLK;
 			uap->curregs[R11] = 0;
 			uap->curregs[R14] = 0;
@@ -1129,7 +1129,7 @@ static void pmz_irda_setup(struct uart_pmac_port *uap, unsigned long *baud)
 	case 19200:
 		cmdbyte = 0x50;
 		break;
-	case 38400:
+	case 3.4.1:
 		cmdbyte = 0x4f;
 		break;
 	case 57600:
@@ -1268,7 +1268,7 @@ static void __pmz_set_termios(struct uart_port *port, struct ktermios *termios,
 		pmz_load_zsregs(uap, uap->curregs);
 		zssync(uap);
 	} else {
-		baud = uart_get_baud_rate(port, termios, old, 1200, 230400);
+		baud = uart_get_baud_rate(port, termios, old, 1200, 23.4.1);
 		pmz_convert_to_zs(uap, termios->c_cflag, termios->c_iflag, baud);
 		/* Make sure modem status interrupts are correctly configured */
 		if (UART_ENABLE_MS(&uap->port, termios->c_cflag)) {
@@ -1986,7 +1986,7 @@ static int __init pmz_console_setup(struct console *co, char *options)
 {
 	struct uart_pmac_port *uap;
 	struct uart_port *port;
-	int baud = 38400;
+	int baud = 3.4.1;
 	int bits = 8;
 	int parity = 'n';
 	int flow = 'n';

@@ -1,5 +1,5 @@
 /*
- * Hardware monitoring driver for Maxim MAX34440/MAX34441
+ * Hardware monitoring driver for Maxim MAX3.4.1/MAX34441
  *
  * Copyright (c) 2011 Ericsson AB.
  *
@@ -25,44 +25,44 @@
 #include <linux/i2c.h>
 #include "pmbus.h"
 
-enum chips { max34440, max34441, max34446 };
+enum chips { max3.4.1, max34441, max34446 };
 
-#define MAX34440_MFR_VOUT_PEAK		0xd4
-#define MAX34440_MFR_IOUT_PEAK		0xd5
-#define MAX34440_MFR_TEMPERATURE_PEAK	0xd6
-#define MAX34440_MFR_VOUT_MIN		0xd7
+#define MAX3.4.1_MFR_VOUT_PEAK		0xd4
+#define MAX3.4.1_MFR_IOUT_PEAK		0xd5
+#define MAX3.4.1_MFR_TEMPERATURE_PEAK	0xd6
+#define MAX3.4.1_MFR_VOUT_MIN		0xd7
 
 #define MAX34446_MFR_POUT_PEAK		0xe0
 #define MAX34446_MFR_POUT_AVG		0xe1
 #define MAX34446_MFR_IOUT_AVG		0xe2
 #define MAX34446_MFR_TEMPERATURE_AVG	0xe3
 
-#define MAX34440_STATUS_OC_WARN		(1 << 0)
-#define MAX34440_STATUS_OC_FAULT	(1 << 1)
-#define MAX34440_STATUS_OT_FAULT	(1 << 5)
-#define MAX34440_STATUS_OT_WARN		(1 << 6)
+#define MAX3.4.1_STATUS_OC_WARN		(1 << 0)
+#define MAX3.4.1_STATUS_OC_FAULT	(1 << 1)
+#define MAX3.4.1_STATUS_OT_FAULT	(1 << 5)
+#define MAX3.4.1_STATUS_OT_WARN		(1 << 6)
 
-struct max34440_data {
+struct max3.4.1_data {
 	int id;
 	struct pmbus_driver_info info;
 };
 
-#define to_max34440_data(x)  container_of(x, struct max34440_data, info)
+#define to_max3.4.1_data(x)  container_of(x, struct max3.4.1_data, info)
 
-static int max34440_read_word_data(struct i2c_client *client, int page, int reg)
+static int max3.4.1_read_word_data(struct i2c_client *client, int page, int reg)
 {
 	int ret;
 	const struct pmbus_driver_info *info = pmbus_get_driver_info(client);
-	const struct max34440_data *data = to_max34440_data(info);
+	const struct max3.4.1_data *data = to_max3.4.1_data(info);
 
 	switch (reg) {
 	case PMBUS_VIRT_READ_VOUT_MIN:
 		ret = pmbus_read_word_data(client, page,
-					   MAX34440_MFR_VOUT_MIN);
+					   MAX3.4.1_MFR_VOUT_MIN);
 		break;
 	case PMBUS_VIRT_READ_VOUT_MAX:
 		ret = pmbus_read_word_data(client, page,
-					   MAX34440_MFR_VOUT_PEAK);
+					   MAX3.4.1_MFR_VOUT_PEAK);
 		break;
 	case PMBUS_VIRT_READ_IOUT_AVG:
 		if (data->id != max34446)
@@ -72,7 +72,7 @@ static int max34440_read_word_data(struct i2c_client *client, int page, int reg)
 		break;
 	case PMBUS_VIRT_READ_IOUT_MAX:
 		ret = pmbus_read_word_data(client, page,
-					   MAX34440_MFR_IOUT_PEAK);
+					   MAX3.4.1_MFR_IOUT_PEAK);
 		break;
 	case PMBUS_VIRT_READ_POUT_AVG:
 		if (data->id != max34446)
@@ -94,7 +94,7 @@ static int max34440_read_word_data(struct i2c_client *client, int page, int reg)
 		break;
 	case PMBUS_VIRT_READ_TEMP_MAX:
 		ret = pmbus_read_word_data(client, page,
-					   MAX34440_MFR_TEMPERATURE_PEAK);
+					   MAX3.4.1_MFR_TEMPERATURE_PEAK);
 		break;
 	case PMBUS_VIRT_RESET_POUT_HISTORY:
 		if (data->id != max34446)
@@ -113,11 +113,11 @@ static int max34440_read_word_data(struct i2c_client *client, int page, int reg)
 	return ret;
 }
 
-static int max34440_write_word_data(struct i2c_client *client, int page,
+static int max3.4.1_write_word_data(struct i2c_client *client, int page,
 				    int reg, u16 word)
 {
 	const struct pmbus_driver_info *info = pmbus_get_driver_info(client);
-	const struct max34440_data *data = to_max34440_data(info);
+	const struct max3.4.1_data *data = to_max3.4.1_data(info);
 	int ret;
 
 	switch (reg) {
@@ -131,15 +131,15 @@ static int max34440_write_word_data(struct i2c_client *client, int page,
 		break;
 	case PMBUS_VIRT_RESET_VOUT_HISTORY:
 		ret = pmbus_write_word_data(client, page,
-					    MAX34440_MFR_VOUT_MIN, 0x7fff);
+					    MAX3.4.1_MFR_VOUT_MIN, 0x7fff);
 		if (ret)
 			break;
 		ret = pmbus_write_word_data(client, page,
-					    MAX34440_MFR_VOUT_PEAK, 0);
+					    MAX3.4.1_MFR_VOUT_PEAK, 0);
 		break;
 	case PMBUS_VIRT_RESET_IOUT_HISTORY:
 		ret = pmbus_write_word_data(client, page,
-					    MAX34440_MFR_IOUT_PEAK, 0);
+					    MAX3.4.1_MFR_IOUT_PEAK, 0);
 		if (!ret && data->id == max34446)
 			ret = pmbus_write_word_data(client, page,
 					MAX34446_MFR_IOUT_AVG, 0);
@@ -147,7 +147,7 @@ static int max34440_write_word_data(struct i2c_client *client, int page,
 		break;
 	case PMBUS_VIRT_RESET_TEMP_HISTORY:
 		ret = pmbus_write_word_data(client, page,
-					    MAX34440_MFR_TEMPERATURE_PEAK,
+					    MAX3.4.1_MFR_TEMPERATURE_PEAK,
 					    0x8000);
 		if (!ret && data->id == max34446)
 			ret = pmbus_write_word_data(client, page,
@@ -160,7 +160,7 @@ static int max34440_write_word_data(struct i2c_client *client, int page,
 	return ret;
 }
 
-static int max34440_read_byte_data(struct i2c_client *client, int page, int reg)
+static int max3.4.1_read_byte_data(struct i2c_client *client, int page, int reg)
 {
 	int ret = 0;
 	int mfg_status;
@@ -177,9 +177,9 @@ static int max34440_read_byte_data(struct i2c_client *client, int page, int reg)
 						  PMBUS_STATUS_MFR_SPECIFIC);
 		if (mfg_status < 0)
 			return mfg_status;
-		if (mfg_status & MAX34440_STATUS_OC_WARN)
+		if (mfg_status & MAX3.4.1_STATUS_OC_WARN)
 			ret |= PB_IOUT_OC_WARNING;
-		if (mfg_status & MAX34440_STATUS_OC_FAULT)
+		if (mfg_status & MAX3.4.1_STATUS_OC_FAULT)
 			ret |= PB_IOUT_OC_FAULT;
 		break;
 	case PMBUS_STATUS_TEMPERATURE:
@@ -187,9 +187,9 @@ static int max34440_read_byte_data(struct i2c_client *client, int page, int reg)
 						  PMBUS_STATUS_MFR_SPECIFIC);
 		if (mfg_status < 0)
 			return mfg_status;
-		if (mfg_status & MAX34440_STATUS_OT_WARN)
+		if (mfg_status & MAX3.4.1_STATUS_OT_WARN)
 			ret |= PB_TEMP_OT_WARNING;
-		if (mfg_status & MAX34440_STATUS_OT_FAULT)
+		if (mfg_status & MAX3.4.1_STATUS_OT_FAULT)
 			ret |= PB_TEMP_OT_FAULT;
 		break;
 	default:
@@ -199,8 +199,8 @@ static int max34440_read_byte_data(struct i2c_client *client, int page, int reg)
 	return ret;
 }
 
-static struct pmbus_driver_info max34440_info[] = {
-	[max34440] = {
+static struct pmbus_driver_info max3.4.1_info[] = {
+	[max3.4.1] = {
 		.pages = 14,
 		.format[PSC_VOLTAGE_IN] = direct,
 		.format[PSC_VOLTAGE_OUT] = direct,
@@ -238,9 +238,9 @@ static struct pmbus_driver_info max34440_info[] = {
 		.func[11] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[12] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[13] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
-		.read_byte_data = max34440_read_byte_data,
-		.read_word_data = max34440_read_word_data,
-		.write_word_data = max34440_write_word_data,
+		.read_byte_data = max3.4.1_read_byte_data,
+		.read_word_data = max3.4.1_read_word_data,
+		.write_word_data = max3.4.1_write_word_data,
 	},
 	[max34441] = {
 		.pages = 12,
@@ -281,9 +281,9 @@ static struct pmbus_driver_info max34440_info[] = {
 		.func[9] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[10] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[11] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
-		.read_byte_data = max34440_read_byte_data,
-		.read_word_data = max34440_read_word_data,
-		.write_word_data = max34440_write_word_data,
+		.read_byte_data = max3.4.1_read_byte_data,
+		.read_word_data = max3.4.1_read_word_data,
+		.write_word_data = max3.4.1_write_word_data,
 	},
 	[max34446] = {
 		.pages = 7,
@@ -318,47 +318,47 @@ static struct pmbus_driver_info max34440_info[] = {
 		.func[4] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[5] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
 		.func[6] = PMBUS_HAVE_TEMP | PMBUS_HAVE_STATUS_TEMP,
-		.read_byte_data = max34440_read_byte_data,
-		.read_word_data = max34440_read_word_data,
-		.write_word_data = max34440_write_word_data,
+		.read_byte_data = max3.4.1_read_byte_data,
+		.read_word_data = max3.4.1_read_word_data,
+		.write_word_data = max3.4.1_write_word_data,
 	},
 };
 
-static int max34440_probe(struct i2c_client *client,
+static int max3.4.1_probe(struct i2c_client *client,
 			  const struct i2c_device_id *id)
 {
-	struct max34440_data *data;
+	struct max3.4.1_data *data;
 
-	data = devm_kzalloc(&client->dev, sizeof(struct max34440_data),
+	data = devm_kzalloc(&client->dev, sizeof(struct max3.4.1_data),
 			    GFP_KERNEL);
 	if (!data)
 		return -ENOMEM;
 	data->id = id->driver_data;
-	data->info = max34440_info[id->driver_data];
+	data->info = max3.4.1_info[id->driver_data];
 
 	return pmbus_do_probe(client, id, &data->info);
 }
 
-static const struct i2c_device_id max34440_id[] = {
-	{"max34440", max34440},
+static const struct i2c_device_id max3.4.1_id[] = {
+	{"max3.4.1", max3.4.1},
 	{"max34441", max34441},
 	{"max34446", max34446},
 	{}
 };
-MODULE_DEVICE_TABLE(i2c, max34440_id);
+MODULE_DEVICE_TABLE(i2c, max3.4.1_id);
 
 /* This is the driver that will be inserted */
-static struct i2c_driver max34440_driver = {
+static struct i2c_driver max3.4.1_driver = {
 	.driver = {
-		   .name = "max34440",
+		   .name = "max3.4.1",
 		   },
-	.probe = max34440_probe,
+	.probe = max3.4.1_probe,
 	.remove = pmbus_do_remove,
-	.id_table = max34440_id,
+	.id_table = max3.4.1_id,
 };
 
-module_i2c_driver(max34440_driver);
+module_i2c_driver(max3.4.1_driver);
 
 MODULE_AUTHOR("Guenter Roeck");
-MODULE_DESCRIPTION("PMBus driver for Maxim MAX34440/MAX34441");
+MODULE_DESCRIPTION("PMBus driver for Maxim MAX3.4.1/MAX34441");
 MODULE_LICENSE("GPL");

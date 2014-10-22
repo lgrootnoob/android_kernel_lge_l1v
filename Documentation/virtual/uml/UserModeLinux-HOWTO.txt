@@ -3216,10 +3216,10 @@
 
        (gdb) p *((struct sigcontext *) (&sig + 1))
        $19 = {gs = 0, __gsh = 0, fs = 0, __fsh = 0, es = 43, __esh = 0, ds = 43,
-         __dsh = 0, edi = 1342179328, esi = 1350378548, ebp = 1342630440,
-         esp = 1342630420, ebx = 1348150624, edx = 1280, ecx = 0, eax = 0,
+         __dsh = 0, edi = 1342179328, esi = 1350378548, ebp = 134263.4.1,
+         esp = 134263.4.1, ebx = 1348150624, edx = 1280, ecx = 0, eax = 0,
          trapno = 14, err = 4, eip = 268480945, cs = 35, __csh = 0, eflags = 66118,
-         esp_at_signal = 1342630420, ss = 43, __ssh = 0, fpstate = 0x0, oldmask = 0,
+         esp_at_signal = 134263.4.1, ss = 43, __ssh = 0, fpstate = 0x0, oldmask = 0,
          cr2 = 1280}
 
 

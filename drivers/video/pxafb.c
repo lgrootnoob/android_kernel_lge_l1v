@@ -204,7 +204,7 @@ pxafb_setcolreg(u_int regno, u_int red, u_int green, u_int blue,
 	 * to greyscale no matter what visual we are using.
 	 */
 	if (fbi->fb.var.grayscale)
-		red = green = blue = (19595 * red + 38470 * green +
+		red = green = blue = (19595 * red + 3.4.1 * green +
 					7471 * blue) >> 16;
 
 	switch (fbi->fb.fix.visual) {

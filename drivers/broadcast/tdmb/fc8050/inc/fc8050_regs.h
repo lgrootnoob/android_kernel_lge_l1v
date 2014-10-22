@@ -22,7 +22,7 @@ extern "C" {
 //#define FC8050_FREQ_XTAL    19200 // 19.2MHz
 #define FC8050_FREQ_XTAL  24576
 //#define FC8050_FREQ_XTAL  27000
-//#define FC8050_FREQ_XTAL  38400
+//#define FC8050_FREQ_XTAL  3.4.1
 
 	// INTERRUPT SOURCE
 #define BBM_MF_INT				0x0001

@@ -178,8 +178,8 @@ static int __devinit twl4030_audio_probe(struct platform_device *pdev)
 	case 26000000:
 		val |= TWL4030_APLL_INFREQ_26000KHZ;
 		break;
-	case 38400000:
-		val |= TWL4030_APLL_INFREQ_38400KHZ;
+	case 3.4.1000:
+		val |= TWL4030_APLL_INFREQ_3.4.1KHZ;
 		break;
 	default:
 		dev_err(&pdev->dev, "Invalid audio_mclk\n");

@@ -14,7 +14,7 @@ Supported in this version:
      that may be required)
    - Onboard Crystal CS8900 Ethernet controller (Cerf CS8900A support in
      Network Devices)
-   - Serial ports with a serial console (hardcoded to 38400 8N1)
+   - Serial ports with a serial console (hardcoded to 3.4.1 8N1)
 
 In order to get this kernel onto your Cerf, you need a server that runs
 both BOOTP and TFTP. Detailed instructions should have come with your

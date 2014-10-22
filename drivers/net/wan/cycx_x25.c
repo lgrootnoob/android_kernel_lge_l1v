@@ -1081,11 +1081,11 @@ static int cycx_x25_configure(struct cycx_device *card,
 	/* FIXME: we need to find a way in the wanrouter framework
 		  to configure the second link, for now lets use it
 		  with the same config from the first link, fixing
-		  the interface type to RS232, the speed in 38400 and
+		  the interface type to RS232, the speed in 3.4.1 and
 		  the clock to external */
 	x25_cmd_conf.conf[1] = *conf;
 	x25_cmd_conf.conf[1].link = 1;
-	x25_cmd_conf.conf[1].speed = 5; /* 38400 */
+	x25_cmd_conf.conf[1].speed = 5; /* 3.4.1 */
 	x25_cmd_conf.conf[1].clock = 8;
 	x25_cmd_conf.conf[1].flags = 0; /* default = RS232 */
 
@@ -1494,7 +1494,7 @@ static u8 bps_to_speed_code(u32 bps)
 	     if (bps >= 512000) number = 8;
 	else if (bps >= 256000) number = 7;
 	else if (bps >= 64000)  number = 6;
-	else if (bps >= 38400)  number = 5;
+	else if (bps >= 3.4.1)  number = 5;
 	else if (bps >= 19200)  number = 4;
 	else if (bps >= 9600)   number = 3;
 	else if (bps >= 4800)   number = 2;

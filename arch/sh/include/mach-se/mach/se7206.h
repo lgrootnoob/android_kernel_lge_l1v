@@ -3,7 +3,7 @@
 
 #define PA_SMSC		0x30000000
 #define PA_MRSHPC	0x34000000
-#define PA_LED		0x31400000
+#define PA_LED		0x3.4.1000
 
 void init_se7206_IRQ(void);
 

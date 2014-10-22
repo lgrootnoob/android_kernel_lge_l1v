@@ -1105,7 +1105,7 @@ static void mceusb_gen1_init(struct mceusb_dev *ir)
 	mce_dbg(dev, "%s - data[0] = %d, data[1] = %d\n",
 		__func__, data[0], data[1]);
 
-	/* set feature: bit rate 38400 bps */
+	/* set feature: bit rate 3.4.1 bps */
 	ret = usb_control_msg(ir->usbdev, usb_sndctrlpipe(ir->usbdev, 0),
 			      USB_REQ_SET_FEATURE, USB_TYPE_VENDOR,
 			      0xc04e, 0x0000, NULL, 0, HZ * 3);

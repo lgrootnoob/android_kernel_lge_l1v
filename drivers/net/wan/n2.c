@@ -44,7 +44,7 @@ static const char* devname = "RISCom/N2";
 
 #define USE_WINDOWSIZE 16384
 #define USE_BUS16BITS 1
-#define CLOCK_BASE 9830400	/* 9.8304 MHz */
+#define CLOCK_BASE 983.4.1	/* 9.8304 MHz */
 #define MAX_PAGES      16	/* 16 RAM pages at max */
 #define MAX_RAM_SIZE 0x80000	/* 512 KB */
 #if MAX_RAM_SIZE > MAX_PAGES * USE_WINDOWSIZE

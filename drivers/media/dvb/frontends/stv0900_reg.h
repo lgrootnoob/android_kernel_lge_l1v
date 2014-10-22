@@ -166,7 +166,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 #define F0900_VDATA3_1 0xf1390080
 #define F0900_VDATA3_2 0xf1390040
 #define F0900_VDATA3_3 0xf1390020
-#define F0900_VDATA3_4 0xf1390010
+#define F0900_VDATA3.4.1xf1390010
 #define F0900_VDATA3_5 0xf1390008
 #define F0900_VDATA3_6 0xf1390004
 #define F0900_VDATA3_7 0xf1390002
@@ -1444,7 +1444,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 /*P2_MODCODLST3*/
 #define R0900_P2_MODCODLST3 0xf2b3
 #define F0900_P2_DIS_32PSK_4_5 0xf2b300f0
-#define F0900_P2_DIS_32PSK_3_4 0xf2b3000f
+#define F0900_P2_DIS_32PSK_3.4.1xf2b3000f
 
 /*P2_MODCODLST4*/
 #define R0900_P2_MODCODLST4 0xf2b4
@@ -1458,7 +1458,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_MODCODLST6*/
 #define R0900_P2_MODCODLST6 0xf2b6
-#define F0900_P2_DIS_16PSK_3_4 0xf2b600f0
+#define F0900_P2_DIS_16PSK_3.4.1xf2b600f0
 #define F0900_P2_DIS_16PSK_2_3 0xf2b6000f
 
 /*P2_MODCODLST7*/
@@ -1469,7 +1469,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 /*P2_MODCODLST8*/
 #define R0900_P2_MODCODLST8 0xf2b8
 #define F0900_P2_DIS_8P_5_6 0xf2b800f0
-#define F0900_P2_DIS_8P_3_4 0xf2b8000f
+#define F0900_P2_DIS_8P_3.4.1xf2b8000f
 
 /*P2_MODCODLST9*/
 #define R0900_P2_MODCODLST9 0xf2b9
@@ -1488,7 +1488,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_MODCODLSTC*/
 #define R0900_P2_MODCODLSTC 0xf2bc
-#define F0900_P2_DIS_QP_3_4 0xf2bc00f0
+#define F0900_P2_DIS_QP_3.4.1xf2bc00f0
 #define F0900_P2_DIS_QP_2_3 0xf2bc000f
 
 /*P2_MODCODLSTD*/
@@ -1719,7 +1719,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_NCO2MAX1*/
 #define R0900_P2_NCO2MAX1 0xf314
-#define F0900_P2_TETA2_MAXVABS1 0xf31400ff
+#define F0900_P2_TETA2_MAXVABS1 0xf3.4.1ff
 
 /*P2_NCO2MAX0*/
 #define R0900_P2_NCO2MAX0 0xf315
@@ -1755,7 +1755,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_LOCKTIME1*/
 #define R0900_P2_LOCKTIME1 0xf324
-#define F0900_P2_DEMOD_LOCKTIME1 0xf32400ff
+#define F0900_P2_DEMOD_LOCKTIME1 0xf3.4.1ff
 
 /*P2_LOCKTIME0*/
 #define R0900_P2_LOCKTIME0 0xf325
@@ -1777,7 +1777,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_VTH12*/
 #define R0900_P2_VTH12 0xf334
-#define F0900_P2_VTH12 0xf33400ff
+#define F0900_P2_VTH12 0xf3.4.1ff
 
 /*P2_VTH23*/
 #define R0900_P2_VTH23 0xf335
@@ -1852,7 +1852,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_KDIV67*/
 #define R0900_P2_KDIV67 0xf344
-#define F0900_P2_K_DIVIDER_67 0xf344007f
+#define F0900_P2_K_DIVIDER_67 0xf3.4.17f
 
 /*P2_KDIV78*/
 #define R0900_P2_KDIV78 0xf345
@@ -1873,8 +1873,8 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_HYSTTHRESH*/
 #define R0900_P2_HYSTTHRESH 0xf354
-#define F0900_P2_UNLCK_THRESH 0xf35400f0
-#define F0900_P2_DELIN_LCK_THRESH 0xf354000f
+#define F0900_P2_UNLCK_THRESH 0xf3.4.1f0
+#define F0900_P2_DELIN_LCK_THRESH 0xf3.4.10f
 
 /*P2_ISIENTRY*/
 #define R0900_P2_ISIENTRY 0xf35e
@@ -1902,7 +1902,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_DFLSTR1*/
 #define R0900_P2_DFLSTR1 0xf364
-#define F0900_P2_DFL_CURRENT1 0xf36400ff
+#define F0900_P2_DFL_CURRENT1 0xf3.4.1ff
 
 /*P2_DFLSTR0*/
 #define R0900_P2_DFLSTR0 0xf365
@@ -1984,11 +1984,11 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_TSCFGL*/
 #define R0900_P2_TSCFGL 0xf374
-#define F0900_P2_TSFIFO_BCLKDEL1CK 0xf37400c0
-#define F0900_P2_BCHERROR_MODE 0xf3740030
-#define F0900_P2_TSFIFO_NSGNL2DATA 0xf3740008
-#define F0900_P2_TSFIFO_EMBINDVB 0xf3740004
-#define F0900_P2_TSFIFO_BITSPEED 0xf3740003
+#define F0900_P2_TSFIFO_BCLKDEL1CK 0xf3.4.1c0
+#define F0900_P2_BCHERROR_MODE 0xf3.4.130
+#define F0900_P2_TSFIFO_NSGNL2DATA 0xf3.4.108
+#define F0900_P2_TSFIFO_EMBINDVB 0xf3.4.104
+#define F0900_P2_TSFIFO_BITSPEED 0xf3.4.103
 
 /*P2_TSINSDELH*/
 #define R0900_P2_TSINSDELH 0xf376
@@ -2033,7 +2033,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_TSBITRATE0*/
 #define R0900_P2_TSBITRATE0 0xf384
-#define F0900_P2_TSFIFO_BITRATE0 0xf38400ff
+#define F0900_P2_TSFIFO_BITRATE0 0xf3.4.1ff
 
 /*P2_ERRCTRL1*/
 #define R0900_P2_ERRCTRL1 0xf398
@@ -2102,11 +2102,11 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*P2_FSTATUS*/
 #define R0900_P2_FSTATUS 0xf3a4
-#define F0900_P2_SPY_ENDSIM 0xf3a40080
-#define F0900_P2_VALID_SIM 0xf3a40040
-#define F0900_P2_FOUND_SIGNAL 0xf3a40020
-#define F0900_P2_DSS_SYNCBYTE 0xf3a40010
-#define F0900_P2_RESULT_STATE 0xf3a4000f
+#define F0900_P2_SPY_ENDSIM 0xf3.4.180
+#define F0900_P2_VALID_SIM 0xf3.4.140
+#define F0900_P2_FOUND_SIGNAL 0xf3.4.120
+#define F0900_P2_DSS_SYNCBYTE 0xf3.4.110
+#define F0900_P2_RESULT_STATE 0xf3.4.10f
 
 /*P2_FBERCPT4*/
 #define R0900_P2_FBERCPT4 0xf3a8
@@ -2940,7 +2940,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 #define R0900_P1_MODCODLST3 0xf4b3
 #define MODCODLST3 REGx(R0900_P1_MODCODLST3)
 #define F0900_P1_DIS_32PSK_4_5 0xf4b300f0
-#define F0900_P1_DIS_32PSK_3_4 0xf4b3000f
+#define F0900_P1_DIS_32PSK_3.4.1xf4b3000f
 
 /*P1_MODCODLST4*/
 #define R0900_P1_MODCODLST4 0xf4b4
@@ -2957,7 +2957,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 /*P1_MODCODLST6*/
 #define R0900_P1_MODCODLST6 0xf4b6
 #define MODCODLST6 REGx(R0900_P1_MODCODLST6)
-#define F0900_P1_DIS_16PSK_3_4 0xf4b600f0
+#define F0900_P1_DIS_16PSK_3.4.1xf4b600f0
 #define F0900_P1_DIS_16PSK_2_3 0xf4b6000f
 
 /*P1_MODCODLST7*/
@@ -2970,7 +2970,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 #define R0900_P1_MODCODLST8 0xf4b8
 #define MODCODLST8 REGx(R0900_P1_MODCODLST8)
 #define F0900_P1_DIS_8P_5_6 0xf4b800f0
-#define F0900_P1_DIS_8P_3_4 0xf4b8000f
+#define F0900_P1_DIS_8P_3.4.1xf4b8000f
 
 /*P1_MODCODLST9*/
 #define R0900_P1_MODCODLST9 0xf4b9
@@ -2993,7 +2993,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 /*P1_MODCODLSTC*/
 #define R0900_P1_MODCODLSTC 0xf4bc
 #define MODCODLSTC REGx(R0900_P1_MODCODLSTC)
-#define F0900_P1_DIS_QP_3_4 0xf4bc00f0
+#define F0900_P1_DIS_QP_3.4.1xf4bc00f0
 #define F0900_P1_DIS_QP_2_3 0xf4bc000f
 
 /*P1_MODCODLSTD*/
@@ -3820,7 +3820,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*NBITER_NF7*/
 #define R0900_NBITER_NF7 0xfa06
-#define F0900_NBITER_NF_QP_3_4 0xfa0600ff
+#define F0900_NBITER_NF_QP_3.4.1xfa0600ff
 
 /*NBITER_NF8*/
 #define R0900_NBITER_NF8 0xfa07
@@ -3848,7 +3848,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*NBITER_NF14*/
 #define R0900_NBITER_NF14 0xfa0d
-#define F0900_NBITER_NF_8P_3_4 0xfa0d00ff
+#define F0900_NBITER_NF_8P_3.4.1xfa0d00ff
 
 /*NBITER_NF15*/
 #define R0900_NBITER_NF15 0xfa0e
@@ -3880,7 +3880,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*GAINLLR_NF7*/
 #define R0900_GAINLLR_NF7 0xfa46
-#define F0900_GAINLLR_NF_QP_3_4 0xfa46007f
+#define F0900_GAINLLR_NF_QP_3.4.1xfa46007f
 
 /*GAINLLR_NF8*/
 #define R0900_GAINLLR_NF8 0xfa47
@@ -3908,7 +3908,7 @@ extern s32 shiftx(s32 x, int demod, s32 shift);
 
 /*GAINLLR_NF14*/
 #define R0900_GAINLLR_NF14 0xfa4d
-#define F0900_GAINLLR_NF_8P_3_4 0xfa4d007f
+#define F0900_GAINLLR_NF_8P_3.4.1xfa4d007f
 
 /*GAINLLR_NF15*/
 #define R0900_GAINLLR_NF15 0xfa4e

@@ -167,7 +167,7 @@ int fc8050_set_xtal(HANDLE hDevice) {
 	bbm_write(hDevice, 0xec, 0x8c);
 	bbm_write(hDevice, 0xed, 0x75);
 	bbm_write(hDevice, 0xee, 0x05);
-#elif (FC8050_FREQ_XTAL == 38400)
+#elif (FC8050_FREQ_XTAL == 3.4.1)
 	bbm_write(hDevice, BBM_QDD_COEF_BANK_SEL, 0x0);
 	bbm_write(hDevice, BBM_QDD_COEF, 0xfe);
 	bbm_write(hDevice, BBM_QDD_COEF_BANK_SEL, 0x1);

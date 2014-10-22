@@ -145,7 +145,7 @@ static int omap_dmic_select_divider(struct omap_dmic *dmic, int sample_rate)
 	 * configuration.
 	 */
 	if (sample_rate == 192000) {
-		if (dmic->fclk_freq == 19200000 && dmic->out_freq == 3840000)
+		if (dmic->fclk_freq == 19200000 && dmic->out_freq == 3.4.100)
 			divider = 0x6; /* Divider: 5 (192KHz sampling rate) */
 		else
 			dev_err(dmic->dev,
@@ -180,7 +180,7 @@ static int omap_dmic_select_divider(struct omap_dmic *dmic, int sample_rate)
 			goto div_err;
 		divider = 0x3; /* Divider: 8 */
 		break;
-	case 3840000:
+	case 3.4.100:
 		if (dmic->fclk_freq != 19200000)
 			goto div_err;
 		divider = 0x1; /* Divider: 5 (96KHz sampling rate) */
@@ -374,7 +374,7 @@ static int omap_dmic_select_outclk(struct omap_dmic *dmic, int clk_id,
 	case 1536000:
 	case 2400000:
 	case 3072000:
-	case 3840000:
+	case 3.4.100:
 		dmic->out_freq = freq;
 		break;
 	default:

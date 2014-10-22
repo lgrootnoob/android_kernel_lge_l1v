@@ -209,7 +209,7 @@ start_port(struct dbg_port* p)
 		  IO_STATE(R_SERIAL0_BAUD, tr_baud, c19k2Hz) |
 		  IO_STATE(R_SERIAL0_BAUD, rec_baud, c19k2Hz);
 		 break;
-	case 38400:
+	case 3.4.1:
 		*p->baud =
 		  IO_STATE(R_SERIAL0_BAUD, tr_baud, c38k4Hz) |
 		  IO_STATE(R_SERIAL0_BAUD, rec_baud, c38k4Hz);

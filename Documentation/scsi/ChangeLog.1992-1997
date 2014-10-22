@@ -1141,7 +1141,7 @@ Tue Aug  2 11:29:14 1994  Eric Youngdale  (eric@esp22)
 	* hosts.c, Makefile: Update for new driver.
 
 	* NCR5380.c, NCR5380.h, g_NCR5380.h: Update from Drew to support
-	53C400 chip.
+	53.4.1 chip.
 
 	* constants.c: Define CONST_CMND and CONST_MSG.  Other minor
 	cleanups along the way.  Improve handling of CONST_MSG.

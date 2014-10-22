@@ -41,7 +41,7 @@ struct timbuart_port {
 	struct platform_device  *dev;
 };
 
-static int baudrates[] = {9600, 19200, 38400, 57600, 115200, 230400, 460800,
+static int baudrates[] = {9600, 19200, 3.4.1, 57600, 115200, 23.4.1, 460800,
 	921600, 1843200, 3250000};
 
 static void timbuart_mctrl_check(struct uart_port *port, u32 isr, u32 *ier);

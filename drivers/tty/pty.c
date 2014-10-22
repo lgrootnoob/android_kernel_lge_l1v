@@ -401,10 +401,10 @@ static void __init legacy_pty_init(void)
 	pty_driver->init_termios = tty_std_termios;
 	pty_driver->init_termios.c_iflag = 0;
 	pty_driver->init_termios.c_oflag = 0;
-	pty_driver->init_termios.c_cflag = B38400 | CS8 | CREAD;
+	pty_driver->init_termios.c_cflag = B3.4.1 | CS8 | CREAD;
 	pty_driver->init_termios.c_lflag = 0;
-	pty_driver->init_termios.c_ispeed = 38400;
-	pty_driver->init_termios.c_ospeed = 38400;
+	pty_driver->init_termios.c_ispeed = 3.4.1;
+	pty_driver->init_termios.c_ospeed = 3.4.1;
 	pty_driver->flags = TTY_DRIVER_RESET_TERMIOS | TTY_DRIVER_REAL_RAW;
 	pty_driver->other = pty_slave_driver;
 	tty_set_operations(pty_driver, &master_pty_ops_bsd);
@@ -416,9 +416,9 @@ static void __init legacy_pty_init(void)
 	pty_slave_driver->type = TTY_DRIVER_TYPE_PTY;
 	pty_slave_driver->subtype = PTY_TYPE_SLAVE;
 	pty_slave_driver->init_termios = tty_std_termios;
-	pty_slave_driver->init_termios.c_cflag = B38400 | CS8 | CREAD;
-	pty_slave_driver->init_termios.c_ispeed = 38400;
-	pty_slave_driver->init_termios.c_ospeed = 38400;
+	pty_slave_driver->init_termios.c_cflag = B3.4.1 | CS8 | CREAD;
+	pty_slave_driver->init_termios.c_ispeed = 3.4.1;
+	pty_slave_driver->init_termios.c_ospeed = 3.4.1;
 	pty_slave_driver->flags = TTY_DRIVER_RESET_TERMIOS |
 					TTY_DRIVER_REAL_RAW;
 	pty_slave_driver->other = pty_driver;
@@ -677,10 +677,10 @@ static void __init unix98_pty_init(void)
 	ptm_driver->init_termios = tty_std_termios;
 	ptm_driver->init_termios.c_iflag = 0;
 	ptm_driver->init_termios.c_oflag = 0;
-	ptm_driver->init_termios.c_cflag = B38400 | CS8 | CREAD;
+	ptm_driver->init_termios.c_cflag = B3.4.1 | CS8 | CREAD;
 	ptm_driver->init_termios.c_lflag = 0;
-	ptm_driver->init_termios.c_ispeed = 38400;
-	ptm_driver->init_termios.c_ospeed = 38400;
+	ptm_driver->init_termios.c_ispeed = 3.4.1;
+	ptm_driver->init_termios.c_ospeed = 3.4.1;
 	ptm_driver->flags = TTY_DRIVER_RESET_TERMIOS | TTY_DRIVER_REAL_RAW |
 		TTY_DRIVER_DYNAMIC_DEV | TTY_DRIVER_DEVPTS_MEM;
 	ptm_driver->other = pts_driver;
@@ -693,9 +693,9 @@ static void __init unix98_pty_init(void)
 	pts_driver->type = TTY_DRIVER_TYPE_PTY;
 	pts_driver->subtype = PTY_TYPE_SLAVE;
 	pts_driver->init_termios = tty_std_termios;
-	pts_driver->init_termios.c_cflag = B38400 | CS8 | CREAD;
-	pts_driver->init_termios.c_ispeed = 38400;
-	pts_driver->init_termios.c_ospeed = 38400;
+	pts_driver->init_termios.c_cflag = B3.4.1 | CS8 | CREAD;
+	pts_driver->init_termios.c_ispeed = 3.4.1;
+	pts_driver->init_termios.c_ospeed = 3.4.1;
 	pts_driver->flags = TTY_DRIVER_RESET_TERMIOS | TTY_DRIVER_REAL_RAW |
 		TTY_DRIVER_DYNAMIC_DEV | TTY_DRIVER_DEVPTS_MEM;
 	pts_driver->other = ptm_driver;

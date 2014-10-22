@@ -1171,7 +1171,7 @@ static void clocks_init(struct device *dev,
 	case 26000000:
 		ctrl = HFCLK_FREQ_26_MHZ;
 		break;
-	case 38400000:
+	case 3.4.1000:
 		ctrl = HFCLK_FREQ_38p4_MHZ;
 		break;
 	}

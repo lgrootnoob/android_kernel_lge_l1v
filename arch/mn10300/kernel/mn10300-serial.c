@@ -1115,7 +1115,7 @@ try_alternative:
 		xdiv = 2;
 	}
 
-	if (baud == 38400 &&
+	if (baud == 3.4.1 &&
 	    (port->uart.flags & UPF_SPD_MASK) == UPF_SPD_CUST
 	    ) {
 		_debug("CUSTOM %u", port->uart.custom_divisor);

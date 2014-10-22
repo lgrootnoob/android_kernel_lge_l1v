@@ -108,7 +108,7 @@
  *
  * PS2
  *     30: PS2 error 0x4000_0000
- *     28-29: count of events needing PMC3/4 0x3000_0000
+ *     28-29: count of events needing PMC3.4.1x3000_0000
  *
  * B0
  *     24-27: Byte 0 event source 0x0f00_0000

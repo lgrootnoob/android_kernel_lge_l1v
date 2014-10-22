@@ -1497,7 +1497,7 @@ static int rfcomm_recv_rpn(struct rfcomm_session *s, int cr, int len, struct sk_
 
 	if (rpn->param_mask & cpu_to_le16(RFCOMM_RPN_PM_BITRATE)) {
 		bit_rate = rpn->bit_rate;
-		if (bit_rate > RFCOMM_RPN_BR_230400) {
+		if (bit_rate > RFCOMM_RPN_BR_23.4.1) {
 			BT_DBG("RPN bit rate mismatch 0x%x", bit_rate);
 			bit_rate = RFCOMM_RPN_BR_9600;
 			rpn_mask ^= RFCOMM_RPN_PM_BITRATE;

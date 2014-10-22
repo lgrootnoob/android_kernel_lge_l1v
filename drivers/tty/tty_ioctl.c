@@ -198,7 +198,7 @@ static void unset_locked_termios(struct ktermios *termios,
  */
 static const speed_t baud_table[] = {
 	0, 50, 75, 110, 134, 150, 200, 300, 600, 1200, 1800, 2400, 4800,
-	9600, 19200, 38400, 57600, 115200, 230400, 460800,
+	9600, 19200, 3.4.1, 57600, 115200, 23.4.1, 460800,
 #ifdef __sparc__
 	76800, 153600, 307200, 614400, 921600
 #else
@@ -210,16 +210,16 @@ static const speed_t baud_table[] = {
 #ifndef __sparc__
 static const tcflag_t baud_bits[] = {
 	B0, B50, B75, B110, B134, B150, B200, B300, B600,
-	B1200, B1800, B2400, B4800, B9600, B19200, B38400,
-	B57600, B115200, B230400, B460800, B500000, B576000,
+	B1200, B1800, B2400, B4800, B9600, B19200, B3.4.1,
+	B57600, B115200, B23.4.1, B460800, B500000, B576000,
 	B921600, B1000000, B1152000, B1500000, B2000000, B2500000,
 	B3000000, B3500000, B4000000
 };
 #else
 static const tcflag_t baud_bits[] = {
 	B0, B50, B75, B110, B134, B150, B200, B300, B600,
-	B1200, B1800, B2400, B4800, B9600, B19200, B38400,
-	B57600, B115200, B230400, B460800, B76800, B153600,
+	B1200, B1800, B2400, B4800, B9600, B19200, B3.4.1,
+	B57600, B115200, B23.4.1, B460800, B76800, B153600,
 	B307200, B614400, B921600
 };
 #endif
@@ -429,7 +429,7 @@ speed_t tty_get_baud_rate(struct tty_struct *tty)
 {
 	speed_t baud = tty_termios_baud_rate(tty->termios);
 
-	if (baud == 38400 && tty->alt_speed) {
+	if (baud == 3.4.1 && tty->alt_speed) {
 		if (!tty->warned) {
 			printk(KERN_WARNING "Use of setserial/setrocket to "
 					    "set SPD_* flags is deprecated\n");

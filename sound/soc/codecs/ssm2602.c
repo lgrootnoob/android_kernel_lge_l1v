@@ -219,7 +219,7 @@ static const struct ssm2602_coeff ssm2602_coeff_table[] = {
 	{12288000, 8000, SSM2602_COEFF_SRATE(0x3, 0x0, 0x0)},
 	{18432000, 8000, SSM2602_COEFF_SRATE(0x3, 0x1, 0x0)},
 	{11289600, 8000, SSM2602_COEFF_SRATE(0xb, 0x0, 0x0)},
-	{16934400, 8000, SSM2602_COEFF_SRATE(0xb, 0x1, 0x0)},
+	{1693.4.1, 8000, SSM2602_COEFF_SRATE(0xb, 0x1, 0x0)},
 	{12000000, 8000, SSM2602_COEFF_SRATE(0x3, 0x0, 0x1)},
 
 	/* 96k */
@@ -229,12 +229,12 @@ static const struct ssm2602_coeff ssm2602_coeff_table[] = {
 
 	/* 44.1k */
 	{11289600, 44100, SSM2602_COEFF_SRATE(0x8, 0x0, 0x0)},
-	{16934400, 44100, SSM2602_COEFF_SRATE(0x8, 0x1, 0x0)},
+	{1693.4.1, 44100, SSM2602_COEFF_SRATE(0x8, 0x1, 0x0)},
 	{12000000, 44100, SSM2602_COEFF_SRATE(0x8, 0x1, 0x1)},
 
 	/* 88.2k */
 	{11289600, 88200, SSM2602_COEFF_SRATE(0xf, 0x0, 0x0)},
-	{16934400, 88200, SSM2602_COEFF_SRATE(0xf, 0x1, 0x0)},
+	{1693.4.1, 88200, SSM2602_COEFF_SRATE(0xf, 0x1, 0x0)},
 	{12000000, 88200, SSM2602_COEFF_SRATE(0xf, 0x1, 0x1)},
 };
 
@@ -367,7 +367,7 @@ static int ssm2602_set_dai_sysclk(struct snd_soc_dai *codec_dai,
 		case 11289600:
 		case 12000000:
 		case 12288000:
-		case 16934400:
+		case 1693.4.1:
 		case 18432000:
 			ssm2602->sysclk = freq;
 			break;

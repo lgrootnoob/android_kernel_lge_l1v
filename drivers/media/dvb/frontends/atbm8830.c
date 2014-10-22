@@ -105,7 +105,7 @@ static int set_osc_freq(struct atbm_state *priv, u32 freq /*in kHz*/)
 
 	/* 0x100000 * freq / 30.4MHz */
 	t = (u64)0x100000 * freq;
-	do_div(t, 30400);
+	do_div(t, 3.4.1);
 	val = t;
 
 	atbm8830_write_reg(priv, REG_OSC_CLK, val);

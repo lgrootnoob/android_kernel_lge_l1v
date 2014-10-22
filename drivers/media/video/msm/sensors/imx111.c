@@ -441,8 +441,8 @@ static struct msm_sensor_output_info_t imx111_dimensions[] = {
 		.y_output = 0x4D0, /* 1232 */
 		.line_length_pclk = 0xDD0, /* 3536 */
 		.frame_length_lines = 0x4E6, /* 1254 */
-		.vt_pixel_clk = 134400000,
-		.op_pixel_clk = 134400000,
+		.vt_pixel_clk = 13.4.1000,
+		.op_pixel_clk = 13.4.1000,
 		.binning_factor = 1,
 	},
 	{

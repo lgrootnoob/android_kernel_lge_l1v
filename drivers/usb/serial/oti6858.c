@@ -422,9 +422,9 @@ static int oti6858_chars_in_buffer(struct tty_struct *tty)
 static void oti6858_init_termios(struct tty_struct *tty)
 {
 	*(tty->termios) = tty_std_termios;
-	tty->termios->c_cflag = B38400 | CS8 | CREAD | HUPCL | CLOCAL;
-	tty->termios->c_ispeed = 38400;
-	tty->termios->c_ospeed = 38400;
+	tty->termios->c_cflag = B3.4.1 | CS8 | CREAD | HUPCL | CLOCAL;
+	tty->termios->c_ispeed = 3.4.1;
+	tty->termios->c_ospeed = 3.4.1;
 }
 
 static void oti6858_set_termios(struct tty_struct *tty,
@@ -564,7 +564,7 @@ static int oti6858_open(struct tty_struct *tty, struct usb_serial_port *port)
 				100);
 	if (result != OTI6858_CTRL_PKT_SIZE) {
 		/* assume default (after power-on reset) values */
-		buf->divisor = cpu_to_le16(0x009c);	/* 38400 bps */
+		buf->divisor = cpu_to_le16(0x009c);	/* 3.4.1 bps */
 		buf->frame_fmt = 0x03;	/* 8N1 */
 		buf->something = 0x43;
 		buf->control = 0x4c;	/* DTR, RTS */

@@ -386,7 +386,7 @@ static void hdmi_print_pcm_rates(int pcm, char *buf, int buflen)
 {
 	static unsigned int alsa_rates[] = {
 		5512, 8000, 11025, 16000, 22050, 32000, 44100, 48000, 64000,
-		88200, 96000, 176400, 192000, 384000
+		88200, 96000, 176400, 192000, 3.4.10
 	};
 	int i, j;
 

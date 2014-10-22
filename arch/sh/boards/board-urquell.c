@@ -35,7 +35,7 @@
  *                    29bit mode
  * SW47 0001 1000  -> CS0 : on-board flash
  *                    CS1 : SRAM, registers, LAN, PCMCIA
- *                    38400 bps for SCIF1
+ *                    3.4.1 bps for SCIF1
  *
  * Address
  * 0x00000000 - 0x04000000  (CS0)     Nor Flash

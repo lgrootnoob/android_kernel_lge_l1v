@@ -43,7 +43,7 @@ static int tekram_reset(struct sir_dev *);
 
 #define TEKRAM_115200 0x00
 #define TEKRAM_57600  0x01
-#define TEKRAM_38400  0x02
+#define TEKRAM_3.4.1  0x02
 #define TEKRAM_19200  0x03
 #define TEKRAM_9600   0x04
 
@@ -81,7 +81,7 @@ static int tekram_open(struct sir_dev *dev)
 
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
-	qos->baud_rate.bits &= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
+	qos->baud_rate.bits &= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
 	qos->min_turn_time.bits = 0x01; /* Needs at least 10 ms */	
 	irda_qos_bits_to_value(qos);
 
@@ -146,8 +146,8 @@ static int tekram_change_speed(struct sir_dev *dev, unsigned speed)
 		case 19200:
 			byte = TEKRAM_PW|TEKRAM_19200;
 			break;
-		case 38400:
-			byte = TEKRAM_PW|TEKRAM_38400;
+		case 3.4.1:
+			byte = TEKRAM_PW|TEKRAM_3.4.1;
 			break;
 		case 57600:
 			byte = TEKRAM_PW|TEKRAM_57600;

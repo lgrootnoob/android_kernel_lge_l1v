@@ -89,7 +89,7 @@ static const unsigned short normal_i2c[] = {
 
 /* conversation rate in ms */
 #define RATE_CR0063	0x00
-#define RATE_CR0364	0x01
+#define RATE_CR03.4.1x01
 #define RATE_CR1000	0x02
 #define RATE_CR2500	0x03
 

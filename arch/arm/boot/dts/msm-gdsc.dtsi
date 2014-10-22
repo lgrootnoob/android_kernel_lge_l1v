@@ -23,7 +23,7 @@
 	gdsc_mdss: qcom,gdsc@fd8c2304 {
 		compatible = "qcom,gdsc";
 		regulator-name = "gdsc_mdss";
-		reg = <0xfd8c2304 0x4>;
+		reg = <0xfd8c23.4.1x4>;
 	};
 
 	gdsc_jpeg: qcom,gdsc@fd8c35a4 {

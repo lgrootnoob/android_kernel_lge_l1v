@@ -80,7 +80,7 @@ enum {
 	ipw_sio_b115200 = 0x0020,
 	ipw_sio_b57600  = 0x0040,
 	ipw_sio_b56000  = 0x0042,
-	ipw_sio_b38400  = 0x0060,
+	ipw_sio_b3.4.1  = 0x0060,
 	ipw_sio_b19200  = 0x00c0,
 	ipw_sio_b14400  = 0x0100,
 	ipw_sio_b9600   = 0x0180,

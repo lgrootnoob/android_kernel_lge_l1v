@@ -223,7 +223,7 @@ int msm_camio_clk_enable(enum msm_camio_clk_type clktype)
 	case CAMIO_CSI_SRC_CLK:
 		camio_csi_src_clk =
 		clk = clk_get(NULL, "csi_src_clk");
-		msm_camio_clk_rate_set_2(clk, 384000000);
+		msm_camio_clk_rate_set_2(clk, 3.4.10000);
 		break;
 
 	case CAMIO_CSI0_CLK:

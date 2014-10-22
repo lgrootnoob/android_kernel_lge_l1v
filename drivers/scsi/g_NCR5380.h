@@ -7,7 +7,7 @@
  *	drew@colorado.edu
  *      +1 (303) 440-4894
  *
- * NCR53C400 extensions (c) 1994,1995,1996, Kevin Lentin
+ * NCR53.4.1 extensions (c) 1994,1995,1996, Kevin Lentin
  *    K.Lentin@cs.monash.edu.au
  *
  * ALPHA RELEASE 1. 
@@ -35,7 +35,7 @@
 
 #define GENERIC_NCR5380_PUBLIC_RELEASE 1
 
-#ifdef NCR53C400
+#ifdef NCR53.4.1
 #define BIOSPARAM
 #define NCR5380_BIOSPARAM generic_NCR5380_biosparam
 #else
@@ -69,10 +69,10 @@ static const char* generic_NCR5380_info(struct Scsi_Host *);
 #define NCR5380_map_type int
 #define NCR5380_map_name port
 #define NCR5380_instance_name io_port
-#define NCR53C400_register_offset 0
-#define NCR53C400_address_adjust 8
+#define NCR53.4.1_register_offset 0
+#define NCR53.4.1_address_adjust 8
 
-#ifdef NCR53C400
+#ifdef NCR53.4.1
 #define NCR5380_region_size 16
 #else
 #define NCR5380_region_size 8
@@ -97,14 +97,14 @@ static const char* generic_NCR5380_info(struct Scsi_Host *);
 #define NCR5380_map_type unsigned long
 #define NCR5380_map_name base
 #define NCR5380_instance_name base
-#define NCR53C400_register_offset 0x108
-#define NCR53C400_address_adjust 0
-#define NCR53C400_mem_base 0x3880
-#define NCR53C400_host_buffer 0x3900
+#define NCR53.4.1_register_offset 0x108
+#define NCR53.4.1_address_adjust 0
+#define NCR53.4.1_mem_base 0x3880
+#define NCR53.4.1_host_buffer 0x3900
 #define NCR5380_region_size 0x3a00
 
-#define NCR5380_read(reg) readb(iomem + NCR53C400_mem_base + (reg))
-#define NCR5380_write(reg, value) writeb(value, iomem + NCR53C400_mem_base + (reg))
+#define NCR5380_read(reg) readb(iomem + NCR53.4.1_mem_base + (reg))
+#define NCR5380_write(reg, value) writeb(value, iomem + NCR53.4.1_mem_base + (reg))
 
 #define NCR5380_implementation_fields \
     NCR5380_map_type NCR5380_map_name; \
@@ -127,8 +127,8 @@ static const char* generic_NCR5380_info(struct Scsi_Host *);
 #define NCR5380_proc_info notyet_generic_proc_info
 
 #define BOARD_NCR5380	0
-#define BOARD_NCR53C400	1
-#define BOARD_NCR53C400A 2
+#define BOARD_NCR53.4.1	1
+#define BOARD_NCR53.4.1A 2
 #define BOARD_DTC3181E	3
 
 #endif /* else def HOSTS_C */

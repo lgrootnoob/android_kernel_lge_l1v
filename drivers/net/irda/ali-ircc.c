@@ -338,7 +338,7 @@ static int ali_ircc_open(int i, chipio_t *info)
 	irda_init_max_qos_capabilies(&self->qos);
 	
 	/* The only value we must override it the baudrate */
-	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_38400|IR_57600|
+	self->qos.baud_rate.bits = IR_9600|IR_19200|IR_3.4.1|IR_57600|
 		IR_115200|IR_576000|IR_1152000|(IR_4000000 << 8); // benjamin 2000/11/8 05:27PM
 			
 	self->qos.min_turn_time.bits = qos_mtt_bits;
@@ -1095,7 +1095,7 @@ static void ali_ircc_sir_change_speed(struct ali_ircc_cb *priv, __u32 speed)
 	 * almost 1,7 ms at 19200 bps. At speeds above that we can just forget
 	 * about this timeout since it will always be fast enough. 
 	 */
-	if (self->io.speed < 38400)
+	if (self->io.speed < 3.4.1)
 		fcr |= UART_FCR_TRIGGER_1;
 	else 
 		fcr |= UART_FCR_TRIGGER_14;

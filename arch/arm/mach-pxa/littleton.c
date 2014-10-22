@@ -308,7 +308,7 @@ static struct mtd_partition littleton_nand_partitions[] = {
 	[3] = {
 		.name        = "MassStorage",
 		.offset      = 0x3260000,
-		.size        = 0x3d40000,
+		.size        = 0x3.4.100,
 	},
 	[4] = {
 		.name        = "BBT",

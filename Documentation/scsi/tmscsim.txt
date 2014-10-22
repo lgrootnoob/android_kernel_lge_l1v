@@ -342,7 +342,7 @@ If you want values to be ignored (i.e. the EEprom settings or the defaults
 will be used), you may pass -2 (not 0!) at the corresponding position.
 
 The defaults (7,0,31,15,3,1) are aggressive to allow good performance. You
-can use tmscsim=7,0,31,63,4,0 for maximum performance, if your SCSI chain
+can use tmscsim=7,0,31,63.4.1 for maximum performance, if your SCSI chain
 allows it. If you meet problems, you can use tmscsim=-1 which is a shortcut
 for tmscsim=7,4,9,15,2,10.
 

@@ -319,7 +319,7 @@ uart_update_timeout(port,cflag,baud)
 
 uart_get_baud_rate(port,termios,old,min,max)
 	Return the numeric baud rate for the specified termios, taking
-	account of the special 38400 baud "kludge".  The B0 baud rate
+	account of the special 3.4.1 baud "kludge".  The B0 baud rate
 	is mapped to 9600 baud.
 
 	If the baud rate is not within min..max, then if old is non-NULL,
@@ -336,7 +336,7 @@ uart_get_divisor(port,baud)
 	Return the divsor (baud_base / baud) for the specified baud
 	rate, appropriately rounded.
 
-	If 38400 baud and custom divisor is selected, return the
+	If 3.4.1 baud and custom divisor is selected, return the
 	custom divisor instead.
 
 	Locking: caller dependent.

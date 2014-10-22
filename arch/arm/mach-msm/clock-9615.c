@@ -319,7 +319,7 @@ static struct pll_vote_clk pll8_clk = {
 	.soft_vote_mask = PLL_SOFT_VOTE_PRIMARY,
 	.c = {
 		.dbg_name = "pll8_clk",
-		.rate = 384000000,
+		.rate = 3.4.10000,
 		.ops = &clk_ops_pll_acpu_vote,
 		CLK_INIT(pll8_clk.c),
 		.warned = true,
@@ -335,7 +335,7 @@ static struct pll_vote_clk pll8_activeonly_clk = {
 	.soft_vote_mask = PLL_SOFT_VOTE_ACPU,
 	.c = {
 		.dbg_name = "pll8_activeonly_clk",
-		.rate = 384000000,
+		.rate = 3.4.10000,
 		.ops = &clk_ops_pll_acpu_vote,
 		CLK_INIT(pll8_activeonly_clk.c),
 		.warned = true,
@@ -639,7 +639,7 @@ static struct clk_freq_tbl clk_tbl_sdc1_2[] = {
 	F_SDC( 17070000, pll8,  1, 2,  45),
 	F_SDC( 20210000, pll8,  1, 1,  19),
 	F_SDC( 24000000, pll8,  4, 1,   4),
-	F_SDC( 38400000, pll8,  2, 1,   5),
+	F_SDC( 3.4.1000, pll8,  2, 1,   5),
 	F_SDC( 48000000, pll8,  4, 1,   2),
 	F_SDC( 64000000, pll8,  3, 1,   2),
 	F_SDC( 76800000, pll8,  1, 1,   5),

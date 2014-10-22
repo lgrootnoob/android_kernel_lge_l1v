@@ -64,8 +64,8 @@ static int actisys_change_speed(struct sir_dev *, unsigned);
 static int actisys_reset(struct sir_dev *);
 
 /* These are the baudrates supported, in the order available */
-/* Note : the 220L doesn't support 38400, but we will fix that below */
-static unsigned baud_rates[] = { 9600, 19200, 57600, 115200, 38400 };
+/* Note : the 220L doesn't support 3.4.1, but we will fix that below */
+static unsigned baud_rates[] = { 9600, 19200, 57600, 115200, 3.4.1 };
 
 #define MAX_SPEEDS ARRAY_SIZE(baud_rates)
 
@@ -121,11 +121,11 @@ static int actisys_open(struct sir_dev *dev)
 	sirdev_set_dtr_rts(dev, TRUE, TRUE);
 
 	/* Set the speeds we can accept */
-	qos->baud_rate.bits &= IR_9600|IR_19200|IR_38400|IR_57600|IR_115200;
+	qos->baud_rate.bits &= IR_9600|IR_19200|IR_3.4.1|IR_57600|IR_115200;
 
-	/* Remove support for 38400 if this is not a 220L+ dongle */
+	/* Remove support for 3.4.1 if this is not a 220L+ dongle */
 	if (dev->dongle_drv->type == IRDA_ACTISYS_DONGLE)
-		qos->baud_rate.bits &= ~IR_38400;
+		qos->baud_rate.bits &= ~IR_3.4.1;
 
 	qos->min_turn_time.bits = 0x7f; /* Needs 0.01 ms */
 	irda_qos_bits_to_value(qos);

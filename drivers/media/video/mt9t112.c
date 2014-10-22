@@ -308,7 +308,7 @@ static int mt9t112_clock_info(const struct i2c_client *client, u32 ext)
 	dev_dbg(&client->dev, "EXTCLK          : %10u K %s\n", ext, enable);
 
 	vco = 2 * m * ext / (n+1);
-	enable = ((384000 > vco) || (768000 < vco)) ? "X" : "";
+	enable = ((3.4.10 > vco) || (768000 < vco)) ? "X" : "";
 	dev_dbg(&client->dev, "VCO             : %10u K %s\n", vco, enable);
 
 	clk = vco / (p1+1) / (p2+1);

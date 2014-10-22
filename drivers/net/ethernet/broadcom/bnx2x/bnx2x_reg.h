@@ -985,7 +985,7 @@
 /* [WB_R 32] Each bit represent write done pending bits status for that SB
  * (MSI/MSIX message was sent and write done was not received yet). 0 =
  * clear; 1 = set. Data valid only in addresses 0-4. all the rest are zero. */
-#define IGU_REG_WRITE_DONE_PENDING				 0x130480
+#define IGU_REG_WRITE_DONE_PENDING				 0x13.4.1
 #define MCP_A_REG_MCPR_SCRATCH					 0x3a0000
 #define MCP_REG_MCPR_ACCESS_LOCK				 0x8009c
 #define MCP_REG_MCPR_CPU_PROGRAM_COUNTER			 0x8501c
